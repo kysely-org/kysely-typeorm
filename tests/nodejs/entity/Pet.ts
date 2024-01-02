@@ -40,11 +40,11 @@ export class PetEntity extends BaseEntity {
   @ManyToOne(() => PersonEntity, (person) => person.pets, {
     onDelete: 'CASCADE',
   })
-  @JoinColumn({name: 'ownerId', referencedColumnName: 'id'})
+  @JoinColumn({name: 'owner_id', referencedColumnName: 'id'})
+  @Index('pet_owner_id_index')
   owner: Populated<PersonEntity>
 
   @RelationId((pet: PetEntity) => pet.owner)
-  @Index('pet_owner_id_index')
   ownerId: number
 
   @Column({type: 'varchar', length: 50})

@@ -27,7 +27,7 @@ export class ToyEntity extends BaseEntity {
   price: number
 
   @ManyToOne(() => PetEntity, (pet) => pet.toys, {onDelete: 'CASCADE'})
-  @JoinColumn({name: 'petId', referencedColumnName: 'id'})
+  @JoinColumn({name: 'pet_id', referencedColumnName: 'id'})
   pet: Populated<PetEntity>
 
   @RelationId((toy: ToyEntity) => toy.pet)
