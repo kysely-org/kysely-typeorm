@@ -1,0 +1,44 @@
+version: '3'
+services:
+  # credit to Knex.js team for the following mssql setup here:
+  mssql:
+    image: mcr.microsoft.com/mssql/server:2022-latest
+    ports:
+      - '21433:1433'
+    environment:
+      ACCEPT_EULA: Y
+      MSSQL_PID: Express
+      SA_PASSWORD: KyselyTest0
+    healthcheck:
+      test: /opt/mssql-tools/bin/sqlcmd -S mssql -U sa -P 'KyselyTest0' -Q 'select 1'
+  waitmssql:
+    image: mcr.microsoft.com/mssql/server:2017-latest
+    links:
+      - mssql
+    depends_on:
+      - mssql
+    environment:
+      MSSQL_PID: Express
+    entrypoint:
+      - bash
+      - -c
+      # https://docs.microsoft.com/en-us/sql/relational-databases/logs/control-transaction-durability?view=sql-server-ver15#bkmk_DbControl
+      - 'until /opt/mssql-tools/bin/sqlcmd -S mssql -U sa -P KyselyTest0 -d master -Q "CREATE DATABASE kysely_test; ALTER DATABASE kysely_test SET ALLOW_SNAPSHOT_ISOLATION ON; ALTER DATABASE kysely_test SET DELAYED_DURABILITY = FORCED"; do sleep 5; done'
+  mysql:
+    image: 'mysql/mysql-server'
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: kysely_test
+    ports:
+      - '3308:3306'
+    volumes:
+      - ./tests/scripts/mysql-init.sql:/data/application/init.sql
+    command: --init-file /data/application/init.sql
+  postgres:
+    image: 'postgres'
+    environment:
+      POSTGRES_DB: kysely_test
+      POSTGRES_USER: kysely
+      POSTGRES_HOST_AUTH_METHOD: trust
+    ports:
+      - '5434:5432'
