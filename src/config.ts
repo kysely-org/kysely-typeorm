@@ -1,9 +1,11 @@
-import type { Dialect } from "kysely";
-import type { DataSource } from "typeorm";
+import type {Dialect} from 'kysely'
+import type {DataSource} from 'typeorm'
 
 export interface KyselyTypeORMDialectConfig {
-  kyselySubDialect: KyselySubDialect;
-  typeORMDataSource: DataSource;
+  kyselySubDialect: KyselySubDialect
+  shouldDestroyDataSource?: boolean
+  shouldInitializeDataSource?: boolean
+  typeORMDataSource: DataSource
 }
 
-export type KyselySubDialect = Omit<Dialect, "createDriver">;
+export type KyselySubDialect = Omit<Dialect, 'createDriver'>
