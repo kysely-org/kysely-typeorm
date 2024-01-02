@@ -1,10 +1,10 @@
 {
   "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "strictPropertyInitialization": false
+    "module": "CommonJS",
+    "moduleResolution": "Node",
+    "target": "ESNext"
   },
-  "include": ["src", "tests"],
-  "exclude": ["node_modules", "dist", "examples", "scripts", "assets"]
+  "include": ["src"],
+  "exclude": ["node_modules", "dist", "examples", "scripts", "assets", "tests"]
 }
