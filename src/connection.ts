@@ -1,6 +1,7 @@
 import type {CompiledQuery, DatabaseConnection, QueryResult, TransactionSettings} from 'kysely'
 import type {QueryRunner} from 'typeorm'
-import {ISOLATION_LEVELS} from './isolation-levels'
+import {ISOLATION_LEVELS} from './isolation-levels.js'
+import {isObject} from './type-utils.js'
 
 export class KyselyTypeORMConnection implements DatabaseConnection {
   readonly #queryRunner: QueryRunner
@@ -34,20 +35,32 @@ export class KyselyTypeORMConnection implements DatabaseConnection {
   }
 
   async executeQuery<R>(compiledQuery: CompiledQuery<unknown>): Promise<QueryResult<R>> {
-    const results = await this.#queryRunner.query(compiledQuery.sql, [...compiledQuery.parameters])
+    const result = await this.#queryRunner.query(compiledQuery.sql, [...compiledQuery.parameters], true)
 
-    console.log('results', results)
-
-    return {rows: []}
+    return {
+      rows: result.records || [],
+      numAffectedRows: result.affected ? BigInt(result.affected) : undefined,
+      insertId: Number.isInteger(result.raw)
+        ? BigInt(result.raw)
+        : isObject(result.raw) && 'insertId' in result.raw && Number.isInteger(result.raw.insertId)
+        ? BigInt(result.raw.insertId)
+        : undefined,
+      numChangedRows:
+        isObject(result.raw) && 'changedRows' in result.raw && Number.isInteger(result.raw.changedRows)
+          ? BigInt(result.raw.changedRows)
+          : undefined,
+    }
   }
 
+  // TODO: implement!
   async *streamQuery<R>(compiledQuery: CompiledQuery<unknown>): AsyncIterableIterator<QueryResult<R>> {
-    const readStream = await this.#queryRunner.stream(compiledQuery.sql, [...compiledQuery.parameters])
+    // const readStream = await this.#queryRunner.stream(compiledQuery.sql, [...compiledQuery.parameters])
 
-    const dataYielder = (chunk: any[]) => yield chunk
+    // const rows: R[] = []
+    // let done = false
 
-    await new Promise((resolve, reject) => {
-      readStream.on('data', dataYielder).once('error', reject).once('end', resolve)
-    })
+    // readStream.on('data', console.log).once('end', () => (done = true))
+
+    throw new Error('Unimplemented!')
   }
 }
