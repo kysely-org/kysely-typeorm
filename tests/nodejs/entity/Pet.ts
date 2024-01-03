@@ -37,9 +37,7 @@ export class PetEntity extends BaseEntity {
   @Column({type: 'varchar', length: 255, unique: true})
   name: string
 
-  @ManyToOne(() => PersonEntity, (person) => person.pets, {
-    onDelete: 'CASCADE',
-  })
+  @ManyToOne(() => PersonEntity, (person) => person.pets, {onDelete: 'CASCADE'})
   @JoinColumn({name: 'owner_id', referencedColumnName: 'id'})
   @Index('pet_owner_id_index')
   owner: Populated<PersonEntity>
@@ -50,6 +48,6 @@ export class PetEntity extends BaseEntity {
   @Column({type: 'varchar', length: 50})
   species: 'dog' | 'cat' | 'hamster'
 
-  @OneToMany(() => ToyEntity, (toy) => toy.pet)
+  @OneToMany(() => ToyEntity, (toy) => toy.pet, {cascade: ['insert']})
   toys: Populated<ToyEntity[]>
 }

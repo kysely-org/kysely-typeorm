@@ -39,6 +39,6 @@ export class PersonEntity extends BaseEntity {
   @Column({type: 'varchar', length: 50, nullable: true})
   maritalStatus: 'single' | 'married' | 'divorced' | 'widowed' | null
 
-  @OneToMany(() => PetEntity, (pet) => pet.owner)
+  @OneToMany(() => PetEntity, (pet) => pet.owner, {cascade: ['insert']})
   pets: Populated<PetEntity[]>
 }
