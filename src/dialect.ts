@@ -1,4 +1,12 @@
-import type {DatabaseIntrospector, Dialect, DialectAdapter, Driver, Kysely, QueryCompiler} from 'kysely'
+import type {
+  DatabaseIntrospector,
+  DefaultQueryCompiler,
+  Dialect,
+  DialectAdapter,
+  Driver,
+  Kysely,
+  QueryCompiler,
+} from 'kysely'
 import type {KyselyTypeORMDialectConfig} from './config.js'
 import {KyselyTypeORMDriver} from './driver.js'
 import {assertSupportedDialect} from './supported-dialects.js'
@@ -24,6 +32,15 @@ export class KyselyTypeORMDialect implements Dialect {
   }
 
   createQueryCompiler(): QueryCompiler {
-    return this.#config.kyselySubDialect.createQueryCompiler()
+    const queryCompiler = this.#config.kyselySubDialect.createQueryCompiler()
+
+    // `typeorm` uses `node-mssql` internally with zero-based variable names.
+    if (this.#config.typeORMDataSource.options.type === 'mssql') {
+      ;(queryCompiler as any).getCurrentParameterPlaceholder = function (this: DefaultQueryCompiler): string {
+        return `@${this.numParameters - 1}`
+      }
+    }
+
+    return queryCompiler
   }
 }
