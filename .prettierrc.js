@@ -4,5 +4,5 @@ module.exports = {
   singleQuote: true,
   trailingComma: 'all',
   bracketSpacing: false,
-  plugins: [require('prettier-plugin-organize-imports'), require('prettier-plugin-pkg')],
+  plugins: ['prettier-plugin-organize-imports', 'prettier-plugin-pkg'],
 }

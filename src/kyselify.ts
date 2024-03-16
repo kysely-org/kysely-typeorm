@@ -287,14 +287,14 @@ export type KyselifyEntity<E> = {
   [K in keyof E as E[K] extends (...args: any) => any
     ? never
     : '__kysely__non__attribute__' extends keyof E[K]
-    ? never
-    : K]-?: '__kysely__generated__' extends keyof E[K]
+      ? never
+      : K]-?: '__kysely__generated__' extends keyof E[K]
     ? E[K] extends Generated<infer T>
       ? KyselyGenerated<Exclude<T, undefined>>
       : never
     : '__kysely__generated__always__' extends keyof E[K]
-    ? E[K] extends GeneratedAlways<infer T>
-      ? KyselyGeneratedAlways<Exclude<T, undefined>>
-      : never
-    : Exclude<E[K], undefined>
+      ? E[K] extends GeneratedAlways<infer T>
+        ? KyselyGeneratedAlways<Exclude<T, undefined>>
+        : never
+      : Exclude<E[K], undefined>
 }

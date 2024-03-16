@@ -43,8 +43,8 @@ export class KyselyTypeORMConnection implements DatabaseConnection {
       insertId: Number.isInteger(result.raw)
         ? BigInt(result.raw)
         : isObject(result.raw) && 'insertId' in result.raw && Number.isInteger(result.raw.insertId)
-        ? BigInt(result.raw.insertId)
-        : undefined,
+          ? BigInt(result.raw.insertId)
+          : undefined,
       numChangedRows:
         isObject(result.raw) && 'changedRows' in result.raw && Number.isInteger(result.raw.changedRows)
           ? BigInt(result.raw.changedRows)
