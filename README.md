@@ -2,7 +2,7 @@
 
 TypeORM is an ORM that can run in NodeJS, Browser, Cordova, PhoneGap, Ionic, React Native, NativeScript, Expo, and Electron platforms and can be used with TypeScript and JavaScript (ES2021). Its goal is to always support the latest JavaScript features and provide additional features that help you to develop any kind of application that uses databases - from small applications with a few tables to large-scale enterprise applications with multiple databases.
 
-As of Mar 17, 2024, TypeORM [has X weekly downloads on npm](https://npmtrends.com/prisma-vs-sequelize-vs-typeorm) (3rd most popular ORM). It is a very popular ORM for Node.js and TypeScript.
+As of Mar 17, 2024, TypeORM [has 1,723,707 weekly downloads on npm](https://npmtrends.com/prisma-vs-sequelize-vs-typeorm) (3rd most popular ORM). It is a very popular ORM for Node.js and TypeScript.
 
 Just like most ORMs for Node.js, TypeORM has poor TypeScript support when it comes to writing queries outside the ORM's CRUD methods - something that happens more often than you might imagine - usually due to performance optimizations OR as a general escape hatch. This is where Kysely comes in.
 
