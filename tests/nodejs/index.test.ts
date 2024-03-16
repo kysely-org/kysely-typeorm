@@ -4,10 +4,10 @@ import {jsonArrayFrom as jsonArrayFromMssql} from 'kysely/helpers/mssql'
 import {jsonArrayFrom as jsonArrayFromMySQL} from 'kysely/helpers/mysql'
 import {jsonArrayFrom as jsonArrayFromPostgres} from 'kysely/helpers/postgres'
 import {jsonArrayFrom as jsonArrayFromSQLite} from 'kysely/helpers/sqlite'
-import {omit} from 'lodash'
-import {SUPPORTED_DIALECTS} from '../../src/supported-dialects.js'
-import {PersonEntity} from './entity/Person.js'
-import {DEFAULT_DATA_SET, PerDialect, TestContext, initTest, seedDatabase} from './test-setup.js'
+import omit from 'lodash/omit'
+import {SUPPORTED_DIALECTS} from '../../src/supported-dialects'
+import {PersonEntity} from './entity/Person'
+import {DEFAULT_DATA_SET, PerDialect, TestContext, initTest, seedDatabase} from './test-setup'
 
 for (const dialect of SUPPORTED_DIALECTS) {
   describe(`KyselyTypeORMDialect: ${dialect}`, () => {
@@ -31,6 +31,10 @@ for (const dialect of SUPPORTED_DIALECTS) {
     })
 
     after(async () => {
+      if (dialect === 'mysql') {
+        setTimeout(() => process.exit(0), 1_000)
+      }
+
       await ctx.kysely.destroy()
     })
 
@@ -118,11 +122,11 @@ for (const dialect of SUPPORTED_DIALECTS) {
       expect(result).to.deep.equal(
         (
           {
-            'better-sqlite3': {numChangedRows: undefined, numUpdatedRows: BigInt(1)},
-            mssql: {numChangedRows: undefined, numUpdatedRows: BigInt(1)},
-            mysql: {numChangedRows: BigInt(1), numUpdatedRows: BigInt(1)},
-            postgres: {numChangedRows: undefined, numUpdatedRows: BigInt(1)},
-            sqlite: {numChangedRows: undefined, numUpdatedRows: BigInt(0)},
+            'better-sqlite3': new UpdateResult(BigInt(1), undefined),
+            mssql: new UpdateResult(BigInt(1), undefined),
+            mysql: new UpdateResult(BigInt(1), BigInt(1)),
+            postgres: new UpdateResult(BigInt(1), undefined),
+            sqlite: new UpdateResult(BigInt(0), undefined),
           } satisfies PerDialect<{[K in keyof UpdateResult]: UpdateResult[K]}>
         )[dialect],
       )

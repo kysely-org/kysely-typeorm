@@ -35,7 +35,8 @@
     "fmt": "prettier --write .",
     "fmt:check": "prettier --check .",
     "lint": "eslint src --ext .ts",
-    "prepack": "pnpm run lint && pnpm run build",
+    "prepack": "pnpm lint && pnpm build",
+    "test": "pnpm test:nodejs",
     "test:nodejs": "mocha ./tests/nodejs",
     "type-check": "tsc --noEmit"
   },

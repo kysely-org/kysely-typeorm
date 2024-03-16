@@ -19,8 +19,13 @@ import {
 import 'reflect-metadata'
 import {DataSource, type DataSourceOptions, type DeepPartial} from 'typeorm'
 import {SnakeNamingStrategy} from 'typeorm-naming-strategies'
-import {KyselyTypeORMDialect, type KyselifyEntity, type KyselySubDialect, type KyselyTypeORMDialectConfig} from '../..'
-import type {SupportedDialect} from '../../src/supported-dialects.js'
+import {
+  KyselyTypeORMDialect,
+  type KyselifyEntity,
+  type KyselySubDialect,
+  type KyselyTypeORMDialectConfig,
+} from '../../src'
+import type {SupportedDialect} from '../../src/supported-dialects'
 import {PersonEntity} from './entity/Person'
 import {PetEntity} from './entity/Pet'
 import {ToyEntity} from './entity/Toy'
@@ -154,7 +159,6 @@ export async function initTest(ctx: Mocha.Context, dialect: SupportedDialect): P
   const kysely = new Kysely<Database>({
     dialect: new KyselyTypeORMDialect({
       kyselySubDialect: config.kyselySubDialect,
-      shouldDestroyDataSource: true,
       typeORMDataSource,
     }),
     plugins: PLUGINS,

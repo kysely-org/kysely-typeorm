@@ -1,10 +1,9 @@
 {
   "extends": "@tsconfig/node20/tsconfig.json",
   "compilerOptions": {
-    "module": "CommonJS",
-    "moduleResolution": "Node",
-    "target": "ESNext"
+    "experimentalDecorators": true,
+    "rootDir": "src"
   },
   "include": ["src"],
-  "exclude": ["node_modules", "dist", "examples", "scripts", "assets", "tests"]
+  "exclude": ["node_modules", "dist", "tests", "examples", "scripts", "assets"]
 }

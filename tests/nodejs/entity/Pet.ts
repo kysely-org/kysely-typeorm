@@ -10,7 +10,7 @@ import {
   PrimaryGeneratedColumn,
   RelationId,
 } from 'typeorm'
-import type {Generated, Populated} from '../../..'
+import type {Generated, Populated} from '../../../src'
 import {PersonEntity} from './Person'
 import {ToyEntity} from './Toy'
 
