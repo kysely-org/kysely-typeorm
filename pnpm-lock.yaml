@@ -11,30 +11,18 @@ devDependencies:
   '@types/chai':
     specifier: ^4.3.4
     version: 4.3.11
-  '@types/chai-as-promised':
-    specifier: ^7.1.5
-    version: 7.1.8
-  '@types/chai-subset':
-    specifier: ^1.3.3
-    version: 1.3.5
   '@types/lodash':
     specifier: ^4.14.202
     version: 4.14.202
   '@types/mocha':
     specifier: ^10.0.1
     version: 10.0.6
-  '@types/mocha-each':
-    specifier: ^2.0.0
-    version: 2.0.4
   '@types/node':
     specifier: ^18.15.11
     version: 18.19.4
   '@types/pg':
     specifier: ^8.10.9
     version: 8.10.9
-  '@types/validator':
-    specifier: ^13.11.7
-    version: 13.11.7
   '@typescript-eslint/eslint-plugin':
     specifier: ^7.2.0
     version: 7.2.0(@typescript-eslint/parser@7.2.0)(eslint@8.57.0)(typescript@5.4.2)
@@ -47,9 +35,6 @@ devDependencies:
   chai:
     specifier: ^4.3.7
     version: 4.3.10
-  chai-subset:
-    specifier: ^1.6.0
-    version: 1.6.0
   esbuild:
     specifier: ^0.17.15
     version: 0.17.19
@@ -74,15 +59,9 @@ devDependencies:
   lodash:
     specifier: ^4.17.21
     version: 4.17.21
-  mariadb:
-    specifier: ^3.2.2
-    version: 3.2.3
   mocha:
     specifier: ^10.2.0
     version: 10.2.0
-  mocha-each:
-    specifier: ^2.0.1
-    version: 2.0.1
   mssql:
     specifier: ^10.0.2
     version: 10.0.2
@@ -981,28 +960,12 @@ packages:
     resolution: {integrity: sha512-madaWq2k+LYMEhmcp0fs+OGaLFk0OenpHa4gmI4VEmCKX4PJntQ6fnnGADVFrVkBj0wIdAlQnK/MrlYTHsa1gQ==}
     dev: true
 
-  /@types/chai-as-promised@7.1.8:
-    resolution: {integrity: sha512-ThlRVIJhr69FLlh6IctTXFkmhtP3NpMZ2QGq69StYLyKZFp/HOp1VdKZj7RvfNWYYcJ1xlbLGLLWj1UvP5u/Gw==}
-    dependencies:
-      '@types/chai': 4.3.11
-    dev: true
-
-  /@types/chai-subset@1.3.5:
-    resolution: {integrity: sha512-c2mPnw+xHtXDoHmdtcCXGwyLMiauiAyxWMzhGpqHC4nqI/Y5G2XhTampslK2rb59kpcuHon03UH8W6iYUzw88A==}
-    dependencies:
-      '@types/chai': 4.3.11
-    dev: true
-
   /@types/chai@4.3.11:
     resolution: {integrity: sha512-qQR1dr2rGIHYlJulmr8Ioq3De0Le9E4MJ5AiaeAETJJpndT1uUNHsGFK3L/UIu+rbkQSdj8J/w2bCsBZc/Y5fQ==}
     dev: true
 
   /@types/estree@1.0.5:
     resolution: {integrity: sha512-/kYRxGDLWzHOB7q+wtSUQlFrtcdUccpfy+X+9iMBpHK8QLLhx2wIPYuS5DYtR9Wa/YlZAbIovy7qVdB1Aq6Lyw==}
-    dev: true
-
-  /@types/geojson@7946.0.13:
-    resolution: {integrity: sha512-bmrNrgKMOhM3WsafmbGmC+6dsF2Z308vLFsQ3a/bT8X8Sv5clVYpPars/UPq+sAaJP+5OoLAYgwbkS5QEJdLUQ==}
     dev: true
 
   /@types/json-schema@7.0.15:
@@ -1017,18 +980,8 @@ packages:
     resolution: {integrity: sha512-OvlIYQK9tNneDlS0VN54LLd5uiPCBOp7gS5Z0f1mjoJYBrtStzgmJBxONW3U6OZqdtNzZPmn9BS/7WI7BFFcFQ==}
     dev: true
 
-  /@types/mocha-each@2.0.4:
-    resolution: {integrity: sha512-BKan+PdIW0Kz9t2FActPvZCNkjIbdUsQIs3ceT7gPZ8xigewLuge7ajXDCe/El6O85LsVMXGn7Uhs1N3/mKPsw==}
-    dependencies:
-      '@types/mocha': 10.0.6
-    dev: true
-
   /@types/mocha@10.0.6:
     resolution: {integrity: sha512-dJvrYWxP/UcXm36Qn36fxhUKu8A/xMRXVT2cliFF1Z7UA9liG5Psj3ezNSZw+5puH2czDXRLcXQxf8JbJt0ejg==}
-    dev: true
-
-  /@types/node@17.0.45:
-    resolution: {integrity: sha512-w+tIMs3rq2afQdsPJlODhoUEKzFP1ayaoyl1CcnwtIlsVe7K7bA1NGm4s3PraqTLlXnbIN84zuBlxBWo1u9BLw==}
     dev: true
 
   /@types/node@18.19.4:
@@ -1054,10 +1007,6 @@ packages:
 
   /@types/semver@7.5.6:
     resolution: {integrity: sha512-dn1l8LaMea/IjDoHNd9J52uBbInB796CDffS6VdIxvqYCPSG0V0DzHp76GpaWnlhg88uYyPbXCDIowa86ybd5A==}
-    dev: true
-
-  /@types/validator@13.11.7:
-    resolution: {integrity: sha512-q0JomTsJ2I5Mv7dhHhQLGjMvX0JJm5dyZ1DXQySIUzU1UlwzB8bt+R6+LODUbz0UDIOvEzGc28tk27gBJw2N8Q==}
     dev: true
 
   /@typescript-eslint/eslint-plugin@7.2.0(@typescript-eslint/parser@7.2.0)(eslint@8.57.0)(typescript@5.4.2):
@@ -1554,11 +1503,6 @@ packages:
   /camelcase@6.3.0:
     resolution: {integrity: sha512-Gmy6FhYlCY7uOElZUSbxo2UCDH8owEk996gkbrpsgGtrJLM3J7jGxl9Ic7Qwwj4ivOE5AWZWRMecDdF7hqGjFA==}
     engines: {node: '>=10'}
-    dev: true
-
-  /chai-subset@1.6.0:
-    resolution: {integrity: sha512-K3d+KmqdS5XKW5DWPd5sgNffL3uxdDe+6GdnJh3AYPhwnBGRY5urfvfcbRtWIvvpz+KxkL9FeBB6MZewLUNwug==}
-    engines: {node: '>=4'}
     dev: true
 
   /chai@4.3.10:
@@ -3132,17 +3076,6 @@ packages:
     dev: true
     optional: true
 
-  /mariadb@3.2.3:
-    resolution: {integrity: sha512-Hyc1ehdUJwzvvzcLU2juZS528wJ6oE8pUlpgY0BAOdpKWcdN1motuugi5lC3jkpCkFpyNknHG7Yg66KASl3aPg==}
-    engines: {node: '>= 12'}
-    dependencies:
-      '@types/geojson': 7946.0.13
-      '@types/node': 17.0.45
-      denque: 2.1.0
-      iconv-lite: 0.6.3
-      lru-cache: 10.1.0
-    dev: true
-
   /merge-stream@2.0.0:
     resolution: {integrity: sha512-abv/qOcuPfk3URPfDzmZU1LKmuw8kT+0nIHvKrKgFrwifol/doWcdA4ZqsWQ8ENrFKkd67Mfpo/LovbIUsbt3w==}
     dev: true
@@ -3282,12 +3215,6 @@ packages:
     resolution: {integrity: sha512-+hEnITedc8LAtIP9u3HJDFIdcLV2vXP33sqLLIzkv1Db1zO/1OxbvYf0Y1OC/S/Qo5dxHXepofhmxL02PsKe+A==}
     engines: {node: '>=10'}
     hasBin: true
-    dev: true
-
-  /mocha-each@2.0.1:
-    resolution: {integrity: sha512-0ZgWY5ajbnROXkfyaDb+0RAYzDBH3QVow/1zJiyl7lYMRnj1Nid8RDP2+/2TTajB5n4vr21v35MjB72GjFFj2g==}
-    dependencies:
-      sprintf-js: 1.1.3
     dev: true
 
   /mocha@10.2.0:
