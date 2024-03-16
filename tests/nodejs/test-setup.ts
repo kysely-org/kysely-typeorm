@@ -62,7 +62,6 @@ const sqliteSubDialect = {
 const BASE_DATA_SOURCE_OPTIONS = {
   entities: [PersonEntity, PetEntity, ToyEntity],
   logging: false,
-  // logging: 'all',
   namingStrategy: new SnakeNamingStrategy(),
 } satisfies Omit<DataSourceOptions, 'type'>
 
