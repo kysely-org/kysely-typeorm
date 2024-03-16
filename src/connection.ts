@@ -54,13 +54,6 @@ export class KyselyTypeORMConnection implements DatabaseConnection {
 
   // TODO: implement!
   async *streamQuery<R>(compiledQuery: CompiledQuery<unknown>): AsyncIterableIterator<QueryResult<R>> {
-    // const readStream = await this.#queryRunner.stream(compiledQuery.sql, [...compiledQuery.parameters])
-
-    // const rows: R[] = []
-    // let done = false
-
-    // readStream.on('data', console.log).once('end', () => (done = true))
-
     throw new Error('Unimplemented!')
   }
 }
