@@ -33,7 +33,7 @@ devDependencies:
     specifier: ^8.7.0
     version: 8.7.0
   chai:
-    specifier: ^4.3.7
+    specifier: ^4.3.10
     version: 4.3.10
   esbuild:
     specifier: ^0.17.15
