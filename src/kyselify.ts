@@ -6,12 +6,12 @@ import type {Generated as KyselyGenerated, GeneratedAlways as KyselyGeneratedAlw
  *
  * Kysely treats Generated properties as write-optional.
  *
- * Also see {@link GeneratedAlways} and {@link Populated}.
+ * Also see {@link GeneratedAlways} and {@link NonAttribute}.
  *
  * ### example
  *
  * ```ts
- * import type { Generated, GeneratedAlways, Populated } from 'kysely-typeorm'
+ * import type { Generated, GeneratedAlways, NonAttribute } from 'kysely-typeorm'
  * import {
  *   Column,
  *   CreateDateColumn,
@@ -65,12 +65,12 @@ export type Generated<T> = T & {
  *
  * Kysely treats GeneratedAlways properties as read-only.
  *
- * Also see {@link Generated} and {@link Populated}.
+ * Also see {@link Generated} and {@link NonAttribute}.
  *
  * ### example
  *
  * ```ts
- * import type { Generated, GeneratedAlways, Populated } from 'kysely-typeorm'
+ * import type { Generated, GeneratedAlways, NonAttribute } from 'kysely-typeorm'
  * import {
  *   Column,
  *   CreateDateColumn,
@@ -118,14 +118,14 @@ export type GeneratedAlways<T> = T & {
 }
 
 /**
- * This is used to mark entity properties that are populated by TypeORM and do
+ * This is used to mark entity properties that are populated at runtime by TypeORM and do
  * not exist in the database schema, so that {@link KyselifyEntity} can exclude
  * them.
  *
  * ### example
  *
  * ```ts
- * import type { GeneratedAlways, Populated } from 'kysely-typeorm'
+ * import type { GeneratedAlways, NonAttribute } from 'kysely-typeorm'
  * import {
  *   Column,
  *   Entity,
@@ -153,43 +153,43 @@ export type GeneratedAlways<T> = T & {
  *   steamAccountId: string | null
  *
  *   \@OneToMany(() => PostEntity, (post) => post.user)
- *   posts: Populated<PostEntity[]>
+ *   posts: NonAttribute<PostEntity[]>
  *
  *   \@ManyToOne(() => ClanEntity, (clan) => clan.users)
  *   \@JoinColumn({ name: 'clanId', referencedColumnName: 'id' })
- *   clan: Populated<ClanEntity>
+ *   clan: NonAttribute<ClanEntity>
  *
  *   \@RelationId((user) => user.clan)
  *   clanId: number | null
  *
  *   \@ManyToMany(() => RoleEntity)
  *   \@JoinTable()
- *   roles: Populated<RoleEntity[]>
+ *   roles: NonAttribute<RoleEntity[]>
  *
  *   \@RelationId((role) => role.users)
- *   roleIds: Populated<number[]>
+ *   roleIds: NonAttribute<number[]>
  *
  *   \@VirtualColumn({ query: (alias) => `select count("id") from "posts" where "author_id" = ${alias}.id` })
- *   totalPostsCount: Populated<number>
+ *   totalPostsCount: NonAttribute<number>
  * }
  *
  * type User = KyselifyEntity<UserEntity>
  * //    ^?  { id: Generated<number>, username: string, steamAccountId: string | null, clanId: number | null }
  * ```
  */
-export type Populated<T> = T & {
-  readonly __kysely__populated__?: unique symbol
+export type NonAttribute<T> = T & {
+  readonly __kysely__non__attribute__?: unique symbol
 }
 
 /**
  * This is used to transform TypeORM entities into Kysely entities.
  *
- * Also see {@link Generated}, {@link GeneratedAlways} and {@link Populated}.
+ * Also see {@link Generated}, {@link GeneratedAlways} and {@link NonAttribute}.
  *
  * ### example
  *
  * ```ts
- * import type { Generated, GeneratedAlways, Populated } from 'kysely-typeorm'
+ * import type { Generated, GeneratedAlways, NonAttribute } from 'kysely-typeorm'
  * import {
  *   Column,
  *   CreateDateColumn,
@@ -239,24 +239,24 @@ export type Populated<T> = T & {
  *   uuid: Generated<string>
  *
  *   \@OneToMany(() => PostEntity, (post) => post.user)
- *   posts: Populated<PostEntity[]>
+ *   posts: NonAttribute<PostEntity[]>
  *
  *   \@ManyToOne(() => ClanEntity, (clan) => clan.users)
  *   \@JoinColumn({ name: 'clanId', referencedColumnName: 'id' })
- *   clan: Populated<ClanEntity>
+ *   clan: NonAttribute<ClanEntity>
  *
  *   \@RelationId((user) => user.clan)
  *   clanId: number | null
  *
  *   \@ManyToMany(() => RoleEntity)
  *   \@JoinTable()
- *   roles: Populated<RoleEntity[]>
+ *   roles: NonAttribute<RoleEntity[]>
  *
  *   \@RelationId((role) => role.users)
- *   roleIds: Populated<number[]>
+ *   roleIds: NonAttribute<number[]>
  *
  *   \@VirtualColumn({ query: (alias) => `select count("id") from "posts" where "author_id" = ${alias}.id` })
- *   totalPostsCount: Populated<number>
+ *   totalPostsCount: NonAttribute<number>
  * }
  *
  * export type User = KyselifyEntity<UserEntity>
@@ -286,7 +286,7 @@ export type Populated<T> = T & {
 export type KyselifyEntity<E> = {
   [K in keyof E as E[K] extends (...args: any) => any
     ? never
-    : '__kysely__populated__' extends keyof E[K]
+    : '__kysely__non__attribute__' extends keyof E[K]
     ? never
     : K]-?: '__kysely__generated__' extends keyof E[K]
     ? E[K] extends Generated<infer T>

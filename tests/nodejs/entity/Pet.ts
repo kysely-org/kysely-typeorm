@@ -10,7 +10,7 @@ import {
   PrimaryGeneratedColumn,
   RelationId,
 } from 'typeorm'
-import type {Generated, Populated} from '../../../src'
+import type {Generated, NonAttribute} from '../../../src'
 import {PersonEntity} from './Person'
 import {ToyEntity} from './Toy'
 
@@ -40,7 +40,7 @@ export class PetEntity extends BaseEntity {
   @ManyToOne(() => PersonEntity, (person) => person.pets, {onDelete: 'CASCADE'})
   @JoinColumn({name: 'owner_id', referencedColumnName: 'id'})
   @Index('pet_owner_id_index')
-  owner: Populated<PersonEntity>
+  owner: NonAttribute<PersonEntity>
 
   @RelationId((pet: PetEntity) => pet.owner)
   ownerId: number
@@ -49,5 +49,5 @@ export class PetEntity extends BaseEntity {
   species: 'dog' | 'cat' | 'hamster'
 
   @OneToMany(() => ToyEntity, (toy) => toy.pet, {cascade: ['insert']})
-  toys: Populated<ToyEntity[]>
+  toys: NonAttribute<ToyEntity[]>
 }

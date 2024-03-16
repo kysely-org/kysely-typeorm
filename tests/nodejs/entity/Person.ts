@@ -1,5 +1,5 @@
 import {BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm'
-import type {Generated, Populated} from '../../../src'
+import type {Generated, NonAttribute} from '../../../src'
 import {PetEntity} from './Pet'
 
 // Trying to recreate the following interface with typeorm:
@@ -40,5 +40,5 @@ export class PersonEntity extends BaseEntity {
   maritalStatus: 'single' | 'married' | 'divorced' | 'widowed' | null
 
   @OneToMany(() => PetEntity, (pet) => pet.owner, {cascade: ['insert']})
-  pets: Populated<PetEntity[]>
+  pets: NonAttribute<PetEntity[]>
 }

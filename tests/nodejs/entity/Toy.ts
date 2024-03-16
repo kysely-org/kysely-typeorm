@@ -1,5 +1,5 @@
 import {BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, RelationId} from 'typeorm'
-import type {Generated, Populated} from '../../../src'
+import type {Generated, NonAttribute} from '../../../src'
 import {PetEntity} from './Pet'
 
 // Trying to recreate the following interface with typeorm:
@@ -28,7 +28,7 @@ export class ToyEntity extends BaseEntity {
 
   @ManyToOne(() => PetEntity, (pet) => pet.toys, {onDelete: 'CASCADE'})
   @JoinColumn({name: 'pet_id', referencedColumnName: 'id'})
-  pet: Populated<PetEntity>
+  pet: NonAttribute<PetEntity>
 
   @RelationId((toy: ToyEntity) => toy.pet)
   petId: number
