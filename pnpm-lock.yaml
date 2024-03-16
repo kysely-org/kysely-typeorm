@@ -111,11 +111,11 @@ devDependencies:
     specifier: ^6.7.0
     version: 6.7.0(typescript@5.4.2)
   typeorm:
-    specifier: ^0.3.17
-    version: 0.3.17(better-sqlite3@8.7.0)(mssql@9.3.2)(mysql2@3.6.5)(pg@8.11.3)(sqlite3@5.1.6)
+    specifier: ^0.3.20
+    version: 0.3.20(better-sqlite3@8.7.0)(mssql@9.3.2)(mysql2@3.6.5)(pg@8.11.3)(sqlite3@5.1.6)
   typeorm-naming-strategies:
     specifier: ^4.1.0
-    version: 4.1.0(typeorm@0.3.17)
+    version: 4.1.0(typeorm@0.3.20)
   typescript:
     specifier: ^5.4.2
     version: 5.4.2
@@ -293,13 +293,6 @@ packages:
       '@azure/msal-common': 13.3.1
       jsonwebtoken: 9.0.2
       uuid: 8.3.2
-    dev: true
-
-  /@babel/runtime@7.23.7:
-    resolution: {integrity: sha512-w06OXVOFso7LcbzMiDGt+3X7Rh7Ho8MmgPoWU3rarH+8upf+wSU/grlGbWzQyr3DkdN6ZeuMFjpdwW0Q+HxobA==}
-    engines: {node: '>=6.9.0'}
-    dependencies:
-      regenerator-runtime: 0.14.1
     dev: true
 
   /@esbuild/android-arm64@0.17.19:
@@ -1394,11 +1387,8 @@ packages:
       which: 2.0.2
     dev: true
 
-  /date-fns@2.30.0:
-    resolution: {integrity: sha512-fnULvOpxnC5/Vg3NCiWelDsLiUc9bRwAPs/+LfTLNvetFCtCTN+yQz15C/fs4AwX1R9K5GLtLfn8QW+dWisaAw==}
-    engines: {node: '>=0.11'}
-    dependencies:
-      '@babel/runtime': 7.23.7
+  /dayjs@1.11.10:
+    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
     dev: true
 
   /debug@3.2.7:
@@ -2182,17 +2172,6 @@ packages:
       minimatch: 3.1.2
       once: 1.4.0
       path-is-absolute: 1.0.1
-    dev: true
-
-  /glob@8.1.0:
-    resolution: {integrity: sha512-r8hpEjiQEYlF2QU0df3dS+nxxSIreXQS1qRhMJM0Q5NDdR386C7jb7Hwwod8Fgiuex+k0GFjgft18yvxm5XoCQ==}
-    engines: {node: '>=12'}
-    dependencies:
-      fs.realpath: 1.0.0
-      inflight: 1.0.6
-      inherits: 2.0.4
-      minimatch: 5.0.1
-      once: 1.4.0
     dev: true
 
   /globals@13.24.0:
@@ -3653,16 +3632,8 @@ packages:
       picomatch: 2.3.1
     dev: true
 
-  /reflect-metadata@0.1.14:
-    resolution: {integrity: sha512-ZhYeb6nRaXCfhnndflDK8qI6ZQ/YcWZCISRAWICW9XYqMUwjZM9Z0DveWX/ABN01oxSHwVxKQmxeYZSsm0jh5A==}
-    dev: true
-
   /reflect-metadata@0.2.1:
     resolution: {integrity: sha512-i5lLI6iw9AU3Uu4szRNPPEkomnkjRTaVt9hy/bn5g/oSzekBSMeLZblcjP74AW0vBabqERLLIrz+gR8QYR54Tw==}
-    dev: true
-
-  /regenerator-runtime@0.14.1:
-    resolution: {integrity: sha512-dYnhHh0nJoMfnkZs6GmmhFknAGRrLznOu5nc9ML+EJxGvrx6H7teuevqVqCuPcPK//3eDrrjQhehXVx9cnkGdw==}
     dev: true
 
   /regexp.prototype.flags@1.5.1:
@@ -4301,28 +4272,28 @@ packages:
       is-typed-array: 1.1.12
     dev: true
 
-  /typeorm-naming-strategies@4.1.0(typeorm@0.3.17):
+  /typeorm-naming-strategies@4.1.0(typeorm@0.3.20):
     resolution: {integrity: sha512-vPekJXzZOTZrdDvTl1YoM+w+sUIfQHG4kZTpbFYoTsufyv9NIBRe4Q+PdzhEAFA2std3D9LZHEb1EjE9zhRpiQ==}
     peerDependencies:
       typeorm: ^0.2.0 || ^0.3.0
     dependencies:
-      typeorm: 0.3.17(better-sqlite3@8.7.0)(mssql@9.3.2)(mysql2@3.6.5)(pg@8.11.3)(sqlite3@5.1.6)
+      typeorm: 0.3.20(better-sqlite3@8.7.0)(mssql@9.3.2)(mysql2@3.6.5)(pg@8.11.3)(sqlite3@5.1.6)
     dev: true
 
-  /typeorm@0.3.17(better-sqlite3@8.7.0)(mssql@9.3.2)(mysql2@3.6.5)(pg@8.11.3)(sqlite3@5.1.6):
-    resolution: {integrity: sha512-UDjUEwIQalO9tWw9O2A4GU+sT3oyoUXheHJy4ft+RFdnRdQctdQ34L9SqE2p7LdwzafHx1maxT+bqXON+Qnmig==}
-    engines: {node: '>= 12.9.0'}
+  /typeorm@0.3.20(better-sqlite3@8.7.0)(mssql@9.3.2)(mysql2@3.6.5)(pg@8.11.3)(sqlite3@5.1.6):
+    resolution: {integrity: sha512-sJ0T08dV5eoZroaq9uPKBoNcGslHBR4E4y+EBHs//SiGbblGe7IeduP/IH4ddCcj0qp3PHwDwGnuvqEAnKlq/Q==}
+    engines: {node: '>=16.13.0'}
     hasBin: true
     peerDependencies:
       '@google-cloud/spanner': ^5.18.0
       '@sap/hana-client': ^2.12.25
-      better-sqlite3: ^7.1.2 || ^8.0.0
+      better-sqlite3: ^7.1.2 || ^8.0.0 || ^9.0.0
       hdb-pool: ^0.1.6
       ioredis: ^5.0.4
-      mongodb: ^5.2.0
-      mssql: ^9.1.1
+      mongodb: ^5.8.0
+      mssql: ^9.1.1 || ^10.0.1
       mysql2: ^2.2.5 || ^3.0.1
-      oracledb: ^5.1.0
+      oracledb: ^6.3.0
       pg: ^8.5.1
       pg-native: ^3.0.0
       pg-query-stream: ^4.0.0
@@ -4373,15 +4344,15 @@ packages:
       buffer: 6.0.3
       chalk: 4.1.2
       cli-highlight: 2.1.11
-      date-fns: 2.30.0
+      dayjs: 1.11.10
       debug: 4.3.4(supports-color@8.1.1)
       dotenv: 16.3.1
-      glob: 8.1.0
+      glob: 10.3.10
       mkdirp: 2.1.6
       mssql: 9.3.2
       mysql2: 3.6.5
       pg: 8.11.3
-      reflect-metadata: 0.1.14
+      reflect-metadata: 0.2.1
       sha.js: 2.4.11
       sqlite3: 5.1.6
       tslib: 2.6.2
