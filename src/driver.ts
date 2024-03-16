@@ -10,7 +10,11 @@ export class KyselyTypeORMDriver implements Driver {
   }
 
   async acquireConnection(): Promise<DatabaseConnection> {
-    return new KyselyTypeORMConnection(this.#config.typeORMDataSource.createQueryRunner())
+    const queryRunner = this.#config.typeORMDataSource.createQueryRunner()
+
+    await queryRunner.connect()
+
+    return new KyselyTypeORMConnection(queryRunner)
   }
 
   async beginTransaction(connection: KyselyTypeORMConnection, settings: TransactionSettings): Promise<void> {
@@ -22,13 +26,13 @@ export class KyselyTypeORMDriver implements Driver {
   }
 
   async destroy(): Promise<void> {
-    if (this.#config.typeORMDataSource.isInitialized && this.#config.shouldDestroyDataSource) {
+    if (this.#config.typeORMDataSource.isInitialized) {
       await this.#config.typeORMDataSource.destroy()
     }
   }
 
   async init(): Promise<void> {
-    if (!this.#config.typeORMDataSource.isInitialized && this.#config.shouldInitializeDataSource) {
+    if (!this.#config.typeORMDataSource.isInitialized) {
       await this.#config.typeORMDataSource.initialize()
     }
   }
