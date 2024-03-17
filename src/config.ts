@@ -3,8 +3,6 @@ import type {DataSource} from 'typeorm'
 
 export interface KyselyTypeORMDialectConfig {
   kyselySubDialect: KyselySubDialect
-  shouldDestroyDataSource?: boolean
-  shouldInitializeDataSource?: boolean
   typeORMDataSource: DataSource
 }
 
