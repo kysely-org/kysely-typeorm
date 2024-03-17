@@ -8,7 +8,7 @@ Just like most ORMs for Node.js, TypeORM has poor TypeScript support when it com
 
 Kysely (pronounced “Key-Seh-Lee”) is a type-safe and autocompletion-friendly TypeScript SQL query builder. Inspired by Knex. Mainly developed for Node.js but also runs on Deno and in the browser.
 
-A match made in heaven, on paper. Let's see how it works in practice, with `kysely-typeorm` - a toolkit (dialect, type translators, etc.) that allows using your existing Sequelize instance with Kysely.
+A match made in heaven, on paper. Let's see how it works in practice, with `kysely-typeorm` - a toolkit (dialect, type translators, etc.) that allows using your existing TypeORM setup with Kysely.
 
 ## Installation
 
