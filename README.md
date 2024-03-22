@@ -203,6 +203,14 @@ Create a Kysely instance.
 `src/kysely.ts`:
 
 ```ts
+import {
+  CamelCasePlugin, // optional
+  Kysely,
+  PostgresAdapter,
+  PostgresIntrospector,
+  PostgresQueryCompiler
+} from 'kysely'
+import { KyselyTypeORMDialect } from 'kysely-typeorm'
 import type {Database} from './types/database'
 import {dataSource} from './typeorm'
 
@@ -217,6 +225,6 @@ export const kysely = new Kysely<Database>({
     typeORMDataSource: dataSource,
   }),
   // `CamelCasePlugin` is used to align with `typeorm-naming-strategies`'s `SnakeNamingStrategy`.
-  plugins: [new CamelCasePlugin()],
+  plugins: [new CamelCasePlugin()], // optional
 })
 ```
