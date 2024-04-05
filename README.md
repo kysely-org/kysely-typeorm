@@ -32,7 +32,8 @@ npm i mysql2
 
 MS SQL Server (MSSQL):
 
-ATTENTION: While Kysely supports `tedious` with its core MS SQL Server (MSSQL) dialect, TypeORM uses `mssql` under the hood. This library doesn't use Kysely's own drivers.
+> [!IMPORTANT]  
+>  While Kysely supports `tedious` with its core MS SQL Server (MSSQL) dialect, TypeORM uses `mssql` under the hood. This library doesn't use Kysely's own drivers.
 
 ```sh
 npm i mssql
