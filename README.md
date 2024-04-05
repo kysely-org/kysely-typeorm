@@ -50,7 +50,7 @@ npm i better-sqlite3
 
 Update your entities using this library's `NonAttribute`, `Generated` and `GeneratedAlways` types.
 
-`src/entities/Person.ts`
+`src/entities/Person.ts`:
 
 ```diff
 +import type {Generated, NonAttribute} from 'kysely-typeorm'
@@ -84,7 +84,7 @@ export class PersonEntity extends BaseEntity {
 }
 ```
 
-`src/entities/Pet.ts`
+`src/entities/Pet.ts`:
 
 ```diff
 +import type {Generated, NonAttribute} from 'kysely-typeorm'
@@ -129,9 +129,9 @@ export class PetEntity extends BaseEntity {
 }
 ```
 
-`src/entities/Toy.ts`
+`src/entities/Toy.ts`:
 
-```ts
+```diff
 +import type {Generated, NonAttribute} from 'kysely-typeorm'
 import {BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, RelationId} from 'typeorm'
 import {PetEntity} from './Pet'
@@ -158,6 +158,8 @@ export class ToyEntity extends BaseEntity {
 }
 ```
 
+Translate your entities to Kysely table schema types via the `KyselifyEntity` helper type.
+
 `src/types/database.ts`:
 
 ```ts
@@ -178,34 +180,9 @@ export interface Database {
 }
 ```
 
-### TypeORM DataSource Instance
-
-Create a TypeORM DataSource instance.
-
-`src/typeorm.ts`:
-
-```ts
-import {SnakeNamingStrategy} from 'typeorm-naming-strategies' // optional
-import {PersonEntity} from './entities/Person'
-import {PetEntity} from './entities/Pet'
-import {ToyEntity} from './entities/Toy'
-
-export const dataSource = new DataSource({
-  entities: [PersonEntity, PetEntity, ToyEntity],
-  database: 'test',
-  host: 'localhost',
-  namingStrategy: new SnakeNamingStrategy(), // optional
-  poolSize: 10,
-  port: 5434,
-  type: 'postgres',
-  username: 'kysely',
-  useUTC: true,
-})
-```
-
 ### Kysely Instance
 
-Create a Kysely instance.
+Create a Kysely instance. Pass to it your existing TypeORM DataSource instance.
 
 `src/kysely.ts`:
 
