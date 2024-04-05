@@ -48,19 +48,20 @@ npm i better-sqlite3
 
 ### Entities & Types
 
-Define your entities using this library's `NonAttribute`, `Generated` and `GeneratedAlways` types.
+Update your entities using this library's `NonAttribute`, `Generated` and `GeneratedAlways` types.
 
 `src/entities/Person.ts`
 
-```ts
-import type {Generated, NonAttribute} from 'kysely-typeorm'
+```diff
++import type {Generated, NonAttribute} from 'kysely-typeorm'
 import {BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm'
 import {PetEntity} from './Pet'
 
 @Entity({name: 'person'})
 export class PersonEntity extends BaseEntity {
   @PrimaryGeneratedColumn()
-  id: Generated<number>
+- id: number
++ id: Generated<number>
 
   @Column({type: 'varchar', length: 255, nullable: true})
   firstName: string | null
@@ -78,14 +79,15 @@ export class PersonEntity extends BaseEntity {
   maritalStatus: 'single' | 'married' | 'divorced' | 'widowed' | null
 
   @OneToMany(() => PetEntity, (pet) => pet.owner, {cascade: ['insert']})
-  pets: NonAttribute<PetEntity[]>
+- pets: PetEntity[]
++ pets: NonAttribute<PetEntity[]>
 }
 ```
 
 `src/entities/Pet.ts`
 
-```ts
-import type {Generated, NonAttribute} from 'kysely-typeorm'
+```diff
++import type {Generated, NonAttribute} from 'kysely-typeorm'
 import {
   BaseEntity,
   Column,
@@ -103,7 +105,8 @@ import {ToyEntity} from './Toy'
 @Entity({name: 'pet'})
 export class PetEntity extends BaseEntity {
   @PrimaryGeneratedColumn()
-  id: Generated<number>
+- id: number
++ id: Generated<number>
 
   @Column({type: 'varchar', length: 255, unique: true})
   name: string
@@ -111,7 +114,8 @@ export class PetEntity extends BaseEntity {
   @ManyToOne(() => PersonEntity, (person) => person.pets, {onDelete: 'CASCADE'})
   @JoinColumn({name: 'owner_id', referencedColumnName: 'id'})
   @Index('pet_owner_id_index')
-  owner: NonAttribute<PersonEntity>
+- owner: PersonEntity
++ owner: NonAttribute<PersonEntity>
 
   @RelationId((pet: PetEntity) => pet.owner)
   ownerId: number
@@ -120,21 +124,23 @@ export class PetEntity extends BaseEntity {
   species: 'dog' | 'cat' | 'hamster'
 
   @OneToMany(() => ToyEntity, (toy) => toy.pet, {cascade: ['insert']})
-  toys: NonAttribute<ToyEntity[]>
+- toys: ToyEntity[]
++ toys: NonAttribute<ToyEntity[]>
 }
 ```
 
 `src/entities/Toy.ts`
 
 ```ts
-import type {Generated, NonAttribute} from 'kysely-typeorm'
++import type {Generated, NonAttribute} from 'kysely-typeorm'
 import {BaseEntity, Column, Entity, JoinColumn, ManyToOne, PrimaryGeneratedColumn, RelationId} from 'typeorm'
 import {PetEntity} from './Pet'
 
 @Entity({name: 'toy'})
 export class ToyEntity extends BaseEntity {
   @PrimaryGeneratedColumn({type: 'integer'})
-  id: Generated<number>
+- id: number
++ id: Generated<number>
 
   @Column({type: 'varchar', length: 255, unique: true})
   name: string
@@ -144,7 +150,8 @@ export class ToyEntity extends BaseEntity {
 
   @ManyToOne(() => PetEntity, (pet) => pet.toys, {onDelete: 'CASCADE'})
   @JoinColumn({name: 'pet_id', referencedColumnName: 'id'})
-  pet: NonAttribute<PetEntity>
+- pet: PetEntity
++ pet: NonAttribute<PetEntity>
 
   @RelationId((toy: ToyEntity) => toy.pet)
   petId: number
