@@ -66,8 +66,8 @@ devDependencies:
     specifier: ^10.0.2
     version: 10.0.2
   mysql2:
-    specifier: ^3.9.6
-    version: 3.9.6
+    specifier: ^3.9.7
+    version: 3.9.7
   pg:
     specifier: ^8.11.3
     version: 8.11.5
@@ -91,7 +91,7 @@ devDependencies:
     version: 8.0.2(typescript@5.4.5)
   typeorm:
     specifier: ^0.3.20
-    version: 0.3.20(better-sqlite3@9.5.0)(mssql@10.0.2)(mysql2@3.9.6)(pg@8.11.5)(sqlite3@5.1.7)
+    version: 0.3.20(better-sqlite3@9.5.0)(mssql@10.0.2)(mysql2@3.9.7)(pg@8.11.5)(sqlite3@5.1.7)
   typeorm-naming-strategies:
     specifier: ^4.1.0
     version: 4.1.0(typeorm@0.3.20)
@@ -3277,8 +3277,8 @@ packages:
       - supports-color
     dev: true
 
-  /mysql2@3.9.6:
-    resolution: {integrity: sha512-9NYUMLQv6yXnu+5hUh8PZ5CdKoG6VWDzXbojIdTyob8upNZXU3rBNQK9viaEqfgw+LMifhd+53VEZPxZk3bTWA==}
+  /mysql2@3.9.7:
+    resolution: {integrity: sha512-KnJT8vYRcNAZv73uf9zpXqNbvBG7DJrs+1nACsjZP1HMJ1TgXEy8wnNilXAn/5i57JizXKtrUtwDB7HxT9DDpw==}
     engines: {node: '>= 8.0'}
     dependencies:
       denque: 2.1.0
@@ -4533,10 +4533,10 @@ packages:
     peerDependencies:
       typeorm: ^0.2.0 || ^0.3.0
     dependencies:
-      typeorm: 0.3.20(better-sqlite3@9.5.0)(mssql@10.0.2)(mysql2@3.9.6)(pg@8.11.5)(sqlite3@5.1.7)
+      typeorm: 0.3.20(better-sqlite3@9.5.0)(mssql@10.0.2)(mysql2@3.9.7)(pg@8.11.5)(sqlite3@5.1.7)
     dev: true
 
-  /typeorm@0.3.20(better-sqlite3@9.5.0)(mssql@10.0.2)(mysql2@3.9.6)(pg@8.11.5)(sqlite3@5.1.7):
+  /typeorm@0.3.20(better-sqlite3@9.5.0)(mssql@10.0.2)(mysql2@3.9.7)(pg@8.11.5)(sqlite3@5.1.7):
     resolution: {integrity: sha512-sJ0T08dV5eoZroaq9uPKBoNcGslHBR4E4y+EBHs//SiGbblGe7IeduP/IH4ddCcj0qp3PHwDwGnuvqEAnKlq/Q==}
     engines: {node: '>=16.13.0'}
     hasBin: true
@@ -4606,7 +4606,7 @@ packages:
       glob: 10.3.10
       mkdirp: 2.1.6
       mssql: 10.0.2
-      mysql2: 3.9.6
+      mysql2: 3.9.7
       pg: 8.11.5
       reflect-metadata: 0.2.2
       sha.js: 2.4.11
