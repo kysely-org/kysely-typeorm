@@ -67,7 +67,7 @@
     "mssql": "^10.0.2",
     "mysql2": "^3.10.0",
     "pg": "^8.11.3",
-    "prettier": "^3.2.5",
+    "prettier": "^3.3.0",
     "prettier-plugin-organize-imports": "^3.2.4",
     "prettier-plugin-pkg": "^0.18.1",
     "reflect-metadata": "^0.2.2",
