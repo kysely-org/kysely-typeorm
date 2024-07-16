@@ -69,8 +69,8 @@ importers:
         specifier: ^10.0.4
         version: 10.0.4
       mysql2:
-        specifier: ^3.10.2
-        version: 3.10.2
+        specifier: ^3.10.3
+        version: 3.10.3
       pg:
         specifier: ^8.12.0
         version: 8.12.0
@@ -94,10 +94,10 @@ importers:
         version: 8.1.0(typescript@5.5.3)
       typeorm:
         specifier: ^0.3.20
-        version: 0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.10.2)(pg@8.12.0)(sqlite3@5.1.7)
+        version: 0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.10.3)(pg@8.12.0)(sqlite3@5.1.7)
       typeorm-naming-strategies:
         specifier: ^4.1.0
-        version: 4.1.0(typeorm@0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.10.2)(pg@8.12.0)(sqlite3@5.1.7))
+        version: 4.1.0(typeorm@0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.10.3)(pg@8.12.0)(sqlite3@5.1.7))
       typescript:
         specifier: ^5.5.3
         version: 5.5.3
@@ -815,6 +815,10 @@ packages:
   available-typed-arrays@1.0.5:
     resolution: {integrity: sha512-DMD0KiN46eipeziST1LPP/STfDU0sufISXmjSgvVsoU2tqxctQeASejWcfNtxYKqETM1UxQ8sp2OrSBWpHY6sw==}
     engines: {node: '>= 0.4'}
+
+  aws-ssl-profiles@1.1.1:
+    resolution: {integrity: sha512-+H+kuK34PfMaI9PNU/NSjBKL5hh/KDM9J72kwYeYEm0A8B1AC4fuCy3qsjnA7lxklgyXsB68yn8Z2xoZEjgwCQ==}
+    engines: {node: '>= 6.0.0'}
 
   balanced-match@1.0.2:
     resolution: {integrity: sha512-3oSeUO0TMV67hN1AmbXsK4yaqU7tjiHlbxRDZOpH0KW9+CeX4bRAaX0Anxt0tx2MrpRpWwQaPwIlISEJhYU5Pw==}
@@ -1814,8 +1818,8 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
-  mysql2@3.10.2:
-    resolution: {integrity: sha512-KCXPEvAkO0RcHPr362O5N8tFY2fXvbjfkPvRY/wGumh4EOemo9Hm5FjQZqv/pCmrnuxGu5OxnSENG0gTXqKMgQ==}
+  mysql2@3.10.3:
+    resolution: {integrity: sha512-k43gmH9i79rZD4hGPdj7pDuT0UBiFjs4UzXEy1cJrV0QqcSABomoLwvejqdbcXN+Vd7gi999CVM6o9vCPKq29g==}
     engines: {node: '>= 8.0'}
 
   mz@2.7.0:
@@ -3293,6 +3297,8 @@ snapshots:
 
   available-typed-arrays@1.0.5: {}
 
+  aws-ssl-profiles@1.1.1: {}
+
   balanced-match@1.0.2: {}
 
   base64-js@1.5.1: {}
@@ -4472,8 +4478,9 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  mysql2@3.10.2:
+  mysql2@3.10.3:
     dependencies:
+      aws-ssl-profiles: 1.1.1
       denque: 2.1.0
       generate-function: 2.3.1
       iconv-lite: 0.6.3
@@ -5208,11 +5215,11 @@ snapshots:
       for-each: 0.3.3
       is-typed-array: 1.1.12
 
-  typeorm-naming-strategies@4.1.0(typeorm@0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.10.2)(pg@8.12.0)(sqlite3@5.1.7)):
+  typeorm-naming-strategies@4.1.0(typeorm@0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.10.3)(pg@8.12.0)(sqlite3@5.1.7)):
     dependencies:
-      typeorm: 0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.10.2)(pg@8.12.0)(sqlite3@5.1.7)
+      typeorm: 0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.10.3)(pg@8.12.0)(sqlite3@5.1.7)
 
-  typeorm@0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.10.2)(pg@8.12.0)(sqlite3@5.1.7):
+  typeorm@0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.10.3)(pg@8.12.0)(sqlite3@5.1.7):
     dependencies:
       '@sqltools/formatter': 1.2.5
       app-root-path: 3.1.0
@@ -5232,7 +5239,7 @@ snapshots:
     optionalDependencies:
       better-sqlite3: 9.6.0
       mssql: 10.0.4
-      mysql2: 3.10.2
+      mysql2: 3.10.3
       pg: 8.12.0
       sqlite3: 5.1.7
     transitivePeerDependencies:
