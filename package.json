@@ -72,7 +72,7 @@
     "prettier-plugin-pkg": "^0.18.1",
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
-    "tsup": "^8.2.3",
+    "tsup": "^8.2.4",
     "typeorm": "^0.3.20",
     "typeorm-naming-strategies": "^4.1.0",
     "typescript": "^5.5.4"
