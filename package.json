@@ -63,7 +63,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "kysely": "^0.27.4",
     "lodash": "^4.17.21",
-    "mocha": "^10.7.0",
+    "mocha": "^10.7.3",
     "mssql": "^10.0.4",
     "mysql2": "^3.11.0",
     "pg": "^8.12.0",
