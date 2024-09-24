@@ -47,7 +47,7 @@
   "devDependencies": {
     "@tsconfig/node20": "^20.1.4",
     "@types/chai": "^4.3.14",
-    "@types/lodash": "^4.17.7",
+    "@types/lodash": "^4.17.9",
     "@types/mocha": "^10.0.8",
     "@types/node": "^22.5.5",
     "@types/pg": "^8.11.10",
