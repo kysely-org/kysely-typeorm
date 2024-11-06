@@ -69,8 +69,8 @@ importers:
         specifier: ^10.0.4
         version: 10.0.4
       mysql2:
-        specifier: ^3.11.3
-        version: 3.11.3
+        specifier: ^3.11.4
+        version: 3.11.4
       pg:
         specifier: ^8.13.1
         version: 8.13.1
@@ -94,10 +94,10 @@ importers:
         version: 8.3.5(typescript@5.6.3)
       typeorm:
         specifier: ^0.3.20
-        version: 0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.11.3)(pg@8.13.1)(sqlite3@5.1.7)
+        version: 0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.11.4)(pg@8.13.1)(sqlite3@5.1.7)
       typeorm-naming-strategies:
         specifier: ^4.1.0
-        version: 4.1.0(typeorm@0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.11.3)(pg@8.13.1)(sqlite3@5.1.7))
+        version: 4.1.0(typeorm@0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.11.4)(pg@8.13.1)(sqlite3@5.1.7))
       typescript:
         specifier: ^5.6.3
         version: 5.6.3
@@ -1732,8 +1732,8 @@ packages:
     engines: {node: '>=14'}
     hasBin: true
 
-  mysql2@3.11.3:
-    resolution: {integrity: sha512-Qpu2ADfbKzyLdwC/5d4W7+5Yz7yBzCU05YWt5npWzACST37wJsB23wgOSo00qi043urkiRwXtEvJc9UnuLX/MQ==}
+  mysql2@3.11.4:
+    resolution: {integrity: sha512-Z2o3tY4Z8EvSRDwknaC40MdZ3+m0sKbpnXrShQLdxPrAvcNli7jLrD2Zd2IzsRMw4eK9Yle500FDmlkIqp+krg==}
     engines: {node: '>= 8.0'}
 
   mz@2.7.0:
@@ -4351,7 +4351,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  mysql2@3.11.3:
+  mysql2@3.11.4:
     dependencies:
       aws-ssl-profiles: 1.1.1
       denque: 2.1.0
@@ -5104,11 +5104,11 @@ snapshots:
       is-typed-array: 1.1.13
       possible-typed-array-names: 1.0.0
 
-  typeorm-naming-strategies@4.1.0(typeorm@0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.11.3)(pg@8.13.1)(sqlite3@5.1.7)):
+  typeorm-naming-strategies@4.1.0(typeorm@0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.11.4)(pg@8.13.1)(sqlite3@5.1.7)):
     dependencies:
-      typeorm: 0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.11.3)(pg@8.13.1)(sqlite3@5.1.7)
+      typeorm: 0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.11.4)(pg@8.13.1)(sqlite3@5.1.7)
 
-  typeorm@0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.11.3)(pg@8.13.1)(sqlite3@5.1.7):
+  typeorm@0.3.20(better-sqlite3@9.6.0)(mssql@10.0.4)(mysql2@3.11.4)(pg@8.13.1)(sqlite3@5.1.7):
     dependencies:
       '@sqltools/formatter': 1.2.5
       app-root-path: 3.1.0
@@ -5128,7 +5128,7 @@ snapshots:
     optionalDependencies:
       better-sqlite3: 9.6.0
       mssql: 10.0.4
-      mysql2: 3.11.3
+      mysql2: 3.11.4
       pg: 8.13.1
       sqlite3: 5.1.7
     transitivePeerDependencies:
