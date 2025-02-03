@@ -21,8 +21,8 @@ importers:
         specifier: ^10.0.10
         version: 10.0.10
       '@types/node':
-        specifier: ^22.12.0
-        version: 22.12.0
+        specifier: ^22.13.0
+        version: 22.13.0
       '@types/pg':
         specifier: ^8.11.11
         version: 8.11.11
@@ -178,6 +178,12 @@ packages:
     resolution: {integrity: sha512-cNLgeqCqV8WxfcTIOeL4OAtSmL8JjcN6m09XIgro1Wi7cF4t/THaWEa7eL5CMoMBdjoHOTh/vwTO/o2TRXIyzg==}
     engines: {node: '>=18'}
     cpu: [arm64]
+    os: [android]
+
+  '@esbuild/android-arm@0.24.2':
+    resolution: {integrity: sha512-tmwl4hJkCfNHwFB3nBa8z1Uy3ypZpxqxfTQOcHX+xRByyYgunVbZ9MzUUfb0RxaHIMnbHagwAxuTL+tnNM+1/Q==}
+    engines: {node: '>=18'}
+    cpu: [arm]
     os: [android]
 
   '@esbuild/android-x64@0.24.2':
@@ -539,8 +545,8 @@ packages:
   '@types/mocha@10.0.10':
     resolution: {integrity: sha512-xPyYSz1cMPnJQhl0CLMH68j3gprKZaTjG3s5Vi+fDgx+uhG9NOXwbVt52eFS8ECyXhyKcjDLCBEqBExKuiZb7Q==}
 
-  '@types/node@22.12.0':
-    resolution: {integrity: sha512-Fll2FZ1riMjNmlmJOdAyY5pUbkftXslB5DgEzlIuNaiWhXd00FhWxVC/r4yV/4wBb9JfImTu+jiSvXTkJ7F/gA==}
+  '@types/node@22.13.0':
+    resolution: {integrity: sha512-ClIbNe36lawluuvq3+YYhnIN2CELi+6q8NpnM7PYp4hBn/TatfboPgVSm2rwKRfnV2M+Ty9GWDFI64KEe+kysA==}
 
   '@types/pg@8.11.11':
     resolution: {integrity: sha512-kGT1qKM8wJQ5qlawUrEkXgvMSXoV213KfMGXcwfDwUIfUHXqXYXOfS1nE1LINRJVVVx5wCm70XnFlMHaIcQAfw==}
@@ -2728,6 +2734,9 @@ snapshots:
   '@esbuild/android-arm64@0.24.2':
     optional: true
 
+  '@esbuild/android-arm@0.24.2':
+    optional: true
+
   '@esbuild/android-x64@0.24.2':
     optional: true
 
@@ -2976,19 +2985,19 @@ snapshots:
 
   '@types/mocha@10.0.10': {}
 
-  '@types/node@22.12.0':
+  '@types/node@22.13.0':
     dependencies:
       undici-types: 6.20.0
 
   '@types/pg@8.11.11':
     dependencies:
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
       pg-protocol: 1.7.0
       pg-types: 4.0.2
 
   '@types/readable-stream@4.0.10':
     dependencies:
-      '@types/node': 22.12.0
+      '@types/node': 22.13.0
       safe-buffer: 5.1.2
 
   '@typescript-eslint/eslint-plugin@8.22.0(@typescript-eslint/parser@8.22.0(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1)(typescript@5.7.3)':
@@ -3605,6 +3614,7 @@ snapshots:
   esbuild@0.24.2:
     optionalDependencies:
       '@esbuild/aix-ppc64': 0.24.2
+      '@esbuild/android-arm': 0.24.2
       '@esbuild/android-arm64': 0.24.2
       '@esbuild/android-x64': 0.24.2
       '@esbuild/darwin-arm64': 0.24.2
