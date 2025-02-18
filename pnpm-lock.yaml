@@ -54,8 +54,8 @@ importers:
         specifier: ^2.31.0
         version: 2.31.0(@typescript-eslint/parser@8.24.1(eslint@8.57.1)(typescript@5.7.3))(eslint@8.57.1)
       eslint-plugin-prettier:
-        specifier: ^5.2.1
-        version: 5.2.1(eslint-config-prettier@9.1.0(eslint@8.57.1))(eslint@8.57.1)(prettier@3.5.1)
+        specifier: ^5.2.3
+        version: 5.2.3(eslint-config-prettier@9.1.0(eslint@8.57.1))(eslint@8.57.1)(prettier@3.5.1)
       kysely:
         specifier: ^0.27.5
         version: 0.27.5
@@ -1256,8 +1256,8 @@ packages:
       '@typescript-eslint/parser':
         optional: true
 
-  eslint-plugin-prettier@5.2.1:
-    resolution: {integrity: sha512-gH3iR3g4JfF+yYPaJYkN7jEl9QbweL/YfkoRlNnuIEHEz1vHVlCmWOS+eGGiRuzHQXdJFCOTxRgvju9b8VUmrw==}
+  eslint-plugin-prettier@5.2.3:
+    resolution: {integrity: sha512-qJ+y0FfCp/mQYQ/vWQ3s7eUlFEL4PyKfAJxsnYTJ4YT73nsJBWqmEpFryxV9OeUiqmsTsYJ5Y+KDNaeP31wrRw==}
     engines: {node: ^14.18.0 || >=16.0.0}
     peerDependencies:
       '@types/eslint': '>=8.0.0'
@@ -2490,8 +2490,8 @@ packages:
     resolution: {integrity: sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==}
     engines: {node: '>= 0.4'}
 
-  synckit@0.9.1:
-    resolution: {integrity: sha512-7gr8p9TQP6RAHusBOSLs46F4564ZrjV8xFmw5zCmgmhGUcw2hxsShhJ6CEiHQMgPDwAQ1fWHPM0ypc4RMAig4A==}
+  synckit@0.9.2:
+    resolution: {integrity: sha512-vrozgXDQwYO72vHjUb/HnFbQx1exDjoKzqx23aXEg2a9VIg2TSFZ8FmeZpTjUCFMYw7mpX4BE2SFu8wI7asYsw==}
     engines: {node: ^14.18.0 || >=16.0.0}
 
   tar-fs@2.1.1:
@@ -2558,6 +2558,9 @@ packages:
 
   tslib@2.6.2:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
+
+  tslib@2.8.1:
+    resolution: {integrity: sha512-oJFu94HQb+KVduSUQL7wnpmqnfmLsOA/nAh6b6EH0wCEoK0/mPeXU6c3wKDV83MkOuHPRHtSXKKU99IBazS/2w==}
 
   tsup@8.3.6:
     resolution: {integrity: sha512-XkVtlDV/58S9Ye0JxUUTcrQk4S+EqlOHKzg6Roa62rdjL1nGWNUstG0xgI4vanHdfIpjP448J8vlN0oK6XOJ5g==}
@@ -2779,13 +2782,13 @@ snapshots:
 
   '@azure/abort-controller@1.1.0':
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   '@azure/core-auth@1.5.0':
     dependencies:
       '@azure/abort-controller': 1.1.0
       '@azure/core-util': 1.6.1
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   '@azure/core-client@1.7.3':
     dependencies:
@@ -2795,7 +2798,7 @@ snapshots:
       '@azure/core-tracing': 1.0.1
       '@azure/core-util': 1.6.1
       '@azure/logger': 1.0.4
-      tslib: 2.6.2
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
@@ -2812,11 +2815,11 @@ snapshots:
       '@azure/abort-controller': 1.1.0
       '@azure/core-util': 1.6.1
       '@azure/logger': 1.0.4
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   '@azure/core-paging@1.5.0':
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   '@azure/core-rest-pipeline@1.13.0':
     dependencies:
@@ -2827,18 +2830,18 @@ snapshots:
       '@azure/logger': 1.0.4
       http-proxy-agent: 5.0.0
       https-proxy-agent: 5.0.1
-      tslib: 2.6.2
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
   '@azure/core-tracing@1.0.1':
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   '@azure/core-util@1.6.1':
     dependencies:
       '@azure/abort-controller': 1.1.0
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   '@azure/identity@3.4.2':
     dependencies:
@@ -2855,7 +2858,7 @@ snapshots:
       jws: 4.0.0
       open: 8.4.2
       stoppable: 1.1.0
-      tslib: 2.6.2
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
@@ -2871,13 +2874,13 @@ snapshots:
       '@azure/core-tracing': 1.0.1
       '@azure/core-util': 1.6.1
       '@azure/logger': 1.0.4
-      tslib: 2.6.2
+      tslib: 2.8.1
     transitivePeerDependencies:
       - supports-color
 
   '@azure/logger@1.0.4':
     dependencies:
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   '@azure/msal-browser@3.10.0':
     dependencies:
@@ -3960,12 +3963,12 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-plugin-prettier@5.2.1(eslint-config-prettier@9.1.0(eslint@8.57.1))(eslint@8.57.1)(prettier@3.5.1):
+  eslint-plugin-prettier@5.2.3(eslint-config-prettier@9.1.0(eslint@8.57.1))(eslint@8.57.1)(prettier@3.5.1):
     dependencies:
       eslint: 8.57.1
       prettier: 3.5.1
       prettier-linter-helpers: 1.0.0
-      synckit: 0.9.1
+      synckit: 0.9.2
     optionalDependencies:
       eslint-config-prettier: 9.1.0(eslint@8.57.1)
 
@@ -5279,10 +5282,10 @@ snapshots:
 
   supports-preserve-symlinks-flag@1.0.0: {}
 
-  synckit@0.9.1:
+  synckit@0.9.2:
     dependencies:
       '@pkgr/core': 0.1.1
-      tslib: 2.6.2
+      tslib: 2.8.1
 
   tar-fs@2.1.1:
     dependencies:
@@ -5369,6 +5372,8 @@ snapshots:
   tslib@2.4.0: {}
 
   tslib@2.6.2: {}
+
+  tslib@2.8.1: {}
 
   tsup@8.3.6(typescript@5.7.3):
     dependencies:
