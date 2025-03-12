@@ -55,7 +55,7 @@
     "@typescript-eslint/parser": "^8.26.1",
     "better-sqlite3": "^9.6.0",
     "chai": "^4.3.10",
-    "esbuild": "^0.25.0",
+    "esbuild": "^0.25.1",
     "esbuild-runner": "^2.2.2",
     "eslint": "^8.57.1",
     "eslint-config-prettier": "^10.0.2",
