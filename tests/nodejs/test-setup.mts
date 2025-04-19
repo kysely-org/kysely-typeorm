@@ -1,6 +1,7 @@
 import {
 	CamelCasePlugin,
 	Kysely,
+	type KyselyPlugin,
 	MssqlAdapter,
 	MssqlIntrospector,
 	MssqlQueryCompiler,
@@ -14,16 +15,15 @@ import {
 	SqliteAdapter,
 	SqliteIntrospector,
 	SqliteQueryCompiler,
-	type KyselyPlugin,
 } from 'kysely'
 import 'reflect-metadata'
 import { DataSource, type DataSourceOptions, type DeepPartial } from 'typeorm'
 import { SnakeNamingStrategy } from 'typeorm-naming-strategies'
 
 import {
-	KyselyTypeORMDialect,
 	type KyselifyEntity,
 	type KyselySubDialect,
+	KyselyTypeORMDialect,
 	type KyselyTypeORMDialectConfig,
 } from '../../src/index.mjs'
 import type { SupportedDialect } from '../../src/supported-dialects.mjs'
