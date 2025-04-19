@@ -42,6 +42,7 @@
     "check:types": "tsc --noEmit",
     "lint": "biome ci",
     "prepublishOnly": "pnpm lint && pnpm build && pnpm check:exports",
+    "release:preview": "pkg-pr-new publish",
     "test": "vitest"
   },
   "peerDependencies": {
