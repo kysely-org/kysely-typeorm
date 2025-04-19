@@ -1,6 +1,22 @@
 name: preview
 
-on: [push, pull_request]
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    paths-ignore:
+      - ".github/workflows/check.yml"
+      - ".github/workflows/test.yml"
+      - ".gitignore"
+      - "LICENSE"
+      - "tests/**"
+      - "tsconfig.json"
+      - "tsup.*"
+      - "vitest.*"
+      - "*.jsonc"
+      - "*.md"
+      - "*.yml"
 
 jobs:
   release:
