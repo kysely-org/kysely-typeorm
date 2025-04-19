@@ -1,0 +1,37 @@
+{
+	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
+	"files": {
+		"ignore": [
+			"package.json",
+			"tsconfig*.json"
+		]
+	},
+	"javascript": {
+		"formatter": {
+			"quoteStyle": "single",
+			"semicolons": "asNeeded"
+		}
+	},
+	"linter": {
+		"rules": {
+			"nursery": {
+				"noCommonJs": "error",
+				"useDeprecatedReason": "error"
+			},
+			"style": {
+				"noNonNullAssertion": "warn",
+				"noParameterAssign": "warn"
+			},
+			"suspicious": {
+				"noAssignInExpressions": "off",
+				"noConsole": "error",
+				"noExplicitAny": "warn"
+			}
+		}
+	},
+	"vcs": {
+		"clientKind": "git",
+		"enabled": true,
+		"useIgnoreFile": true
+	}
+}
