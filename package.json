@@ -53,7 +53,7 @@
     "@types/pg": "^8.11.12",
     "@typescript-eslint/eslint-plugin": "^8.26.1",
     "@typescript-eslint/parser": "^8.26.1",
-    "better-sqlite3": "^9.6.0",
+    "better-sqlite3": "^11.9.1",
     "chai": "^4.3.10",
     "esbuild": "^0.25.2",
     "esbuild-runner": "^2.2.2",
