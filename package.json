@@ -6,12 +6,19 @@
   "homepage": "https://github.com/kysely-org/kysely-typeorm",
   "author": "Igal Klebanov <igalklebanov@gmail.com>",
   "license": "MIT",
-  "main": "./dist/cjs/index.js",
-  "module": "./dist/esm/index.js",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/esm/index.js",
-      "require": "./dist/cjs/index.js"
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     }
   },
   "files": [
@@ -30,53 +37,47 @@
     "dialect"
   ],
   "scripts": {
-    "build": "tsup && node ./scripts/dist-fix.js",
-    "clean": "rm -rf dist",
-    "fmt": "prettier --write .",
-    "fmt:check": "prettier --check .",
-    "lint": "eslint src --ext .ts",
-    "prepack": "pnpm lint && pnpm build",
-    "test": "pnpm test:nodejs",
-    "test:nodejs": "mocha ./tests/nodejs",
-    "type-check": "tsc --noEmit"
+    "build": "tsup",
+    "check:exports": "attw . --pack",
+    "check:types": "tsc --noEmit",
+    "lint": "biome ci",
+    "prepublishOnly": "pnpm lint && pnpm build && pnpm check:exports",
+    "release:preview": "pkg-pr-new publish",
+    "test": "vitest"
   },
   "peerDependencies": {
     "kysely": ">= 0.24.0 < 1",
     "typeorm": ">= 0.3.0 < 0.4.0"
   },
   "devDependencies": {
-    "@tsconfig/node20": "^20.1.5",
-    "@types/chai": "^4.3.14",
+    "@arethetypeswrong/cli": "^0.17.4",
+    "@arktype/attest": "^0.46.0",
+    "@biomejs/biome": "^1.9.4",
+    "@tsconfig/node22": "^22.0.1",
     "@types/lodash": "^4.17.16",
-    "@types/mocha": "^10.0.10",
-    "@types/node": "^22.13.10",
-    "@types/pg": "^8.11.12",
-    "@typescript-eslint/eslint-plugin": "^8.26.1",
-    "@typescript-eslint/parser": "^8.26.1",
-    "better-sqlite3": "^9.6.0",
-    "chai": "^4.3.10",
-    "esbuild": "^0.25.2",
-    "esbuild-runner": "^2.2.2",
-    "eslint": "^8.57.1",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-import": "^2.31.0",
-    "eslint-plugin-prettier": "^5.2.6",
-    "kysely": "^0.27.5",
+    "@types/node": "^22.14.1",
+    "@types/pg": "^8.11.13",
+    "better-sqlite3": "^11.9.1",
+    "kysely": "^0.28.1",
     "lodash": "^4.17.21",
-    "mocha": "^11.1.0",
-    "mssql": "^10.0.4",
-    "mysql2": "^3.12.0",
+    "mssql": "^11.0.1",
+    "mysql2": "^3.14.0",
     "pg": "^8.14.1",
-    "prettier": "^3.5.3",
-    "prettier-plugin-organize-imports": "^4.1.0",
-    "prettier-plugin-pkg": "^0.18.1",
+    "pkg-pr-new": "^0.0.42",
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
     "tsup": "^8.4.0",
     "typeorm": "^0.3.22",
     "typeorm-naming-strategies": "^4.1.0",
-    "typescript": "^5.8.3"
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.1"
   },
   "sideEffects": false,
-  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+  "packageManager": "pnpm@10.8.1+sha512.c50088ba998c67b8ca8c99df8a5e02fd2ae2e2b29aaf238feaa9e124248d3f48f9fb6db2424949ff901cffbb5e0f0cc1ad6aedb602cd29450751d11c35023677",
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "better-sqlite3",
+      "sqlite3"
+    ]
+  }
 }
