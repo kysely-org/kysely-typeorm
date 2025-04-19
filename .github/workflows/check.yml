@@ -8,6 +8,8 @@ on:
 
 jobs:
   check:
+    name: Checks
+
     runs-on: ubuntu-latest
 
     steps:
