@@ -3,18 +3,18 @@ import { jsonArrayFrom as jsonArrayFromMssql } from 'kysely/helpers/mssql'
 import { jsonArrayFrom as jsonArrayFromMySQL } from 'kysely/helpers/mysql'
 import { jsonArrayFrom as jsonArrayFromPostgres } from 'kysely/helpers/postgres'
 import { jsonArrayFrom as jsonArrayFromSQLite } from 'kysely/helpers/sqlite'
-import omit from 'lodash/omit'
+import { omit } from 'lodash'
 import { afterAll, afterEach, beforeEach, describe, expect, it } from 'vitest'
 
-import { SUPPORTED_DIALECTS } from '../../src/supported-dialects'
-import { PersonEntity } from './entity/Person'
+import { SUPPORTED_DIALECTS } from '../../src/supported-dialects.mjs'
+import { PersonEntity } from './entity/Person.mjs'
 import {
 	DEFAULT_DATA_SET,
 	type PerDialect,
 	type TestContext,
 	initTest,
 	seedDatabase,
-} from './test-setup'
+} from './test-setup.mjs'
 
 for (const dialect of SUPPORTED_DIALECTS) {
 	describe(`KyselyTypeORMDialect: ${dialect}`, () => {
@@ -123,7 +123,7 @@ for (const dialect of SUPPORTED_DIALECTS) {
 						},
 						sqlite: {
 							insertId: undefined,
-							numInsertedOrUpdatedRows: undefined,
+							numInsertedOrUpdatedRows: BigInt(0),
 						},
 					} satisfies PerDialect<{ [K in keyof InsertResult]: InsertResult[K] }>
 				)[dialect],

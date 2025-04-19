@@ -164,20 +164,20 @@ Translate your entities to Kysely table schema types via the `KyselifyEntity` he
 `src/types/database.ts`:
 
 ```ts
-import type {KyselifyEntity} from 'kysely-typeorm'
-import type {PersonEntity} from '../entities/Person'
-import type {PetEntity} from '../entities/Pet'
-import type {ToyEntity} from '../entities/Toy'
+import type { KyselifyEntity } from "kysely-typeorm";
+import type { PersonEntity } from "../entities/Person";
+import type { PetEntity } from "../entities/Pet";
+import type { ToyEntity } from "../entities/Toy";
 
-export type PersonTable = KyselifyEntity<PersonEntity>
+export type PersonTable = KyselifyEntity<PersonEntity>;
 //               ^? { id: Generated<number>, firstName: string | null, ... }
-export type PetTable = KyselifyEntity<PetEntity>
-export type ToyTable = KyselifyEntity<ToyEntity>
+export type PetTable = KyselifyEntity<PetEntity>;
+export type ToyTable = KyselifyEntity<ToyEntity>;
 
 export interface Database {
-  person: PersonTable
-  pet: PetTable
-  toy: ToyTable
+  person: PersonTable;
+  pet: PetTable;
+  toy: ToyTable;
 }
 ```
 
@@ -193,11 +193,11 @@ import {
   Kysely,
   PostgresAdapter,
   PostgresIntrospector,
-  PostgresQueryCompiler
-} from 'kysely'
-import { KyselyTypeORMDialect } from 'kysely-typeorm'
-import type {Database} from './types/database'
-import {dataSource} from './typeorm'
+  PostgresQueryCompiler,
+} from "kysely";
+import { KyselyTypeORMDialect } from "kysely-typeorm";
+import type { Database } from "./types/database";
+import { dataSource } from "./typeorm";
 
 export const kysely = new Kysely<Database>({
   dialect: new KyselyTypeORMDialect({
@@ -211,5 +211,5 @@ export const kysely = new Kysely<Database>({
   }),
   // `CamelCasePlugin` is used to align with `typeorm-naming-strategies`'s `SnakeNamingStrategy`.
   plugins: [new CamelCasePlugin()], // optional
-})
+});
 ```

@@ -25,11 +25,14 @@ jobs:
       - name: Install dependencies
         run: pnpm i
 
-      - name: Biome
-        run: pnpx @biomejs/biome ci
+      - name: Lint
+        run: pnpm lint
+
+      - name: Typecheck
+        run: pnpm check:types
 
       - name: Build
         run: pnpm build
 
-      - name: Attw
+      - name: Exports
         run: pnpm check:exports

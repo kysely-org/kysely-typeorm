@@ -25,11 +25,11 @@ import {
 	type KyselifyEntity,
 	type KyselySubDialect,
 	type KyselyTypeORMDialectConfig,
-} from '../../src'
-import type { SupportedDialect } from '../../src/supported-dialects'
-import { PersonEntity } from './entity/Person'
-import { PetEntity } from './entity/Pet'
-import { ToyEntity } from './entity/Toy'
+} from '../../src/index.mjs'
+import type { SupportedDialect } from '../../src/supported-dialects.mjs'
+import { PersonEntity } from './entity/Person.mjs'
+import { PetEntity } from './entity/Pet.mjs'
+import { ToyEntity } from './entity/Toy.mjs'
 
 export type Person = KyselifyEntity<PersonEntity>
 export type Pet = KyselifyEntity<PetEntity>
@@ -47,8 +47,6 @@ export interface TestContext {
 }
 
 export type PerDialect<T> = Record<SupportedDialect, T>
-
-const TEST_INIT_TIMEOUT = 5 * 60 * 1_000
 
 export const PLUGINS: KyselyPlugin[] = [
 	new ParseJSONResultsPlugin(),
