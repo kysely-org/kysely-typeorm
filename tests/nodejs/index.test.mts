@@ -205,5 +205,26 @@ for (const dialect of SUPPORTED_DIALECTS) {
 				expect(result).to.deep.equal({ gender: DEFAULT_DATA_SET[0].gender })
 			})
 		}
+
+		if (dialect === 'postgres' || dialect === 'mysql' || dialect === 'mssql') {
+			it('should be able to stream query results', async () => {
+				const people = []
+
+				for await (const person of ctx.kysely
+					.selectFrom('person')
+					.selectAll()
+					.stream()) {
+					people.push(person)
+				}
+
+				expect(people).to.have.lengthOf(DEFAULT_DATA_SET.length)
+				expect(people).to.deep.equal(
+					DEFAULT_DATA_SET.map((datum, index) => ({
+						id: index + 1,
+						...omit(datum, ['pets']),
+					})),
+				)
+			})
+		}
 	})
 }
