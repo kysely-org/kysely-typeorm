@@ -74,11 +74,13 @@ export class KyselyTypeORMConnection implements DatabaseConnection {
 		}
 	}
 
-	// TODO: implement!
-	// biome-ignore lint/correctness/useYield: <explanation>
 	async *streamQuery<R>(
 		compiledQuery: CompiledQuery<unknown>,
 	): AsyncIterableIterator<QueryResult<R>> {
-		throw new Error('Unimplemented!')
+		for await (const row of await this.#queryRunner.stream(compiledQuery.sql, [
+			...compiledQuery.parameters,
+		])) {
+			yield { rows: [row] }
+		}
 	}
 }
