@@ -1,9 +1,6 @@
 {
-  "extends": "@tsconfig/node22/tsconfig.json",
-  "compilerOptions": {
-    "experimentalDecorators": true,
-    "rootDir": "src"
-  },
-  "include": ["src"],
-  "exclude": ["node_modules", "dist", "tests"]
+	"extends": "./tsconfig.base.json",
+	"compilerOptions": {},
+	"exclude": ["node_modules", "dist"],
+	"include": ["src"]
 }
