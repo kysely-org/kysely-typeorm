@@ -2,7 +2,8 @@
     "extends": "../../tsconfig.base.json",
     "compilerOptions": {
         "experimentalDecorators": true,
-        "strictPropertyInitialization": false
+        "noErrorTruncation": true,
+        "strictPropertyInitialization": false,
     },
     "include": ["**/*.mts"],
 }
