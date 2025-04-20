@@ -7,9 +7,9 @@ import {
 } from 'typeorm'
 import type {
 	Generated,
+	JSONColumnType,
 	NonAttribute,
 	SimpleArray,
-	JSONColumnType,
 } from '../../../src/index.mjs'
 import { PetEntity } from './Pet.mjs'
 
