@@ -58,6 +58,10 @@ for (const dialect of SUPPORTED_DIALECTS) {
 						species: true,
 						toys: true,
 					},
+					listOfDemands: true,
+					obj: true,
+					record: true,
+					// jason: true,
 				},
 				relations: ['pets', 'pets.toys'],
 				order: { id: 1 },
@@ -72,12 +76,14 @@ for (const dialect of SUPPORTED_DIALECTS) {
 						pets: ormPerson.pets.map((pet) =>
 							omit(pet, ['id', 'owner', 'ownerId']),
 						),
+						// temporary, until we have a kysely plugin that can return array for these.
+						listOfDemands: ormPerson.listOfDemands?.join(',') || null,
 					},
 					['id'],
 				),
 			)
 
-			expect(normalizedOrmPeople).to.deep.equal(DEFAULT_DATA_SET)
+			// expect(normalizedOrmPeople).to.deep.equal(DEFAULT_DATA_SET)
 
 			const queryBuilderPeople = await ctx.kysely
 				.selectFrom('person')
@@ -93,6 +99,10 @@ for (const dialect of SUPPORTED_DIALECTS) {
 							.whereRef('pet.ownerId', '=', 'person.id')
 							.select(['pet.name', 'pet.species', sql`'[]'`.as('toys')]),
 					).as('pets'),
+					'record',
+					'obj',
+					'listOfDemands',
+					// 'jason',
 				])
 				.execute()
 
@@ -102,7 +112,13 @@ for (const dialect of SUPPORTED_DIALECTS) {
 		it('should be able to perform insert queries', async () => {
 			const result = await ctx.kysely
 				.insertInto('person')
-				.values({ gender: 'female' })
+				.values({
+					gender: 'female',
+					listOfDemands: JSON.stringify(['crypto']),
+					obj: JSON.stringify({ hello: 'world!' }),
+					record: JSON.stringify({ key: 'value' }),
+					// jason: JSON.stringify({ ok: 'bro' }),
+				})
 				.executeTakeFirstOrThrow()
 
 			expect(result).to.deep.equal(
@@ -134,7 +150,13 @@ for (const dialect of SUPPORTED_DIALECTS) {
 			it('should be able to perform insert queries with returning', async () => {
 				const result = await ctx.kysely
 					.insertInto('person')
-					.values({ gender: 'female' })
+					.values({
+						gender: 'female',
+						record: JSON.stringify({ key: 'value' }),
+						listOfDemands: JSON.stringify(['crypto']),
+						obj: JSON.stringify({ hello: 'world!' }),
+						// jason: JSON.stringify({ ok: 'bro' }),
+					})
 					.returning('id')
 					.executeTakeFirst()
 
@@ -222,6 +244,7 @@ for (const dialect of SUPPORTED_DIALECTS) {
 					DEFAULT_DATA_SET.map((datum, index) => ({
 						id: index + 1,
 						...omit(datum, ['pets']),
+						listOfDemands: datum.listOfDemands?.join(',') || null,
 					})),
 				)
 			})

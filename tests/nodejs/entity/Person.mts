@@ -5,7 +5,12 @@ import {
 	OneToMany,
 	PrimaryGeneratedColumn,
 } from 'typeorm'
-import type { Generated, NonAttribute } from '../../../src/index.mjs'
+import type {
+	Generated,
+	JSONColumnType,
+	NonAttribute,
+	SimpleArray,
+} from '../../../src/index.mjs'
 import { PetEntity } from './Pet.mjs'
 
 // Trying to recreate the following interface with typeorm:
@@ -44,6 +49,18 @@ export class PersonEntity extends BaseEntity {
 
 	@Column({ type: 'varchar', length: 50, nullable: true })
 	maritalStatus: 'single' | 'married' | 'divorced' | 'widowed' | null
+
+	@Column({ type: 'simple-json', nullable: true })
+	record: JSONColumnType<Record<string, unknown> | null>
+
+	@Column({ type: 'simple-json', nullable: true })
+	obj: JSONColumnType<{ hello: 'world!' } | null>
+
+	@Column({ type: 'simple-array', nullable: true })
+	listOfDemands: SimpleArray<string[] | null>
+
+	// @Column({ type: 'json', nullable: true })
+	// jason: Record<string, unknown> | null
 
 	@OneToMany(
 		() => PetEntity,

@@ -2,7 +2,7 @@
 
 TypeORM is an ORM that can run in NodeJS, Browser, Cordova, PhoneGap, Ionic, React Native, NativeScript, Expo, and Electron platforms and can be used with TypeScript and JavaScript (ES2021). Its goal is to always support the latest JavaScript features and provide additional features that help you to develop any kind of application that uses databases - from small applications with a few tables to large-scale enterprise applications with multiple databases.
 
-As of Mar 17, 2024, TypeORM [has 1,723,707 weekly downloads on npm](https://npmtrends.com/prisma-vs-sequelize-vs-typeorm) (3rd most popular ORM). It is a very popular ORM for Node.js and TypeScript.
+As of Mar 17, 2024, TypeORM [has 2,104,650 weekly downloads on npm](https://npmtrends.com/prisma-vs-sequelize-vs-typeorm) (2nd most popular ORM). It is a very popular ORM for Node.js and TypeScript.
 
 Just like most ORMs for Node.js, TypeORM has poor TypeScript support when it comes to writing queries outside the ORM's CRUD methods - something that happens more often than you might imagine - usually due to performance optimizations OR as a general escape hatch. This is where Kysely comes in.
 
@@ -54,7 +54,7 @@ Update your entities using this library's `NonAttribute`, `Generated` and `Gener
 `src/entities/Person.ts`:
 
 ```diff
-+import type {Generated, NonAttribute} from 'kysely-typeorm'
++import type {Generated, JSONColumnType, NonAttribute, SimpleArray} from 'kysely-typeorm'
 import {BaseEntity, Column, Entity, OneToMany, PrimaryGeneratedColumn} from 'typeorm'
 import {PetEntity} from './Pet'
 
@@ -78,6 +78,18 @@ export class PersonEntity extends BaseEntity {
 
   @Column({type: 'varchar', length: 50, nullable: true})
   maritalStatus: 'single' | 'married' | 'divorced' | 'widowed' | null
+
+  @Column({type: 'simple-array', nullable: true})
+- listOfDemands: string[] | null
++ listOfDemands: SimpleArray<string[] | null>
+
+  @Column({type: 'simple-json', nullable: true})
+- metadata: Record<string, unknown> | null
++ metadata: JSONColumnType<Record<string, unknown> | null>
+
+  @Column({type: 'jsonb', nullable: true})
+- lastSession: { loggedInAt: string } | null
++ lastSession: JSONColumnType<{ loggedInAt: string } | null>
 
   @OneToMany(() => PetEntity, (pet) => pet.owner, {cascade: ['insert']})
 - pets: PetEntity[]

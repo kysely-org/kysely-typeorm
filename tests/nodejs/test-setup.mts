@@ -177,6 +177,10 @@ export const DEFAULT_DATA_SET = [
 		gender: 'female',
 		pets: [{ name: 'Catto', species: 'cat', toys: [] }],
 		maritalStatus: 'divorced',
+		listOfDemands: ['money', 'power'],
+		obj: { hello: 'world!' },
+		record: { key: 'value' },
+		// jason: { anotherKey: 1 },
 	},
 	{
 		firstName: 'Arnold',
@@ -185,6 +189,10 @@ export const DEFAULT_DATA_SET = [
 		gender: 'male',
 		pets: [{ name: 'Doggo', species: 'dog', toys: [] }],
 		maritalStatus: 'divorced',
+		listOfDemands: null,
+		obj: null,
+		record: null,
+		// jason: null,
 	},
 	{
 		firstName: 'Sylvester',
@@ -193,6 +201,10 @@ export const DEFAULT_DATA_SET = [
 		gender: 'male',
 		pets: [{ name: 'Hammo', species: 'hamster', toys: [] }],
 		maritalStatus: 'married',
+		listOfDemands: ['money'],
+		obj: { hello: 'world!' },
+		record: { anotherKey: 0 },
+		// jason: { nope: null },
 	},
 ] as const satisfies DeepPartial<PersonEntity>[]
 
