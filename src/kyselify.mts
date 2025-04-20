@@ -1,7 +1,7 @@
 import type {
-	JSONColumnType as KyselyJSONColumnType,
 	Generated as KyselyGenerated,
 	GeneratedAlways as KyselyGeneratedAlways,
+	JSONColumnType as KyselyJSONColumnType,
 } from 'kysely'
 
 /**
