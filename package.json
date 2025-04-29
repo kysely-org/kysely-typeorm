@@ -64,7 +64,7 @@
     "mssql": "^11.0.1",
     "mysql2": "^3.14.1",
     "pg": "^8.15.6",
-    "pg-query-stream": "^4.9.5",
+    "pg-query-stream": "^4.9.6",
     "pkg-pr-new": "^0.0.43",
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
