@@ -27,8 +27,8 @@ importers:
         specifier: ^22.15.3
         version: 22.15.3
       '@types/pg':
-        specifier: ^8.11.14
-        version: 8.11.14
+        specifier: ^8.12.0
+        version: 8.12.0
       better-sqlite3:
         specifier: ^11.9.1
         version: 11.9.1
@@ -726,8 +726,8 @@ packages:
   '@types/node@22.15.3':
     resolution: {integrity: sha512-lX7HFZeHf4QG/J7tBZqrCAXwz9J5RD56Y6MpP0eJkka8p+K0RY/yBTW7CYFJ4VGCclxqOLKmiGP5juQc6MKgcw==}
 
-  '@types/pg@8.11.14':
-    resolution: {integrity: sha512-qyD11E5R3u0eJmd1lB0WnWKXJGA7s015nyARWljfz5DcX83TKAIlY+QrmvzQTsbIe+hkiFtkyL2gHC6qwF6Fbg==}
+  '@types/pg@8.12.0':
+    resolution: {integrity: sha512-a9Z11ecnpNPFu2iT4Qo9SSYgM2r1l4UqLIQ454zhCDRzxqOh/vsi57FFovbc64oBGPBotXw5cRhUQtJEHCb/OA==}
 
   '@types/readable-stream@4.0.10':
     resolution: {integrity: sha512-AbUKBjcC8SHmImNi4yK2bbjogQlkFSg7shZCcicxPQapniOlajG8GCc39lvXzCWX4lLRRs7DM3VAeSlqmEVZUA==}
@@ -2897,7 +2897,7 @@ snapshots:
     dependencies:
       undici-types: 6.21.0
 
-  '@types/pg@8.11.14':
+  '@types/pg@8.12.0':
     dependencies:
       '@types/node': 22.15.3
       pg-protocol: 1.9.5
