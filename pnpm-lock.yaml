@@ -30,8 +30,8 @@ importers:
         specifier: ^8.15.1
         version: 8.15.1
       better-sqlite3:
-        specifier: ^11.9.1
-        version: 11.9.1
+        specifier: ^11.10.0
+        version: 11.10.0
       kysely:
         specifier: ^0.28.2
         version: 0.28.2
@@ -64,10 +64,10 @@ importers:
         version: 8.4.0(postcss@8.5.3)(typescript@5.8.3)
       typeorm:
         specifier: ^0.3.22
-        version: 0.3.22(better-sqlite3@11.9.1)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
+        version: 0.3.22(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
       typeorm-naming-strategies:
         specifier: ^4.1.0
-        version: 4.1.0(typeorm@0.3.22(better-sqlite3@11.9.1)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7))
+        version: 4.1.0(typeorm@0.3.22(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7))
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -857,8 +857,8 @@ packages:
   before-after-hook@2.2.3:
     resolution: {integrity: sha512-NzUnlZexiaH/46WDhANlyR2bXRopNg4F/zuSA3OpZnllCUgRaOF2znDioDWrmbNVsuZk6l9pMquQB38cfBZwkQ==}
 
-  better-sqlite3@11.9.1:
-    resolution: {integrity: sha512-Ba0KR+Fzxh2jDRhdg6TSH0SJGzb8C0aBY4hR8w8madIdIzzC6Y1+kx5qR6eS1Z+Gy20h6ZU28aeyg0z1VIrShQ==}
+  better-sqlite3@11.10.0:
+    resolution: {integrity: sha512-EwhOpyXiOEL/lKzHz9AW1msWFNzGc/z+LzeB3/jnFJpxu+th2yqvzsSWas1v9jgs9+xiXJcD5A8CJxAG2TaghQ==}
 
   bindings@1.5.0:
     resolution: {integrity: sha512-p2q/t/mhvuOj/UeLlV6566GD/guowlr0hHxClI0W9m7MWYkL1F0hLo+0Aexs9HSPCtR1SXQ0TD3MMKrXZajbiQ==}
@@ -1051,6 +1051,10 @@ packages:
 
   detect-libc@2.0.2:
     resolution: {integrity: sha512-UX6sGumvvqSaXgdKGUsgZWqcUyIXZ/vZTrlRT/iobiKhGL0zL4d3osHj3uqllWJK+i+sixDS/3COVEOFbupFyw==}
+    engines: {node: '>=8'}
+
+  detect-libc@2.0.4:
+    resolution: {integrity: sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==}
     engines: {node: '>=8'}
 
   dotenv@16.4.7:
@@ -1498,6 +1502,9 @@ packages:
   napi-build-utils@1.0.2:
     resolution: {integrity: sha512-ONmRUqK7zj7DWX0D9ADe03wbwOBZxNAfF20PlGfCWQcD3+/MakShIHrMqx9YwPTfxDdF1zLeL+RGZiR9kGMLdg==}
 
+  napi-build-utils@2.0.0:
+    resolution: {integrity: sha512-GEbrYkbfF7MoNaoh2iGG84Mnf/WZfB0GdGEsM8wz7Expx/LlWf5U8t9nvJKXSp3qr5IsEbK04cBGhol/KwOsWA==}
+
   native-duplexpair@1.0.0:
     resolution: {integrity: sha512-E7QQoM+3jvNtlmyfqRZ0/U75VFgCls+fSkbml2MpgWkWyz3ox8Y58gNhfuziuQYGNNQAbFZJQck55LHCnCK6CA==}
 
@@ -1507,6 +1514,10 @@ packages:
 
   node-abi@3.52.0:
     resolution: {integrity: sha512-JJ98b02z16ILv7859irtXn4oUaFWADtvkzy2c0IAatNVX2Mc9Yoh8z6hZInn3QwvMEYhHuQloYi+TTQy67SIdQ==}
+    engines: {node: '>=10'}
+
+  node-abi@3.75.0:
+    resolution: {integrity: sha512-OhYaY5sDsIka7H7AtijtI9jwGYLyl29eQn/W623DiN/MIv5sUqc4g7BIDThX+gb7di9f6xK02nkp8sdfFWZLTg==}
     engines: {node: '>=10'}
 
   node-addon-api@7.1.0:
@@ -1717,6 +1728,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  prebuild-install@7.1.3:
+    resolution: {integrity: sha512-8Mf2cbV7x1cXPUILADGI3wuhfqWvtiLA1iclTDbFRZkgRQS0NqsPZphna9V+HyTEadheuPmjaJMsbzKQFOzLug==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   prettier@3.5.3:
     resolution: {integrity: sha512-QQtaxnoDJeAkDvDKWCLiwIXkTgRhwYDEQCghU9Z6q03iyek/rxRh/2lC3HB7P8sWT2xC/y5JDctPLBIGzHKbhw==}
     engines: {node: '>=14'}
@@ -1740,6 +1756,9 @@ packages:
 
   pump@3.0.0:
     resolution: {integrity: sha512-LwZy+p3SFs1Pytd/jYct4wpv49HiYCqd9Rlc5ZVdk0V+8Yzv6jR5Blk3TRmPL1ft69TxP0IMZGJ+WPFU2BFhww==}
+
+  pump@3.0.2:
+    resolution: {integrity: sha512-tUPXtzlGM8FE3P0ZL6DVs/3P58k9nk8/jZeQCurTJylQA8qFYzHFfhBJkuqyE0FifOsQ0uKWekiZ5g8wtr28cw==}
 
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
@@ -1964,6 +1983,9 @@ packages:
 
   tar-fs@2.1.1:
     resolution: {integrity: sha512-V0r2Y9scmbDRLCNex/+hYzvp/zyYjvFbHPNgVTKfQvVrb6guiE/fxP+XblDNR011utopbkex2nM4dHNV6GDsng==}
+
+  tar-fs@2.1.2:
+    resolution: {integrity: sha512-EsaAXwxmx8UB7FRKqeozqEPop69DXcmYwTQwXvyAPF352HJsPdkVhvTaDPYqfNgruveJIJy3TA2l+2zj8LJIJA==}
 
   tar-stream@2.2.0:
     resolution: {integrity: sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==}
@@ -2668,7 +2690,7 @@ snapshots:
   '@npmcli/fs@1.1.1':
     dependencies:
       '@gar/promisify': 1.1.3
-      semver: 7.6.3
+      semver: 7.7.1
     optional: true
 
   '@npmcli/move-file@1.1.2':
@@ -3038,10 +3060,10 @@ snapshots:
 
   before-after-hook@2.2.3: {}
 
-  better-sqlite3@11.9.1:
+  better-sqlite3@11.10.0:
     dependencies:
       bindings: 1.5.0
-      prebuild-install: 7.1.1
+      prebuild-install: 7.1.3
 
   bindings@1.5.0:
     dependencies:
@@ -3242,6 +3264,8 @@ snapshots:
   deprecation@2.3.1: {}
 
   detect-libc@2.0.2: {}
+
+  detect-libc@2.0.4: {}
 
   dotenv@16.4.7: {}
 
@@ -3726,6 +3750,8 @@ snapshots:
 
   napi-build-utils@1.0.2: {}
 
+  napi-build-utils@2.0.0: {}
+
   native-duplexpair@1.0.0: {}
 
   negotiator@0.6.3:
@@ -3734,6 +3760,10 @@ snapshots:
   node-abi@3.52.0:
     dependencies:
       semver: 7.6.3
+
+  node-abi@3.75.0:
+    dependencies:
+      semver: 7.7.1
 
   node-addon-api@7.1.0: {}
 
@@ -3949,6 +3979,21 @@ snapshots:
       tar-fs: 2.1.1
       tunnel-agent: 0.6.0
 
+  prebuild-install@7.1.3:
+    dependencies:
+      detect-libc: 2.0.4
+      expand-template: 2.0.3
+      github-from-package: 0.0.0
+      minimist: 1.2.8
+      mkdirp-classic: 0.5.3
+      napi-build-utils: 2.0.0
+      node-abi: 3.75.0
+      pump: 3.0.2
+      rc: 1.2.8
+      simple-get: 4.0.1
+      tar-fs: 2.1.2
+      tunnel-agent: 0.6.0
+
   prettier@3.5.3: {}
 
   process@0.11.10: {}
@@ -3963,6 +4008,11 @@ snapshots:
     optional: true
 
   pump@3.0.0:
+    dependencies:
+      end-of-stream: 1.4.4
+      once: 1.4.0
+
+  pump@3.0.2:
     dependencies:
       end-of-stream: 1.4.4
       once: 1.4.0
@@ -4233,7 +4283,14 @@ snapshots:
     dependencies:
       chownr: 1.1.4
       mkdirp-classic: 0.5.3
-      pump: 3.0.0
+      pump: 3.0.2
+      tar-stream: 2.2.0
+
+  tar-fs@2.1.2:
+    dependencies:
+      chownr: 1.1.4
+      mkdirp-classic: 0.5.3
+      pump: 3.0.2
       tar-stream: 2.2.0
 
   tar-stream@2.2.0:
@@ -4347,11 +4404,11 @@ snapshots:
 
   type-detect@4.1.0: {}
 
-  typeorm-naming-strategies@4.1.0(typeorm@0.3.22(better-sqlite3@11.9.1)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7)):
+  typeorm-naming-strategies@4.1.0(typeorm@0.3.22(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7)):
     dependencies:
-      typeorm: 0.3.22(better-sqlite3@11.9.1)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
+      typeorm: 0.3.22(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
 
-  typeorm@0.3.22(better-sqlite3@11.9.1)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7):
+  typeorm@0.3.22(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 3.17.0
@@ -4368,7 +4425,7 @@ snapshots:
       uuid: 11.1.0
       yargs: 17.7.2
     optionalDependencies:
-      better-sqlite3: 11.9.1
+      better-sqlite3: 11.10.0
       mssql: 11.0.1
       mysql2: 3.14.1
       pg: 8.15.6
