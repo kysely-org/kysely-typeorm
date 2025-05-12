@@ -51,7 +51,7 @@
     "typeorm": ">= 0.3.0 < 0.4.0"
   },
   "devDependencies": {
-    "@arethetypeswrong/cli": "^0.17.4",
+    "@arethetypeswrong/cli": "^0.18.1",
     "@arktype/attest": "^0.46.0",
     "@biomejs/biome": "^1.9.4",
     "@tsconfig/node22": "^22.0.1",
@@ -69,7 +69,7 @@
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
     "tsup": "^8.4.0",
-    "typeorm": "^0.3.22",
+    "typeorm": "^0.3.23",
     "typeorm-naming-strategies": "^4.1.0",
     "typescript": "^5.8.3",
     "vitest": "^3.1.2"
