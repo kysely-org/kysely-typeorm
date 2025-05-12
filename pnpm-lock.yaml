@@ -63,11 +63,11 @@ importers:
         specifier: ^8.4.0
         version: 8.4.0(postcss@8.5.3)(typescript@5.8.3)
       typeorm:
-        specifier: ^0.3.22
-        version: 0.3.22(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
+        specifier: ^0.3.23
+        version: 0.3.23(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
       typeorm-naming-strategies:
         specifier: ^4.1.0
-        version: 4.1.0(typeorm@0.3.22(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7))
+        version: 4.1.0(typeorm@0.3.23(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7))
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -1057,8 +1057,8 @@ packages:
     resolution: {integrity: sha512-3UDv+G9CsCKO1WKMGw9fwq/SWJYbI0c5Y7LU1AXYoDdbhE2AHQ6N6Nb34sG8Fj7T5APy8qXDCKuuIHd1BR0tVA==}
     engines: {node: '>=8'}
 
-  dotenv@16.4.7:
-    resolution: {integrity: sha512-47qPchRCykZC03FhkYAhrvwU4xDBFIj1QPqaarj6mdM/hgUzfPHcpkHJOn3mJAufFeeAxAzeGsr5X0M4k6fLZQ==}
+  dotenv@16.5.0:
+    resolution: {integrity: sha512-m/C+AwOAr9/W1UOIZUo232ejMNnJAJtYQjUbHoNTBNTJSvqzzDh7vnrei3o3r3m9blf6ZoDkvcw0VmozNRFJxg==}
     engines: {node: '>=12'}
 
   eastasianwidth@0.2.0:
@@ -2086,8 +2086,8 @@ packages:
     peerDependencies:
       typeorm: ^0.2.0 || ^0.3.0
 
-  typeorm@0.3.22:
-    resolution: {integrity: sha512-P/Tsz3UpJ9+K0oryC0twK5PO27zejLYYwMsE8SISfZc1lVHX+ajigiOyWsKbuXpEFMjD9z7UjLzY3+ElVOMMDA==}
+  typeorm@0.3.23:
+    resolution: {integrity: sha512-CJUZWW7O5zZG0TA7bRpntJx97AvvQwsoSa1UgYlzTOtmkwODrqIyxP9wtzHpBssEKie5chnLiCVyxKNeYo65wQ==}
     engines: {node: '>=16.13.0'}
     hasBin: true
     peerDependencies:
@@ -3266,7 +3266,7 @@ snapshots:
 
   detect-libc@2.0.4: {}
 
-  dotenv@16.4.7: {}
+  dotenv@16.5.0: {}
 
   eastasianwidth@0.2.0: {}
 
@@ -4403,11 +4403,11 @@ snapshots:
 
   type-detect@4.1.0: {}
 
-  typeorm-naming-strategies@4.1.0(typeorm@0.3.22(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7)):
+  typeorm-naming-strategies@4.1.0(typeorm@0.3.23(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7)):
     dependencies:
-      typeorm: 0.3.22(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
+      typeorm: 0.3.23(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
 
-  typeorm@0.3.22(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7):
+  typeorm@0.3.23(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.9.6(pg@8.15.6))(pg@8.15.6)(reflect-metadata@0.2.2)(sqlite3@5.1.7):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 3.17.0
@@ -4415,7 +4415,7 @@ snapshots:
       buffer: 6.0.3
       dayjs: 1.11.13
       debug: 4.4.0
-      dotenv: 16.4.7
+      dotenv: 16.5.0
       glob: 10.4.5
       reflect-metadata: 0.2.2
       sha.js: 2.4.11
