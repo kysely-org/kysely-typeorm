@@ -68,7 +68,7 @@
     "pkg-pr-new": "^0.0.49",
     "reflect-metadata": "^0.2.2",
     "sqlite3": "^5.1.7",
-    "tsup": "^8.4.0",
+    "tsup": "^8.5.0",
     "typeorm": "^0.3.24",
     "typeorm-naming-strategies": "^4.1.0",
     "typescript": "^5.8.3",
