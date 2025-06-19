@@ -48,8 +48,8 @@ importers:
         specifier: ^8.16.1
         version: 8.16.1
       pg-query-stream:
-        specifier: ^4.10.0
-        version: 4.10.0(pg@8.16.1)
+        specifier: ^4.10.1
+        version: 4.10.1(pg@8.16.1)
       pkg-pr-new:
         specifier: ^0.0.51
         version: 0.0.51
@@ -64,10 +64,10 @@ importers:
         version: 8.5.0(postcss@8.5.6)(typescript@5.8.3)
       typeorm:
         specifier: ^0.3.24
-        version: 0.3.24(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.10.0(pg@8.16.1))(pg@8.16.1)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
+        version: 0.3.24(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.10.1(pg@8.16.1))(pg@8.16.1)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
       typeorm-naming-strategies:
         specifier: ^4.1.0
-        version: 4.1.0(typeorm@0.3.24(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.10.0(pg@8.16.1))(pg@8.16.1)(reflect-metadata@0.2.2)(sqlite3@5.1.7))
+        version: 4.1.0(typeorm@0.3.24(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.10.1(pg@8.16.1))(pg@8.16.1)(reflect-metadata@0.2.2)(sqlite3@5.1.7))
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -1792,8 +1792,8 @@ packages:
   pg-connection-string@2.9.1:
     resolution: {integrity: sha512-nkc6NpDcvPVpZXxrreI/FOtX3XemeLl8E0qFr6F2Lrm/I8WOnaWNhIPK2Z7OHpw7gh5XJThi6j6ppgNoaT1w4w==}
 
-  pg-cursor@2.15.0:
-    resolution: {integrity: sha512-sO3SQP9seXoaV7sddeKrPQk3zhnrMchCr71cYjkyNHCC6n3mA5AAyhK5foxy+yBtnBZuPqxzoiVxz3jKyV7D3g==}
+  pg-cursor@2.15.1:
+    resolution: {integrity: sha512-H3pT6fqIO1/u55mDGen2v6gvoaIBwVxhoJWEdF0qhQfsF7hXGW1BbJ8CwMtyoZRWZH7fASVoT3p2/4BGUoSxTg==}
     peerDependencies:
       pg: ^8
 
@@ -1812,8 +1812,8 @@ packages:
   pg-protocol@1.10.1:
     resolution: {integrity: sha512-9YS3ZonDj0Lxny//aF0ITPdfrEPgKWCJvONsSXAaIUhgpzlzl5JgaZNlbTFxvYNfm2terGEnHeOSUlF6qRGBzw==}
 
-  pg-query-stream@4.10.0:
-    resolution: {integrity: sha512-w4h/zgnjI5mIEkK9Bufeo+V4EsHp4lTt9HD8f4Zqt3kYMb30bn/2iLq/UyZb4MMxhZO78Lr6kBLyfGsqq4H7Fw==}
+  pg-query-stream@4.10.1:
+    resolution: {integrity: sha512-xxtMwwtM7DbfsGc4H2jd8USjg0JgdhnyzFphTm47VP+YKOw75JSugjFTI2vNL9AVrNKDa/cmlUWkN99taIS1Ng==}
     peerDependencies:
       pg: ^8
 
@@ -4149,7 +4149,7 @@ snapshots:
 
   pg-connection-string@2.9.1: {}
 
-  pg-cursor@2.15.0(pg@8.16.1):
+  pg-cursor@2.15.1(pg@8.16.1):
     dependencies:
       pg: 8.16.1
 
@@ -4163,10 +4163,10 @@ snapshots:
 
   pg-protocol@1.10.1: {}
 
-  pg-query-stream@4.10.0(pg@8.16.1):
+  pg-query-stream@4.10.1(pg@8.16.1):
     dependencies:
       pg: 8.16.1
-      pg-cursor: 2.15.0(pg@8.16.1)
+      pg-cursor: 2.15.1(pg@8.16.1)
 
   pg-types@2.2.0:
     dependencies:
@@ -4678,11 +4678,11 @@ snapshots:
 
   type-detect@4.1.0: {}
 
-  typeorm-naming-strategies@4.1.0(typeorm@0.3.24(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.10.0(pg@8.16.1))(pg@8.16.1)(reflect-metadata@0.2.2)(sqlite3@5.1.7)):
+  typeorm-naming-strategies@4.1.0(typeorm@0.3.24(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.10.1(pg@8.16.1))(pg@8.16.1)(reflect-metadata@0.2.2)(sqlite3@5.1.7)):
     dependencies:
-      typeorm: 0.3.24(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.10.0(pg@8.16.1))(pg@8.16.1)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
+      typeorm: 0.3.24(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.10.1(pg@8.16.1))(pg@8.16.1)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
 
-  typeorm@0.3.24(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.10.0(pg@8.16.1))(pg@8.16.1)(reflect-metadata@0.2.2)(sqlite3@5.1.7):
+  typeorm@0.3.24(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.1)(pg-query-stream@4.10.1(pg@8.16.1))(pg@8.16.1)(reflect-metadata@0.2.2)(sqlite3@5.1.7):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 3.17.0
@@ -4704,7 +4704,7 @@ snapshots:
       mssql: 11.0.1
       mysql2: 3.14.1
       pg: 8.16.1
-      pg-query-stream: 4.10.0(pg@8.16.1)
+      pg-query-stream: 4.10.1(pg@8.16.1)
       sqlite3: 5.1.7
     transitivePeerDependencies:
       - babel-plugin-macros
