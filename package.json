@@ -55,7 +55,7 @@
     "@arktype/attest": "^0.46.0",
     "@biomejs/biome": "^1.9.4",
     "@tsconfig/node22": "^22.0.2",
-    "@types/lodash": "^4.17.19",
+    "@types/lodash": "^4.17.20",
     "@types/node": "^24.0.10",
     "@types/pg": "^8.15.4",
     "better-sqlite3": "^11.10.0",
