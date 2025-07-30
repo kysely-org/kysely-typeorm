@@ -42,8 +42,8 @@ importers:
         specifier: ^11.0.1
         version: 11.0.1
       mysql2:
-        specifier: ^3.14.2
-        version: 3.14.2
+        specifier: ^3.14.3
+        version: 3.14.3
       pg:
         specifier: ^8.16.3
         version: 8.16.3
@@ -64,10 +64,10 @@ importers:
         version: 8.5.0(postcss@8.5.6)(typescript@5.8.3)
       typeorm:
         specifier: ^0.3.25
-        version: 0.3.25(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.2)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
+        version: 0.3.25(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.3)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
       typeorm-naming-strategies:
         specifier: ^4.1.0
-        version: 4.1.0(typeorm@0.3.25(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.2)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(reflect-metadata@0.2.2)(sqlite3@5.1.7))
+        version: 4.1.0(typeorm@0.3.25(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.3)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(reflect-metadata@0.2.2)(sqlite3@5.1.7))
       typescript:
         specifier: ^5.8.3
         version: 5.8.3
@@ -1676,8 +1676,8 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  mysql2@3.14.2:
-    resolution: {integrity: sha512-YD6mZMeoypmheHT6b2BrVmQFvouEpRICuvPIREulx2OvP1xAxxeqkMQqZSTBefv0PiOBKGYFa2zQtY+gf/4eQw==}
+  mysql2@3.14.3:
+    resolution: {integrity: sha512-fD6MLV8XJ1KiNFIF0bS7Msl8eZyhlTDCDl75ajU5SJtpdx9ZPEACulJcqJWr1Y8OYyxsFc4j3+nflpmhxCU5aQ==}
     engines: {node: '>= 8.0'}
 
   mz@2.7.0:
@@ -2063,6 +2063,7 @@ packages:
   source-map@0.8.0-beta.0:
     resolution: {integrity: sha512-2ymg6oRBpebeZi9UUNsgQ89bhx01TcTkmNTGnNO88imTmbSgy4nfujrgVEFKWpMTEGA11EDkTt7mqObTPdigIA==}
     engines: {node: '>= 8'}
+    deprecated: The work that was done in this beta branch won't be included in future versions
 
   split-on-first@3.0.0:
     resolution: {integrity: sha512-qxQJTx2ryR0Dw0ITYyekNQWpz6f8dGd7vffGNflQQ3Iqj9NJ6qiZ7ELpZsJ/QBhIVAiDfXdag3+Gp8RvWa62AA==}
@@ -4015,7 +4016,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  mysql2@3.14.2:
+  mysql2@3.14.3:
     dependencies:
       aws-ssl-profiles: 1.1.2
       denque: 2.1.0
@@ -4673,11 +4674,11 @@ snapshots:
 
   type-detect@4.1.0: {}
 
-  typeorm-naming-strategies@4.1.0(typeorm@0.3.25(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.2)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(reflect-metadata@0.2.2)(sqlite3@5.1.7)):
+  typeorm-naming-strategies@4.1.0(typeorm@0.3.25(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.3)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(reflect-metadata@0.2.2)(sqlite3@5.1.7)):
     dependencies:
-      typeorm: 0.3.25(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.2)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
+      typeorm: 0.3.25(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.3)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(reflect-metadata@0.2.2)(sqlite3@5.1.7)
 
-  typeorm@0.3.25(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.2)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(reflect-metadata@0.2.2)(sqlite3@5.1.7):
+  typeorm@0.3.25(better-sqlite3@11.10.0)(mssql@11.0.1)(mysql2@3.14.3)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(reflect-metadata@0.2.2)(sqlite3@5.1.7):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 3.17.0
@@ -4697,7 +4698,7 @@ snapshots:
     optionalDependencies:
       better-sqlite3: 11.10.0
       mssql: 11.0.1
-      mysql2: 3.14.2
+      mysql2: 3.14.3
       pg: 8.16.3
       pg-query-stream: 4.10.3(pg@8.16.3)
       sqlite3: 5.1.7
