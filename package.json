@@ -59,7 +59,7 @@
     "@types/node": "^24.1.0",
     "@types/pg": "^8.15.5",
     "better-sqlite3": "^11.10.0",
-    "kysely": "^0.28.3",
+    "kysely": "^0.28.4",
     "lodash": "^4.17.21",
     "mssql": "^11.0.1",
     "mysql2": "^3.14.3",
