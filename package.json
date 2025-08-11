@@ -53,7 +53,7 @@
   "devDependencies": {
     "@arethetypeswrong/cli": "^0.18.2",
     "@arktype/attest": "^0.46.0",
-    "@biomejs/biome": "^1.9.4",
+    "@biomejs/biome": "^2.1.4",
     "@tsconfig/node22": "^22.0.2",
     "@types/lodash": "^4.17.20",
     "@types/node": "^24.2.1",
