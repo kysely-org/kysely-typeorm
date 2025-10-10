@@ -33,8 +33,8 @@ importers:
         specifier: ^12.4.1
         version: 12.4.1
       kysely:
-        specifier: ^0.28.7
-        version: 0.28.7
+        specifier: ^0.28.8
+        version: 0.28.8
       lodash:
         specifier: ^4.17.21
         version: 4.17.21
@@ -1646,8 +1646,8 @@ packages:
   jws@3.2.2:
     resolution: {integrity: sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA==}
 
-  kysely@0.28.7:
-    resolution: {integrity: sha512-u/cAuTL4DRIiO2/g4vNGRgklEKNIj5Q3CG7RoUB5DV5SfEC2hMvPxKi0GWPmnzwL2ryIeud2VTcEEmqzTzEPNw==}
+  kysely@0.28.8:
+    resolution: {integrity: sha512-QUOgl5ZrS9IRuhq5FvOKFSsD/3+IA6MLE81/bOOTRA/YQpKDza2sFdN5g6JCB9BOpqMJDGefLCQ9F12hRS13TA==}
     engines: {node: '>=20.0.0'}
 
   lilconfig@3.1.3:
@@ -4145,7 +4145,7 @@ snapshots:
       jwa: 1.4.1
       safe-buffer: 5.2.1
 
-  kysely@0.28.7: {}
+  kysely@0.28.8: {}
 
   lilconfig@3.1.3: {}
 
