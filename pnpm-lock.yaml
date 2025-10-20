@@ -12,8 +12,8 @@ importers:
         specifier: ^0.18.2
         version: 0.18.2
       '@arktype/attest':
-        specifier: ^0.50.0
-        version: 0.50.0(typescript@5.9.3)
+        specifier: ^0.51.0
+        version: 0.51.0(typescript@5.9.3)
       '@biomejs/biome':
         specifier: ^1.9.4
         version: 1.9.4
@@ -101,8 +101,8 @@ packages:
     resolution: {integrity: sha512-GiwTmBFOU1/+UVNqqCGzFJYfBXEytUkiI+iRZ6Qx7KmUVtLm00sYySkfe203C9QtPG11yOz1ZaMek8dT/xnlgg==}
     engines: {node: '>=20'}
 
-  '@ark/fs@0.50.0':
-    resolution: {integrity: sha512-6OrxNt2T+/pL4RUMZK/aiVRLIS3acNs5uSpHDyZAP6+OXwXchFSQ1lJTH+uuGBlDWeQxPD7VmymYXLF5s1Eyhw==}
+  '@ark/fs@0.51.0':
+    resolution: {integrity: sha512-aampuHM/geoy1s2CZ8wNaGLZC3idUJiC6mwWeT5QCNqQY5VH38eAH9u4zUFTUZRb5RIsaBQ+MLYFvtReDPTsKw==}
 
   '@ark/regex@0.0.0':
     resolution: {integrity: sha512-p4vsWnd/LRGOdGQglbwOguIVhPmCAf5UzquvnDoxqhhPWTP84wWgi1INea8MgJ4SnI2gp37f13oA4Waz9vwNYg==}
@@ -113,8 +113,11 @@ packages:
   '@ark/util@0.50.0':
     resolution: {integrity: sha512-tIkgIMVRpkfXRQIEf0G2CJryZVtHVrqcWHMDa5QKo0OEEBu0tHkRSIMm4Ln8cd8Bn9TPZtvc/kE2Gma8RESPSg==}
 
-  '@arktype/attest@0.50.0':
-    resolution: {integrity: sha512-szxr7NAwEHQxJ5rTJs1dpig0JjYTJR6o8c8nYs3lnp1tZSXRNSGpfvewg+SEXeInvWlRMvJOhVxETs68s/miNQ==}
+  '@ark/util@0.51.0':
+    resolution: {integrity: sha512-OVdvu1NzEFhIRe1/nXUyfRe4hDh8CC8Ag+IYV0RngCc3Gtayny8lIvJjdw+Ef27ClEIuTGlEPEefvoKAm6mu9g==}
+
+  '@arktype/attest@0.51.0':
+    resolution: {integrity: sha512-nVYivqAqnLRze56W3A7UrXJYicwJoFIeeQSCPacrK8cdWW7dw6s5Kr0yTa3l/fAVqqbYC/Izk0Bit3oFFwslSQ==}
     hasBin: true
     peerDependencies:
       typescript: '*'
@@ -2713,7 +2716,7 @@ snapshots:
       typescript: 5.6.1-rc
       validate-npm-package-name: 5.0.1
 
-  '@ark/fs@0.50.0': {}
+  '@ark/fs@0.51.0': {}
 
   '@ark/regex@0.0.0':
     dependencies:
@@ -2725,10 +2728,12 @@ snapshots:
 
   '@ark/util@0.50.0': {}
 
-  '@arktype/attest@0.50.0(typescript@5.9.3)':
+  '@ark/util@0.51.0': {}
+
+  '@arktype/attest@0.51.0(typescript@5.9.3)':
     dependencies:
-      '@ark/fs': 0.50.0
-      '@ark/util': 0.50.0
+      '@ark/fs': 0.51.0
+      '@ark/util': 0.51.0
       '@prettier/sync': 0.6.1(prettier@3.6.2)
       '@typescript/analyze-trace': 0.10.1
       '@typescript/vfs': 1.6.1(typescript@5.9.3)
