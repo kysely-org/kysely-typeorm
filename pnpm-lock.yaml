@@ -12,8 +12,8 @@ importers:
         specifier: ^0.18.2
         version: 0.18.2
       '@arktype/attest':
-        specifier: ^0.53.0
-        version: 0.53.0(typescript@5.9.3)
+        specifier: ^0.54.0
+        version: 0.54.0(typescript@5.9.3)
       '@biomejs/biome':
         specifier: ^1.9.4
         version: 1.9.4
@@ -101,17 +101,20 @@ packages:
     resolution: {integrity: sha512-GiwTmBFOU1/+UVNqqCGzFJYfBXEytUkiI+iRZ6Qx7KmUVtLm00sYySkfe203C9QtPG11yOz1ZaMek8dT/xnlgg==}
     engines: {node: '>=20'}
 
-  '@ark/fs@0.53.0':
-    resolution: {integrity: sha512-XL0EbBAZgyy+j9aPhftYaBsbKAW5PTNSKCN6oLRRdrHuHPSAZgR6765/z0YZGhPxHEUNmq0vBoSk8yOLk91dNQ==}
+  '@ark/fs@0.54.0':
+    resolution: {integrity: sha512-JX00G1adNyqLbbLdbP0sG4N/sAO/jqX61MFxbrPgt6W5mv+/qP5raoqwUwCY2g9AzKVD3TlxGReOWrnEVv2lvQ==}
 
-  '@ark/schema@0.53.0':
-    resolution: {integrity: sha512-1PB7RThUiTlmIu8jbSurPrhHpVixPd4C+xNBUF/HrjIENCeDcAMg36n5mpMzED7OQGDVIzpfXXiMnaTiutjHJw==}
+  '@ark/schema@0.54.0':
+    resolution: {integrity: sha512-QloFou+ODfb5qXgPxX1EbJyRqZEwoElzvJ6VuuFVvWJQGoigBEUW3L0HejXG/B9v8K3VvDikuULp5ELSwZn8hg==}
 
   '@ark/util@0.53.0':
     resolution: {integrity: sha512-TGn4gLlA6dJcQiqrtCtd88JhGb2XBHo6qIejsDre+nxpGuUVW4G3YZGVrwjNBTO0EyR+ykzIo4joHJzOj+/cpA==}
 
-  '@arktype/attest@0.53.0':
-    resolution: {integrity: sha512-m2etXj1eqseATWuOTceGOEE7vRsX5nDhrnhYsqZ3UZHgZ8Cdvum56Ue/u/bBcFNe3p8IXfOp1q1LCK1cCHl3JQ==}
+  '@ark/util@0.54.0':
+    resolution: {integrity: sha512-ugTfpEDGA6d2uU2/3M7uRiuPNYckQMhg2wfNMw8zZHXjPhuVCbXWZzIcBojuXuCN8j4MrNWNqQ9z7f8W/JiE8w==}
+
+  '@arktype/attest@0.54.0':
+    resolution: {integrity: sha512-aNMeig9GxFbiCUn6ff6FDMP1FsrgYrzUeQZxyVSqHDoDGqRBZu26aozk2hlxiMPWCqZzmLLDd3PEXyjAryKsNQ==}
     hasBin: true
     peerDependencies:
       typescript: '*'
@@ -1040,8 +1043,8 @@ packages:
   arkregex@0.0.2:
     resolution: {integrity: sha512-ttjDUICBVoXD/m8bf7eOjx8XMR6yIT2FmmW9vsN0FCcFOygEZvvIX8zK98tTdXkzi0LkRi5CmadB44jFEIyDNA==}
 
-  arktype@2.1.25:
-    resolution: {integrity: sha512-fdj10sNlUPeDRg1QUqMbzJ4Q7gutTOWOpLUNdcC4vxeVrN0G+cbDOvLbuxQOFj/NDAode1G7kwFv4yKwQvupJg==}
+  arktype@2.1.26:
+    resolution: {integrity: sha512-zDwukKV6uTElKCAbIoQ9OU6shXE5ALjvZAqHErOSv6l0iLKlubELZ7AcevYLaWFYr5rmIN4Uv9+dIzInktSO1A==}
 
   assertion-error@2.0.1:
     resolution: {integrity: sha512-Izi8RQcffqCeNVgFigKli1ssklIbpHnCYc6AknXGYoB6grJqyeby7jv12JUQgmTAnIDnbck1uxksT4dzN3PWBA==}
@@ -2688,22 +2691,24 @@ snapshots:
       typescript: 5.6.1-rc
       validate-npm-package-name: 5.0.1
 
-  '@ark/fs@0.53.0': {}
+  '@ark/fs@0.54.0': {}
 
-  '@ark/schema@0.53.0':
+  '@ark/schema@0.54.0':
     dependencies:
-      '@ark/util': 0.53.0
+      '@ark/util': 0.54.0
 
   '@ark/util@0.53.0': {}
 
-  '@arktype/attest@0.53.0(typescript@5.9.3)':
+  '@ark/util@0.54.0': {}
+
+  '@arktype/attest@0.54.0(typescript@5.9.3)':
     dependencies:
-      '@ark/fs': 0.53.0
-      '@ark/util': 0.53.0
+      '@ark/fs': 0.54.0
+      '@ark/util': 0.54.0
       '@prettier/sync': 0.6.1(prettier@3.6.2)
       '@typescript/analyze-trace': 0.10.1
       '@typescript/vfs': 1.6.1(typescript@5.9.3)
-      arktype: 2.1.25
+      arktype: 2.1.26
       prettier: 3.6.2
       typescript: 5.9.3
     transitivePeerDependencies:
@@ -3472,10 +3477,10 @@ snapshots:
     dependencies:
       '@ark/util': 0.53.0
 
-  arktype@2.1.25:
+  arktype@2.1.26:
     dependencies:
-      '@ark/schema': 0.53.0
-      '@ark/util': 0.53.0
+      '@ark/schema': 0.54.0
+      '@ark/util': 0.54.0
       arkregex: 0.0.2
 
   assertion-error@2.0.1: {}
