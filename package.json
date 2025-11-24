@@ -58,7 +58,7 @@
     "@types/lodash": "^4.17.21",
     "@types/node": "^24.10.1",
     "@types/pg": "^8.15.6",
-    "better-sqlite3": "^12.4.1",
+    "better-sqlite3": "^12.4.6",
     "kysely": "^0.28.8",
     "lodash": "^4.17.21",
     "mssql": "^11.0.1",
