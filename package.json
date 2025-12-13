@@ -57,7 +57,7 @@
     "@tsconfig/node22": "^22.0.5",
     "@types/lodash": "^4.17.21",
     "@types/node": "^25.0.1",
-    "@types/pg": "^8.15.6",
+    "@types/pg": "^8.16.0",
     "better-sqlite3": "^12.5.0",
     "kysely": "^0.28.8",
     "lodash": "^4.17.21",
