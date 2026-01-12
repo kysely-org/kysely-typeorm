@@ -30,8 +30,8 @@ importers:
         specifier: ^8.16.0
         version: 8.16.0
       better-sqlite3:
-        specifier: ^12.5.0
-        version: 12.5.0
+        specifier: ^12.6.0
+        version: 12.6.0
       kysely:
         specifier: ^0.28.9
         version: 0.28.9
@@ -64,10 +64,10 @@ importers:
         version: 8.5.1(postcss@8.5.6)(typescript@5.9.3)
       typeorm:
         specifier: ^0.3.28
-        version: 0.3.28(better-sqlite3@12.5.0)(mssql@12.2.0)(mysql2@3.16.0)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(sqlite3@5.1.7)
+        version: 0.3.28(better-sqlite3@12.6.0)(mssql@12.2.0)(mysql2@3.16.0)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(sqlite3@5.1.7)
       typeorm-naming-strategies:
         specifier: ^4.1.0
-        version: 4.1.0(typeorm@0.3.28(better-sqlite3@12.5.0)(mssql@12.2.0)(mysql2@3.16.0)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(sqlite3@5.1.7))
+        version: 4.1.0(typeorm@0.3.28(better-sqlite3@12.6.0)(mssql@12.2.0)(mysql2@3.16.0)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(sqlite3@5.1.7))
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -1064,8 +1064,8 @@ packages:
   before-after-hook@2.2.3:
     resolution: {integrity: sha512-NzUnlZexiaH/46WDhANlyR2bXRopNg4F/zuSA3OpZnllCUgRaOF2znDioDWrmbNVsuZk6l9pMquQB38cfBZwkQ==}
 
-  better-sqlite3@12.5.0:
-    resolution: {integrity: sha512-WwCZ/5Diz7rsF29o27o0Gcc1Du+l7Zsv7SYtVPG0X3G/uUI1LqdxrQI7c9Hs2FWpqXXERjW9hp6g3/tH7DlVKg==}
+  better-sqlite3@12.6.0:
+    resolution: {integrity: sha512-FXI191x+D6UPWSze5IzZjhz+i9MK9nsuHsmTX9bXVl52k06AfZ2xql0lrgIUuzsMsJ7Vgl5kIptvDgBLIV3ZSQ==}
     engines: {node: 20.x || 22.x || 23.x || 24.x || 25.x}
 
   bindings@1.5.0:
@@ -3453,7 +3453,7 @@ snapshots:
 
   before-after-hook@2.2.3: {}
 
-  better-sqlite3@12.5.0:
+  better-sqlite3@12.6.0:
     dependencies:
       bindings: 1.5.0
       prebuild-install: 7.1.3
@@ -4893,11 +4893,11 @@ snapshots:
       es-errors: 1.3.0
       is-typed-array: 1.1.15
 
-  typeorm-naming-strategies@4.1.0(typeorm@0.3.28(better-sqlite3@12.5.0)(mssql@12.2.0)(mysql2@3.16.0)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(sqlite3@5.1.7)):
+  typeorm-naming-strategies@4.1.0(typeorm@0.3.28(better-sqlite3@12.6.0)(mssql@12.2.0)(mysql2@3.16.0)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(sqlite3@5.1.7)):
     dependencies:
-      typeorm: 0.3.28(better-sqlite3@12.5.0)(mssql@12.2.0)(mysql2@3.16.0)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(sqlite3@5.1.7)
+      typeorm: 0.3.28(better-sqlite3@12.6.0)(mssql@12.2.0)(mysql2@3.16.0)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(sqlite3@5.1.7)
 
-  typeorm@0.3.28(better-sqlite3@12.5.0)(mssql@12.2.0)(mysql2@3.16.0)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(sqlite3@5.1.7):
+  typeorm@0.3.28(better-sqlite3@12.6.0)(mssql@12.2.0)(mysql2@3.16.0)(pg-query-stream@4.10.3(pg@8.16.3))(pg@8.16.3)(sqlite3@5.1.7):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 4.2.0
@@ -4915,7 +4915,7 @@ snapshots:
       uuid: 11.1.0
       yargs: 17.7.2
     optionalDependencies:
-      better-sqlite3: 12.5.0
+      better-sqlite3: 12.6.0
       mssql: 12.2.0
       mysql2: 3.16.0
       pg: 8.16.3
