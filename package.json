@@ -63,7 +63,7 @@
     "lodash": "^4.17.21",
     "mssql": "^12.2.0",
     "mysql2": "^3.16.0",
-    "pg": "^8.17.0",
+    "pg": "^8.17.1",
     "pg-query-stream": "^4.11.1",
     "pkg-pr-new": "^0.0.62",
     "reflect-metadata": "^0.2.2",
