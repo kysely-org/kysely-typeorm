@@ -42,8 +42,8 @@ importers:
         specifier: ^12.5.0
         version: 12.5.0(@azure/core-client@1.10.1)
       mysql2:
-        specifier: ^3.22.2
-        version: 3.22.2(@types/node@25.6.0)
+        specifier: ^3.22.3
+        version: 3.22.3(@types/node@25.6.0)
       pg:
         specifier: ^8.20.0
         version: 8.20.0
@@ -61,13 +61,13 @@ importers:
         version: 5.1.7
       tsup:
         specifier: ^8.5.1
-        version: 8.5.1(postcss@8.5.10)(typescript@5.9.3)
+        version: 8.5.1(postcss@8.5.12)(typescript@5.9.3)
       typeorm:
         specifier: ^0.3.28
-        version: 0.3.28(better-sqlite3@12.9.0)(mssql@12.5.0(@azure/core-client@1.10.1))(mysql2@3.22.2(@types/node@25.6.0))(pg-query-stream@4.14.0(pg@8.20.0))(pg@8.20.0)(sqlite3@5.1.7)
+        version: 0.3.28(better-sqlite3@12.9.0)(mssql@12.5.0(@azure/core-client@1.10.1))(mysql2@3.22.3(@types/node@25.6.0))(pg-query-stream@4.14.0(pg@8.20.0))(pg@8.20.0)(sqlite3@5.1.7)
       typeorm-naming-strategies:
         specifier: ^4.1.0
-        version: 4.1.0(typeorm@0.3.28(better-sqlite3@12.9.0)(mssql@12.5.0(@azure/core-client@1.10.1))(mysql2@3.22.2(@types/node@25.6.0))(pg-query-stream@4.14.0(pg@8.20.0))(pg@8.20.0)(sqlite3@5.1.7))
+        version: 4.1.0(typeorm@0.3.28(better-sqlite3@12.9.0)(mssql@12.5.0(@azure/core-client@1.10.1))(mysql2@3.22.3(@types/node@25.6.0))(pg-query-stream@4.14.0(pg@8.20.0))(pg@8.20.0)(sqlite3@5.1.7))
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -1791,8 +1791,8 @@ packages:
     engines: {node: '>=18.19.0'}
     hasBin: true
 
-  mysql2@3.22.2:
-    resolution: {integrity: sha512-snC/L6YoCJPFpozZo3p3hiOlt9ItQ7sCnLSziFLlIttEzsPhrdcPT8g21BiQ7Oqif25W4Xq1IFuBzBvoFYDf0Q==}
+  mysql2@3.22.3:
+    resolution: {integrity: sha512-uWWxvZSRvRhtBdh2CdcuK83YcOfPdmEeEYB069bAmPnV93QApDGVPuvCQOLjlh7tYHEWdgQPrn6kosDxHBVLkA==}
     engines: {node: '>= 8.0'}
     peerDependencies:
       '@types/node': '>= 8'
@@ -1986,8 +1986,8 @@ packages:
       yaml:
         optional: true
 
-  postcss@8.5.10:
-    resolution: {integrity: sha512-pMMHxBOZKFU6HgAZ4eyGnwXF/EvPGGqUr0MnZ5+99485wwW41kW91A4LOGxSHhgugZmSChL5AlElNdwlNgcnLQ==}
+  postcss@8.5.12:
+    resolution: {integrity: sha512-W62t/Se6rA0Az3DfCL0AqJwXuKwBeYg6nOaIgzP+xZ7N5BFCI7DYi1qs6ygUYT6rvfi6t9k65UMLJC+PHZpDAA==}
     engines: {node: ^10 || ^12 || >=14}
 
   postgres-array@2.0.0:
@@ -4273,7 +4273,7 @@ snapshots:
       - '@azure/core-client'
       - supports-color
 
-  mysql2@3.22.2(@types/node@25.6.0):
+  mysql2@3.22.3(@types/node@25.6.0):
     dependencies:
       '@types/node': 25.6.0
       aws-ssl-profiles: 1.1.2
@@ -4468,13 +4468,13 @@ snapshots:
 
   possible-typed-array-names@1.1.0: {}
 
-  postcss-load-config@6.0.1(postcss@8.5.10):
+  postcss-load-config@6.0.1(postcss@8.5.12):
     dependencies:
       lilconfig: 3.1.3
     optionalDependencies:
-      postcss: 8.5.10
+      postcss: 8.5.12
 
-  postcss@8.5.10:
+  postcss@8.5.12:
     dependencies:
       nanoid: 3.3.11
       picocolors: 1.1.1
@@ -4906,7 +4906,7 @@ snapshots:
 
   tslib@2.8.1: {}
 
-  tsup@8.5.1(postcss@8.5.10)(typescript@5.9.3):
+  tsup@8.5.1(postcss@8.5.12)(typescript@5.9.3):
     dependencies:
       bundle-require: 5.1.0(esbuild@0.27.0)
       cac: 6.7.14
@@ -4917,7 +4917,7 @@ snapshots:
       fix-dts-default-cjs-exports: 1.0.1
       joycon: 3.1.1
       picocolors: 1.1.1
-      postcss-load-config: 6.0.1(postcss@8.5.10)
+      postcss-load-config: 6.0.1(postcss@8.5.12)
       resolve-from: 5.0.0
       rollup: 4.53.2
       source-map: 0.7.6
@@ -4926,7 +4926,7 @@ snapshots:
       tinyglobby: 0.2.15
       tree-kill: 1.2.2
     optionalDependencies:
-      postcss: 8.5.10
+      postcss: 8.5.12
       typescript: 5.9.3
     transitivePeerDependencies:
       - jiti
@@ -4948,11 +4948,11 @@ snapshots:
       es-errors: 1.3.0
       is-typed-array: 1.1.15
 
-  typeorm-naming-strategies@4.1.0(typeorm@0.3.28(better-sqlite3@12.9.0)(mssql@12.5.0(@azure/core-client@1.10.1))(mysql2@3.22.2(@types/node@25.6.0))(pg-query-stream@4.14.0(pg@8.20.0))(pg@8.20.0)(sqlite3@5.1.7)):
+  typeorm-naming-strategies@4.1.0(typeorm@0.3.28(better-sqlite3@12.9.0)(mssql@12.5.0(@azure/core-client@1.10.1))(mysql2@3.22.3(@types/node@25.6.0))(pg-query-stream@4.14.0(pg@8.20.0))(pg@8.20.0)(sqlite3@5.1.7)):
     dependencies:
-      typeorm: 0.3.28(better-sqlite3@12.9.0)(mssql@12.5.0(@azure/core-client@1.10.1))(mysql2@3.22.2(@types/node@25.6.0))(pg-query-stream@4.14.0(pg@8.20.0))(pg@8.20.0)(sqlite3@5.1.7)
+      typeorm: 0.3.28(better-sqlite3@12.9.0)(mssql@12.5.0(@azure/core-client@1.10.1))(mysql2@3.22.3(@types/node@25.6.0))(pg-query-stream@4.14.0(pg@8.20.0))(pg@8.20.0)(sqlite3@5.1.7)
 
-  typeorm@0.3.28(better-sqlite3@12.9.0)(mssql@12.5.0(@azure/core-client@1.10.1))(mysql2@3.22.2(@types/node@25.6.0))(pg-query-stream@4.14.0(pg@8.20.0))(pg@8.20.0)(sqlite3@5.1.7):
+  typeorm@0.3.28(better-sqlite3@12.9.0)(mssql@12.5.0(@azure/core-client@1.10.1))(mysql2@3.22.3(@types/node@25.6.0))(pg-query-stream@4.14.0(pg@8.20.0))(pg@8.20.0)(sqlite3@5.1.7):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 4.2.0
@@ -4972,7 +4972,7 @@ snapshots:
     optionalDependencies:
       better-sqlite3: 12.9.0
       mssql: 12.5.0(@azure/core-client@1.10.1)
-      mysql2: 3.22.2(@types/node@25.6.0)
+      mysql2: 3.22.3(@types/node@25.6.0)
       pg: 8.20.0
       pg-query-stream: 4.14.0(pg@8.20.0)
       sqlite3: 5.1.7
@@ -5019,7 +5019,7 @@ snapshots:
       esbuild: 0.27.7
       fdir: 6.5.0(picomatch@4.0.4)
       picomatch: 4.0.4
-      postcss: 8.5.10
+      postcss: 8.5.12
       rollup: 4.60.2
       tinyglobby: 0.2.16
     optionalDependencies:
