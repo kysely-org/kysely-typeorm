@@ -51,8 +51,8 @@ importers:
         specifier: ^4.14.0
         version: 4.14.0(pg@8.20.0)
       pkg-pr-new:
-        specifier: ^0.0.72
-        version: 0.0.72
+        specifier: ^0.0.73
+        version: 0.0.73
       reflect-metadata:
         specifier: ^0.2.2
         version: 0.2.2
@@ -1863,8 +1863,8 @@ packages:
     resolution: {integrity: sha512-TfySrs/5nm8fQJDcBDuUng3VOUKsd7S+zqvbOTiGXHfxX4wK31ard+hoNuvkicM/2YFzlpDgABOevKSsB4G/FA==}
     engines: {node: '>= 6'}
 
-  pkg-pr-new@0.0.72:
-    resolution: {integrity: sha512-tp/Z6jjxJz+HIZOXEkPnxgNRntd5wIB/wgoShZYkLGr90zmkHoNfTYCnX1KZrx/90e3KSapyItuxzipdHHrrsQ==}
+  pkg-pr-new@0.0.73:
+    resolution: {integrity: sha512-/4iUn/yiDo5Fur+wGBASVPUTPPzcu422+BA0KeyTtDNX7uPuDfB/Lul9vGLXyk6Y2lULZ9YIxfqnNTGiImRLbw==}
     hasBin: true
 
   pkg-types@1.3.1:
@@ -4197,7 +4197,7 @@ snapshots:
 
   pirates@4.0.7: {}
 
-  pkg-pr-new@0.0.72: {}
+  pkg-pr-new@0.0.73: {}
 
   pkg-types@1.3.1:
     dependencies:
