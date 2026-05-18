@@ -71,7 +71,7 @@
     "tsup": "^8.5.1",
     "typeorm": "^0.3.29",
     "typeorm-naming-strategies": "^4.1.0",
-    "typescript": "^5.9.3",
+    "typescript": "^6.0.3",
     "vitest": "^4.1.6"
   },
   "sideEffects": false,
