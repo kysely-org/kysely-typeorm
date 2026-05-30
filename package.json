@@ -1,25 +1,19 @@
 {
   "name": "kysely-typeorm",
   "version": "0.3.0",
+  "type": "module",
   "description": "Kysely dialect for TypeORM",
-  "repository": "https://github.com/kysely-org/kysely-typeorm.git",
-  "homepage": "https://github.com/kysely-org/kysely-typeorm",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kysely-org/kysely-typeorm.git"
+  },
+  "homepage": "https://kysely.dev",
   "author": "Igal Klebanov <igalklebanov@gmail.com>",
   "license": "MIT",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.ts",
+  "types": "./dist/index.d.mts",
   "exports": {
-    ".": {
-      "import": {
-        "types": "./dist/index.d.mts",
-        "default": "./dist/index.mjs"
-      },
-      "require": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      }
-    }
+    ".": "./dist/index.mjs",
+    "./package.json": "./package.json"
   },
   "files": [
     "dist"
@@ -38,11 +32,11 @@
   ],
   "scripts": {
     "build": "tsdown",
-    "check:types": "tsc --noEmit",
     "lint": "biome ci",
     "prepublishOnly": "pnpm lint && pnpm build",
     "start": "tsdown --watch",
-    "test": "vitest"
+    "test": "vitest",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "kysely": "^0.29",
@@ -73,7 +67,7 @@
     "vitest": "^4.1.7"
     "@arethetypeswrong/core": "0.18.3",
     "@arktype/attest": "0.56.0",
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.4.16",
     "@tsconfig/node22": "22.0.5",
     "@types/lodash": "4.17.24",
     "@types/node": "25.9.1",
@@ -85,16 +79,18 @@
     "mysql2": "3.22.4",
     "pg": "8.21.0",
     "pg-query-stream": "4.15.0",
-    "pkg-pr-new": "0.0.75",
-    "publint": "^0.3.21",
+    "publint": "0.3.21",
     "reflect-metadata": "0.2.2",
-    "sqlite3": "5.1.7",
+    "sql.js": "1.14.1",
     "tsdown": "0.22.1",
-    "typeorm": "0.3.29",
+    "typeorm": "1.0.0",
     "typeorm-naming-strategies": "4.1.0",
-    "typescript": "5.9.3",
+    "typescript": "6.0.3",
     "vitest": "4.1.7"
   },
   "sideEffects": false,
-  "packageManager": "pnpm@11.5.0+sha512.dbfcc4f81cf48597afd4bc391ffdf12c11f1a9fb83a395bfa6b0a2d9cc2fd8ffebafdb1ccbd529632153f793904c2615b7f09fe1a345473fd1c35845172a8eb1"
+  "packageManager": "pnpm@11.5.0+sha512.dbfcc4f81cf48597afd4bc391ffdf12c11f1a9fb83a395bfa6b0a2d9cc2fd8ffebafdb1ccbd529632153f793904c2615b7f09fe1a345473fd1c35845172a8eb1",
+  "engines": {
+    "node": ">=22"
+  }
 }
