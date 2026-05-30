@@ -1,9 +1,12 @@
-import { defineConfig } from 'tsup'
+import { defineConfig } from 'tsdown'
 
 export default defineConfig({
-	clean: true,
+	attw: {
+		enabled: true,
+		profile: 'esm-only',
+	},
 	dts: true,
-	entry: ['./src/index.mts'],
-	format: ['cjs', 'esm'],
-	shims: true,
+	entry: 'src/index.mts',
+	exports: true,
+	publint: true,
 })

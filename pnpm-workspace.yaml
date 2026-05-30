@@ -1,0 +1,5 @@
+allowBuilds:
+  "@biomejs/biome@1.9.4": true
+  better-sqlite3@12.10.0: true
+  esbuild@0.27.7: true
+  sqlite3@5.1.7: true
