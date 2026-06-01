@@ -39,8 +39,8 @@ importers:
         specifier: ^4.18.1
         version: 4.18.1
       mssql:
-        specifier: ^12.5.4
-        version: 12.5.4(@azure/core-client@1.10.1)
+        specifier: ^12.5.5
+        version: 12.5.5(@azure/core-client@1.10.1)
       mysql2:
         specifier: ^3.22.4
         version: 3.22.4(@types/node@25.9.1)
@@ -64,10 +64,10 @@ importers:
         version: 8.5.1(postcss@8.5.15)(typescript@5.9.3)
       typeorm:
         specifier: ^0.3.29
-        version: 0.3.29(better-sqlite3@12.10.0)(mssql@12.5.4(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sqlite3@5.1.7)
+        version: 0.3.29(better-sqlite3@12.10.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sqlite3@5.1.7)
       typeorm-naming-strategies:
         specifier: ^4.1.0
-        version: 4.1.0(typeorm@0.3.29(better-sqlite3@12.10.0)(mssql@12.5.4(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sqlite3@5.1.7))
+        version: 4.1.0(typeorm@0.3.29(better-sqlite3@12.10.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sqlite3@5.1.7))
       typescript:
         specifier: ^5.9.3
         version: 5.9.3
@@ -163,16 +163,16 @@ packages:
     resolution: {integrity: sha512-fCqPIfOcLE+CGqGPd66c8bZpwAji98tZ4JI9i/mlTNTlsIWslCfpg48s/ypyLxZTump5sypjrKn2/kY7q8oAbA==}
     engines: {node: '>=20.0.0'}
 
-  '@azure/msal-browser@5.10.1':
-    resolution: {integrity: sha512-hTbvOi9Ko2Jvn+G/fSmjzHf9WbNcf/o3epMtbeGx/pMwMrVAbi6OgCJVeCfsAb8IybSRpaCSc4EDRlYAhgngUQ==}
+  '@azure/msal-browser@5.11.0':
+    resolution: {integrity: sha512-zkGNYS3TwY8lUpPIafAmsFCYZbgFixY9y/LZB9GUg0IILoHTqpN26j5OrkL1AQThh/YdZsawe4iWXfp85lFVxg==}
     engines: {node: '>=0.8.0'}
 
-  '@azure/msal-common@16.6.1':
-    resolution: {integrity: sha512-VxKdEtUwDuLD0F1hOQP7kye0YadZxFJfv37Em440geEf/w9uggKnHpRrqwZJOdxmPUOdhZ9kyRtKuAJW8wUcRg==}
+  '@azure/msal-common@16.6.2':
+    resolution: {integrity: sha512-hQjjsekAjB00cM1EmatWJlzhEoK2Qhz7Rj5gvM6tYf8iL7RM3tkxlpU9fG0+ofkulzg9AEEA6dIEnSmDr5ZqUA==}
     engines: {node: '>=0.8.0'}
 
-  '@azure/msal-node@5.2.1':
-    resolution: {integrity: sha512-tmQiQ2HvtzaeLqYGy3BemiPOSGPY4wCy1IW5zDWITKSs/s35WEd7Zij/hCxvUdAOzj6U3qnyaGbYXY91ortFEQ==}
+  '@azure/msal-node@5.2.2':
+    resolution: {integrity: sha512-toS+2AePxqyzb0YOKttDOOiSl3jrkK9aiqIvpurpis0O34QcIS5gToqrgT39p04Dpxw3YoUU0lxJKTpSFFfA6Q==}
     engines: {node: '>=20'}
 
   '@biomejs/biome@1.9.4':
@@ -1692,8 +1692,8 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  mssql@12.5.4:
-    resolution: {integrity: sha512-f8UzhpO1STCYhxBybEgT4kaPa2Pda+nucQcMMad7RqOmmTZu3tjkvpPeI9h0RdSK//eua4ybRsLcalz/ttagwQ==}
+  mssql@12.5.5:
+    resolution: {integrity: sha512-kQYghNfnnx+jX0Wyl8g+MtP6Z3DtOajINNx6pEgaG8K/MGlB3LCtU8Bmoje4zeEwukI35yCfpJQa+5AEUcNf1g==}
     engines: {node: '>=18.19.0'}
     hasBin: true
 
@@ -2020,6 +2020,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.8.1:
+    resolution: {integrity: sha512-rkVq3IXh+4FDGch+KwzX3aV9W3kO54GyEgpvBzSyctDA6Xtd7RJQV1xmXbeQp5v7+VzLOfVqiutSE6GICgPFvg==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   set-blocking@2.0.0:
     resolution: {integrity: sha512-KiKBS8AnWGEyLzofFfmvKwpdPzqiy16LvQfK3yv/fVH7Bj13/wl3JSR1J+rfgRE9q7xUJK4qvgS8raSOeLUehw==}
 
@@ -2196,6 +2201,10 @@ packages:
 
   tinyglobby@0.2.16:
     resolution: {integrity: sha512-pn99VhoACYR8nFHhxqix+uvsbXineAasWm5ojXoN8xEwK5Kd3/TrhNn1wByuD52UxWRLy8pu+kRMniEi6Eq9Zg==}
+    engines: {node: '>=12.0.0'}
+
+  tinyglobby@0.2.17:
+    resolution: {integrity: sha512-wXR/dYpcqKmfWpEdZjiKJOwCNFndD0DMnrW/cYjVGttEkBfVgcLFHoNrlj47mjOVic9yyNu65alsgF4NQyTa2g==}
     engines: {node: '>=12.0.0'}
 
   tinyrainbow@3.1.0:
@@ -2620,8 +2629,8 @@ snapshots:
       '@azure/core-tracing': 1.3.1
       '@azure/core-util': 1.13.1
       '@azure/logger': 1.3.0
-      '@azure/msal-browser': 5.10.1
-      '@azure/msal-node': 5.2.1
+      '@azure/msal-browser': 5.11.0
+      '@azure/msal-node': 5.2.2
       open: 10.2.0
       tslib: 2.8.1
     transitivePeerDependencies:
@@ -2665,15 +2674,15 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@azure/msal-browser@5.10.1':
+  '@azure/msal-browser@5.11.0':
     dependencies:
-      '@azure/msal-common': 16.6.1
+      '@azure/msal-common': 16.6.2
 
-  '@azure/msal-common@16.6.1': {}
+  '@azure/msal-common@16.6.2': {}
 
-  '@azure/msal-node@5.2.1':
+  '@azure/msal-node@5.2.2':
     dependencies:
-      '@azure/msal-common': 16.6.1
+      '@azure/msal-common': 16.6.2
       jsonwebtoken: 9.0.3
 
   '@biomejs/biome@1.9.4':
@@ -3844,7 +3853,7 @@ snapshots:
       lodash.isstring: 4.0.1
       lodash.once: 4.1.1
       ms: 2.1.3
-      semver: 7.8.0
+      semver: 7.8.1
 
   jwa@2.0.1:
     dependencies:
@@ -4013,7 +4022,7 @@ snapshots:
 
   ms@2.1.3: {}
 
-  mssql@12.5.4(@azure/core-client@1.10.1):
+  mssql@12.5.5(@azure/core-client@1.10.1):
     dependencies:
       '@tediousjs/connection-string': 1.1.0
       commander: 11.1.0
@@ -4393,6 +4402,8 @@ snapshots:
 
   semver@7.8.0: {}
 
+  semver@7.8.1: {}
+
   set-blocking@2.0.0:
     optional: true
 
@@ -4613,6 +4624,11 @@ snapshots:
       fdir: 6.5.0(picomatch@4.0.4)
       picomatch: 4.0.4
 
+  tinyglobby@0.2.17:
+    dependencies:
+      fdir: 6.5.0(picomatch@4.0.4)
+      picomatch: 4.0.4
+
   tinyrainbow@3.1.0: {}
 
   to-buffer@1.2.2:
@@ -4667,11 +4683,11 @@ snapshots:
       es-errors: 1.3.0
       is-typed-array: 1.1.15
 
-  typeorm-naming-strategies@4.1.0(typeorm@0.3.29(better-sqlite3@12.10.0)(mssql@12.5.4(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sqlite3@5.1.7)):
+  typeorm-naming-strategies@4.1.0(typeorm@0.3.29(better-sqlite3@12.10.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sqlite3@5.1.7)):
     dependencies:
-      typeorm: 0.3.29(better-sqlite3@12.10.0)(mssql@12.5.4(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sqlite3@5.1.7)
+      typeorm: 0.3.29(better-sqlite3@12.10.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sqlite3@5.1.7)
 
-  typeorm@0.3.29(better-sqlite3@12.10.0)(mssql@12.5.4(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sqlite3@5.1.7):
+  typeorm@0.3.29(better-sqlite3@12.10.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sqlite3@5.1.7):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 4.2.0
@@ -4690,7 +4706,7 @@ snapshots:
       yargs: 17.7.2
     optionalDependencies:
       better-sqlite3: 12.10.0
-      mssql: 12.5.4(@azure/core-client@1.10.1)
+      mssql: 12.5.5(@azure/core-client@1.10.1)
       mysql2: 3.22.4(@types/node@25.9.1)
       pg: 8.21.0
       pg-query-stream: 4.15.0(pg@8.21.0)
@@ -4732,7 +4748,7 @@ snapshots:
       picomatch: 4.0.4
       postcss: 8.5.15
       rollup: 4.60.4
-      tinyglobby: 0.2.16
+      tinyglobby: 0.2.17
     optionalDependencies:
       '@types/node': 25.9.1
       fsevents: 2.3.3
