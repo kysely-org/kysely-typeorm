@@ -1,4 +1,15 @@
-# kysely-typeorm
+![The Kysely duck mascot in a yellow hoodie stands beside an exhausted knight in orange and purple armor, representing TypeORM. The duck holds a glowing 'K' icon, while the knight holds a tattered scroll of complex code and bears a 'v1.0.0' emblem on their armor.](./assets/banner.jpeg)
+
+[![NPM Version](https://img.shields.io/npm/v/kysely-typeorm?style=flat&label=latest)](https://github.com/kysely-org/kysely-typeorm/releases/latest)
+[![Socket Badge](https://badge.socket.dev/npm/package/kysely-typeorm/0.3.0)](https://socket.dev/npm/package/kysely/overview/0.3.0)
+[![Tests](https://github.com/kysely-org/kysely-typeorm/actions/workflows/test.yml/badge.svg)](https://github.com/kysely-org/kysely-typeorm)
+[![License](https://img.shields.io/github/license/kysely-org/kysely-typeorm?style=flat)](https://github.com/kysely-org/kysely-typeorm/blob/main/LICENSE)
+[![Issues](https://img.shields.io/github/issues-closed/kysely-org/kysely-typeorm?logo=github)](https://github.com/kysely-org/kysely-typeorm/issues?q=is%3Aissue+is%3Aopen+sort%3Aupdated-desc)
+[![Pull Requests](https://img.shields.io/github/issues-pr-closed/kysely-org/kysely-typeorm?label=PRs&logo=github&style=flat)](https://github.com/kysely-org/kysely-typeorm/pulls?q=is%3Apr+is%3Aopen+sort%3Aupdated-desc)
+![GitHub contributors](https://img.shields.io/github/contributors/kysely-org/kysely-typeorm)
+[![Downloads](https://img.shields.io/npm/dw/kysely-typeorm?logo=npm)](https://www.npmjs.com/package/kysely-typeorm)
+[![JSR Downloads](https://jsr.io/badges/@kysely/kysely/weekly-downloads)](https://jsr.io/@kysely/kysely)
+[![JSR Score](https://jsr.io/badges/@kysely/kysely/score)](https://jsr.io/@kysely/kysely)
 
 TypeORM is an ORM that can run in NodeJS, Browser, Cordova, PhoneGap, Ionic, React Native, NativeScript, Expo, and Electron platforms and can be used with TypeScript and JavaScript (ES2021). Its goal is to always support the latest JavaScript features and provide additional features that help you to develop any kind of application that uses databases - from small applications with a few tables to large-scale enterprise applications with multiple databases.
 
@@ -15,19 +26,19 @@ A match made in heaven, on paper. Let's see how it works in practice, with `kyse
 Main dependencies:
 
 ```sh
-npm i kysely kysely-typeorm typeorm
+pnpm i kysely kysely-typeorm typeorm
 ```
 
 PostgreSQL:
 
 ```sh
-npm i pg
+pnpm i pg
 ```
 
 MySQL:
 
 ```sh
-npm i mysql2
+pnpm i mysql2
 ```
 
 MS SQL Server (MSSQL):
