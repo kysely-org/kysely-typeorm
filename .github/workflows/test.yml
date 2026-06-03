@@ -11,7 +11,7 @@ permissions: {}
 jobs:
   node:
     concurrency:
-      cancel-in-progress: ${{ github.ref_name != 'master' }}
+      cancel-in-progress: ${{ github.ref_name != 'main' }}
       group: ${{ github.workflow }}-node-${{ matrix.node-version }}-${{ github.event.pull_request.number || github.sha }}
 
     name: Node.js v${{ matrix.node-version }}

@@ -11,7 +11,7 @@ permissions: {}
 jobs:
   check:
     concurrency:
-      cancel-in-progress: ${{ github.ref_name != 'master' }}
+      cancel-in-progress: ${{ github.ref_name != 'main' }}
       group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
 
     name: Checks

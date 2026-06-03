@@ -45,12 +45,12 @@ jobs:
 
           TAG="$REF_NAME"
 
-          # Route stable tags to master/latest, RC tags to next/next
+          # Route stable tags to main/latest, RC tags to next/next
           if [[ "$TAG" =~ -rc\.[0-9]+$ ]]; then
             BRANCH=next
             DIST_TAG=next
           else
-            BRANCH=master
+            BRANCH=main
             DIST_TAG=latest
           fi
 

@@ -2,7 +2,7 @@ name: secure
 
 on:
   push:
-    branches: [master, next]
+    branches: [main, next]
   pull_request:
     branches: ["**"]
 
@@ -11,7 +11,7 @@ permissions: {}
 jobs:
   node:
     concurrency:
-      cancel-in-progress: ${{ github.ref_name != 'master' }}
+      cancel-in-progress: ${{ github.ref_name != 'main' }}
       group: ${{ github.workflow }}-node-${{ github.event.pull_request.number || github.sha }}
 
     name: Audit Node.js dependencies
@@ -37,7 +37,7 @@ jobs:
 
   zizmor:
     concurrency:
-      cancel-in-progress: ${{ github.ref_name != 'master' }}
+      cancel-in-progress: ${{ github.ref_name != 'main' }}
       group: ${{ github.workflow }}-zizmor-${{ github.event.pull_request.number || github.sha }}
 
     name: zizmor github actions scan

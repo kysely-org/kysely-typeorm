@@ -5,7 +5,7 @@ permissions: {}
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
     paths:
       - "**/*"
@@ -28,7 +28,7 @@ on:
 jobs:
   release:
     concurrency:
-      cancel-in-progress: ${{ github.ref_name != 'master' }}
+      cancel-in-progress: ${{ github.ref_name != 'main' }}
       group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
 
     name: Release preview build
