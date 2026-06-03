@@ -51,6 +51,9 @@ importers:
       mysql2:
         specifier: 3.22.4
         version: 3.22.4(@types/node@25.9.1)
+      pathe:
+        specifier: 2.0.3
+        version: 2.0.3
       pg:
         specifier: 8.21.0
         version: 8.21.0
