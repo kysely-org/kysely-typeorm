@@ -2,7 +2,11 @@ lockfileVersion: '9.0'
 
 settings:
   autoInstallPeers: true
+  dedupePeers: true
   excludeLinksFromLockfile: false
+
+overrides:
+  vite@>=7.0.0 <7.3.2: 7.3.2
 
 importers:
 
@@ -64,16 +68,16 @@ importers:
         version: 0.22.1(@arethetypeswrong/core@0.18.3)(publint@0.3.21)(typescript@6.0.3)
       typeorm:
         specifier: 1.0.0
-        version: 1.0.0(better-sqlite3@12.10.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sql.js@1.14.1)
+        version: 1.0.0(better-sqlite3@12.10.0)(mssql@12.5.5)(mysql2@3.22.4)(pg-query-stream@4.15.0)(pg@8.21.0)(sql.js@1.14.1)
       typeorm-naming-strategies:
         specifier: 4.1.0
-        version: 4.1.0(typeorm@1.0.0(better-sqlite3@12.10.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sql.js@1.14.1))
+        version: 4.1.0(typeorm@1.0.0)
       typescript:
         specifier: 6.0.3
         version: 6.0.3
       vitest:
         specifier: 4.1.8
-        version: 4.1.8(@types/node@25.9.1)(vite@7.3.1(@types/node@25.9.1))
+        version: 4.1.8(@types/node@25.9.1)(vite@7.3.2)
 
 packages:
 
@@ -754,7 +758,7 @@ packages:
     resolution: {integrity: sha512-LEiN/xe4OSIbKe9HQIp5OC24agGD9J5CnmMgsLohVVoOPWL9a2sBoR6VBx43jQZb7Kr1l4RCuyCJzcAa0+dojw==}
     peerDependencies:
       msw: ^2.4.9
-      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
+      vite: 7.3.2
     peerDependenciesMeta:
       msw:
         optional: true
@@ -1636,8 +1640,8 @@ packages:
     resolution: {integrity: sha512-OljLrQ9SQdOUqTaQxqL5dEfZWrXExyyWsozYlAWFawPVNuD83igl7uJD2RTkNMbniIYgt8l81eCJGIdQF7avLQ==}
     engines: {node: ^14.17.0 || ^16.13.0 || >=18.0.0}
 
-  vite@7.3.1:
-    resolution: {integrity: sha512-w+N7Hifpc3gRjZ63vYBXA56dvvRlNWRczTdmCBBa+CotUzAPf5b7YMdMR/8CQoeYE5LX3W4wj6RYTgonm1b9DA==}
+  vite@7.3.2:
+    resolution: {integrity: sha512-Bby3NOsna2jsjfLVOHKes8sGwgl4TT0E6vvpYgnAYDIF/tie7MRaFthmKuHx1NSXjiTueXH3do80FMQgvEktRg==}
     engines: {node: ^20.19.0 || >=22.12.0}
     hasBin: true
     peerDependencies:
@@ -1692,7 +1696,7 @@ packages:
       '@vitest/ui': 4.1.8
       happy-dom: '*'
       jsdom: '*'
-      vite: ^6.0.0 || ^7.0.0 || ^8.0.0
+      vite: 7.3.2
     peerDependenciesMeta:
       '@edge-runtime/vm':
         optional: true
@@ -2340,13 +2344,13 @@ snapshots:
       chai: 6.2.2
       tinyrainbow: 3.1.0
 
-  '@vitest/mocker@4.1.8(vite@7.3.1(@types/node@25.9.1))':
+  '@vitest/mocker@4.1.8(vite@7.3.2)':
     dependencies:
       '@vitest/spy': 4.1.8
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.1(@types/node@25.9.1)
+      vite: 7.3.2(@types/node@25.9.1)
 
   '@vitest/pretty-format@4.1.8':
     dependencies:
@@ -3137,11 +3141,11 @@ snapshots:
     dependencies:
       safe-buffer: 5.2.1
 
-  typeorm-naming-strategies@4.1.0(typeorm@1.0.0(better-sqlite3@12.10.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sql.js@1.14.1)):
+  typeorm-naming-strategies@4.1.0(typeorm@1.0.0):
     dependencies:
-      typeorm: 1.0.0(better-sqlite3@12.10.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sql.js@1.14.1)
+      typeorm: 1.0.0(better-sqlite3@12.10.0)(mssql@12.5.5)(mysql2@3.22.4)(pg-query-stream@4.15.0)(pg@8.21.0)(sql.js@1.14.1)
 
-  typeorm@1.0.0(better-sqlite3@12.10.0)(mssql@12.5.5(@azure/core-client@1.10.1))(mysql2@3.22.4(@types/node@25.9.1))(pg-query-stream@4.15.0(pg@8.21.0))(pg@8.21.0)(sql.js@1.14.1):
+  typeorm@1.0.0(better-sqlite3@12.10.0)(mssql@12.5.5)(mysql2@3.22.4)(pg-query-stream@4.15.0)(pg@8.21.0)(sql.js@1.14.1):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 4.3.0
@@ -3179,7 +3183,7 @@ snapshots:
 
   validate-npm-package-name@5.0.1: {}
 
-  vite@7.3.1(@types/node@25.9.1):
+  vite@7.3.2(@types/node@25.9.1):
     dependencies:
       esbuild: 0.27.7
       fdir: 6.5.0(picomatch@4.0.4)
@@ -3191,10 +3195,10 @@ snapshots:
       '@types/node': 25.9.1
       fsevents: 2.3.3
 
-  vitest@4.1.8(@types/node@25.9.1)(vite@7.3.1(@types/node@25.9.1)):
+  vitest@4.1.8(@types/node@25.9.1)(vite@7.3.2):
     dependencies:
       '@vitest/expect': 4.1.8
-      '@vitest/mocker': 4.1.8(vite@7.3.1(@types/node@25.9.1))
+      '@vitest/mocker': 4.1.8(vite@7.3.2)
       '@vitest/pretty-format': 4.1.8
       '@vitest/runner': 4.1.8
       '@vitest/snapshot': 4.1.8
@@ -3211,7 +3215,7 @@ snapshots:
       tinyexec: 1.1.2
       tinyglobby: 0.2.17
       tinyrainbow: 3.1.0
-      vite: 7.3.1(@types/node@25.9.1)
+      vite: 7.3.2(@types/node@25.9.1)
       why-is-node-running: 2.3.0
     optionalDependencies:
       '@types/node': 25.9.1

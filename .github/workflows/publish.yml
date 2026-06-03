@@ -1,0 +1,147 @@
+# https://docs.npmjs.com/trusted-publishers#github-actions-configuration
+name: publish
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions: {}
+
+jobs:
+  npm:
+    concurrency:
+      cancel-in-progress: false
+      group: ${{ github.workflow }}-npm
+
+    environment: release
+    if: github.repository == 'kysely-org/kysely'
+    name: publish to npm
+    permissions:
+      contents: read
+      id-token: write # Required for OIDC
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          fetch-depth: 0 # Need full history to check branch ancestry
+          persist-credentials: false
+
+      - name: verify tag format and branch
+        env:
+          REF_NAME: ${{ github.ref_name }}
+        run: |
+          # Validate ref_name format before using it
+          if [[ ! "$REF_NAME" =~ ^v[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?$ ]]; then
+            echo "Error: tag does not follow semver!"
+            exit 1
+          fi
+
+          TAG="$REF_NAME"
+
+          # Route stable tags to master/latest, RC tags to next/next
+          if [[ "$TAG" =~ -rc\.[0-9]+$ ]]; then
+            BRANCH=next
+            DIST_TAG=next
+          else
+            BRANCH=master
+            DIST_TAG=latest
+          fi
+
+          # Check if tag points to a commit that exists on the expected branch
+          TAG_COMMIT=$(git rev-list -n 1 "$TAG")
+          if ! git merge-base --is-ancestor "$TAG_COMMIT" "origin/$BRANCH"; then
+            echo "Error: tag is not based on $BRANCH branch"
+            exit 1
+          fi
+
+          echo "TAG=$TAG" >> "$GITHUB_ENV"
+          echo "DIST_TAG=$DIST_TAG" >> "$GITHUB_ENV"
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6.0.8
+        with:
+          cache: false # cache can be poisoned by malicious actors.
+
+      - name: Use Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: lts/*
+          package-manager-cache: false # cache can be poisoned by malicious actors.
+          registry-url: https://registry.npmjs.org/
+
+      - name: verify package version
+        run: |
+          # TAG was validated and set in the previous step via $GITHUB_ENV
+          VERSION="${TAG#v}"
+
+          # Get version from package.json safely (parse as JSON, don't execute)
+          PACKAGE_VERSION=$(node -p "JSON.parse(require('node:fs').readFileSync('./package.json', 'utf8')).version")
+
+          # Validate version format: must be MAJOR.MINOR.PATCH or MAJOR.MINOR.PATCH-rc.N
+          if [[ ! "$PACKAGE_VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-rc\.[0-9]+)?$ ]]; then
+            echo "Error: package.json version does not follow semver!"
+            exit 1
+          fi
+
+          # Verify versions match
+          if [[ "$VERSION" != "$PACKAGE_VERSION" ]]; then
+            echo "Error: tag and package.json version don't match!"
+            exit 1
+          fi
+
+      - name: Install dependencies
+        run: pnpm i --frozen-lockfile --prefer-offline
+
+      - name: Publish
+        run: pnpm publish --no-git-checks --tag "$DIST_TAG" # the workflow runs in a detached head state, so git checks fail
+
+  jsr:
+    concurrency:
+      cancel-in-progress: false
+      group: ${{ github.workflow }}-jsr
+
+    environment: release
+    needs: npm
+    name: publish to jsr
+    permissions:
+      contents: read
+      id-token: write # Required for OIDC
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Harden the runner (Audit all outbound calls)
+        uses: step-security/harden-runner@ab7a9404c0f3da075243ca237b5fac12c98deaa5 # v2.19.3
+        with:
+          egress-policy: audit
+
+      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+        with:
+          persist-credentials: false
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093 # v6.0.8
+        with:
+          cache: false # cache can be poisoned by malicious actors.
+
+      - name: Use Node.js
+        uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e # v6.4.0
+        with:
+          node-version: lts/*
+          package-manager-cache: false # cache can be poisoned by malicious actors.
+          registry-url: https://registry.npmjs.org/
+
+      - name: Install dependencies
+        run: pnpm i
+
+      - name: Prepare for publish
+        run: pnpm script:remove-global-augmentations
+
+      - name: publish
+        run: pnpm jsr publish --allow-dirty
