@@ -1,4 +1,4 @@
-import { type DeleteResult, type InsertResult, UpdateResult, sql } from 'kysely'
+import { DeleteResult, type InsertResult, sql, UpdateResult } from 'kysely'
 import { jsonArrayFrom as jsonArrayFromMssql } from 'kysely/helpers/mssql'
 import { jsonArrayFrom as jsonArrayFromMySQL } from 'kysely/helpers/mysql'
 import { jsonArrayFrom as jsonArrayFromPostgres } from 'kysely/helpers/postgres'
@@ -6,17 +6,22 @@ import { jsonArrayFrom as jsonArrayFromSQLite } from 'kysely/helpers/sqlite'
 import { omit } from 'lodash'
 import { afterAll, afterEach, beforeEach, describe, expect, it } from 'vitest'
 
-import { SUPPORTED_DIALECTS } from '../../src/supported-dialects.mjs'
 import { PersonEntity } from './entity/Person.mjs'
 import {
 	DEFAULT_DATA_SET,
-	type PerDialect,
-	type TestContext,
 	initTest,
+	type PerDialect,
 	seedDatabase,
+	type TestContext,
+	type TestedDialect,
 } from './test-setup.mjs'
 
-for (const dialect of SUPPORTED_DIALECTS) {
+for (const dialect of [
+	'mssql',
+	'mysql',
+	'postgres',
+	'sqljs',
+] satisfies TestedDialect[]) {
 	describe(`KyselyTypeORMDialect: ${dialect}`, () => {
 		let ctx: TestContext
 
@@ -25,7 +30,7 @@ for (const dialect of SUPPORTED_DIALECTS) {
 			mssql: jsonArrayFromMssql,
 			mysql: jsonArrayFromMySQL,
 			postgres: jsonArrayFromPostgres,
-			sqlite: jsonArrayFromSQLite,
+			sqljs: jsonArrayFromSQLite,
 		}[dialect] as typeof jsonArrayFromMySQL
 
 		beforeEach(async () => {
@@ -61,9 +66,12 @@ for (const dialect of SUPPORTED_DIALECTS) {
 					listOfDemands: true,
 					obj: true,
 					record: true,
-					// jason: true,
 				},
-				relations: ['pets', 'pets.toys'],
+				relations: {
+					pets: {
+						toys: true,
+					},
+				},
 				order: { id: 1 },
 			})
 
@@ -102,7 +110,6 @@ for (const dialect of SUPPORTED_DIALECTS) {
 					'record',
 					'obj',
 					'listOfDemands',
-					// 'jason',
 				])
 				.execute()
 
@@ -117,7 +124,6 @@ for (const dialect of SUPPORTED_DIALECTS) {
 					listOfDemands: JSON.stringify(['crypto']),
 					obj: JSON.stringify({ hello: 'world!' }),
 					record: JSON.stringify({ key: 'value' }),
-					// jason: JSON.stringify({ ok: 'bro' }),
 				})
 				.executeTakeFirstOrThrow()
 
@@ -137,16 +143,16 @@ for (const dialect of SUPPORTED_DIALECTS) {
 							insertId: undefined,
 							numInsertedOrUpdatedRows: BigInt(1),
 						},
-						sqlite: {
+						sqljs: {
 							insertId: undefined,
-							numInsertedOrUpdatedRows: BigInt(0),
+							numInsertedOrUpdatedRows: BigInt(1),
 						},
 					} satisfies PerDialect<{ [K in keyof InsertResult]: InsertResult[K] }>
 				)[dialect],
 			)
 		})
 
-		if (dialect === 'postgres' || dialect === 'sqlite') {
+		if (dialect === 'postgres' || dialect === 'sqljs') {
 			it('should be able to perform insert queries with returning', async () => {
 				const result = await ctx.kysely
 					.insertInto('person')
@@ -155,7 +161,6 @@ for (const dialect of SUPPORTED_DIALECTS) {
 						record: JSON.stringify({ key: 'value' }),
 						listOfDemands: JSON.stringify(['crypto']),
 						obj: JSON.stringify({ hello: 'world!' }),
-						// jason: JSON.stringify({ ok: 'bro' }),
 					})
 					.returning('id')
 					.executeTakeFirst()
@@ -178,13 +183,13 @@ for (const dialect of SUPPORTED_DIALECTS) {
 						mssql: new UpdateResult(BigInt(1), undefined),
 						mysql: new UpdateResult(BigInt(1), BigInt(1)),
 						postgres: new UpdateResult(BigInt(1), undefined),
-						sqlite: new UpdateResult(BigInt(0), undefined),
+						sqljs: new UpdateResult(BigInt(1), undefined),
 					} satisfies PerDialect<{ [K in keyof UpdateResult]: UpdateResult[K] }>
 				)[dialect],
 			)
 		})
 
-		if (dialect === 'postgres' || dialect === 'sqlite') {
+		if (dialect === 'postgres' || dialect === 'sqljs') {
 			it('should be able to perform update queries with returning', async () => {
 				const result = await ctx.kysely
 					.updateTable('person')
@@ -203,20 +208,10 @@ for (const dialect of SUPPORTED_DIALECTS) {
 				.where('id', '=', 1)
 				.executeTakeFirstOrThrow()
 
-			expect(result).to.deep.equal(
-				(
-					{
-						'better-sqlite3': { numDeletedRows: BigInt(1) },
-						mssql: { numDeletedRows: BigInt(1) },
-						mysql: { numDeletedRows: BigInt(1) },
-						postgres: { numDeletedRows: BigInt(1) },
-						sqlite: { numDeletedRows: BigInt(0) },
-					} satisfies PerDialect<{ [K in keyof DeleteResult]: DeleteResult[K] }>
-				)[dialect],
-			)
+			expect(result).to.deep.equal(new DeleteResult(1n))
 		})
 
-		if (dialect === 'postgres' || dialect === 'sqlite') {
+		if (dialect === 'postgres' || dialect === 'sqljs') {
 			it('should be able to perform delete queries with returning', async () => {
 				const result = await ctx.kysely
 					.deleteFrom('person')

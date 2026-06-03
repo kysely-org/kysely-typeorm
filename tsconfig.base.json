@@ -1,4 +1,16 @@
 {
     "extends": "@tsconfig/node22/tsconfig.json",
-    "compilerOptions": {},
+    "compilerOptions": {
+        "declaration": true,
+        "lib": ["es2023"],
+        "moduleResolution": "node16",
+        "module": "node16",
+        "noImplicitAny": true,
+        "rootDir": "./src",
+        "skipLibCheck": true,
+        "strict": true,
+        "target": "es2023",
+        "types": ["node"],
+        "verbatimModuleSyntax": true
+    }
 }

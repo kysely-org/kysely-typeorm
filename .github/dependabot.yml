@@ -5,14 +5,22 @@
 
 version: 2
 updates:
-  - package-ecosystem: "npm" # See documentation for possible values
-    directory: "/" # Location of package manifests
-    schedule:
-      interval: "daily"
+  - package-ecosystem: npm
+    cooldown:
+      default-days: 1
+    directory: /
+    rebase-strategy: disabled
     reviewers:
-      - "igalklebanov"
-    versioning-strategy: increase
-    groups:
-      typescript-eslint:
-        patterns:
-          - "@typescript-eslint*"
+      - igalklebanov
+    schedule:
+      interval: daily
+
+  - package-ecosystem: github-actions
+    cooldown:
+      default-days: 1
+    directory: /
+    rebase-strategy: disabled
+    reviewers:
+      - igalklebanov
+    schedule:
+      interval: daily

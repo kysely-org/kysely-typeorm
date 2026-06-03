@@ -1,7 +1,7 @@
 {
 	"$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
 	"files": {
-		"ignore": ["package.json", "tsconfig*.json"]
+		"includes": ["**", "!**/.vscode", "!**/package.json", "!**/tsconfig*.json"]
 	},
 	"javascript": {
 		"formatter": {
@@ -11,13 +11,20 @@
 	},
 	"linter": {
 		"rules": {
-			"nursery": {
-				"noCommonJs": "error",
-				"useDeprecatedReason": "error"
+			"nursery": {},
+			"performance": {
+				"noAccumulatingSpread": "error",
+				"noBarrelFile": "error",
+				"noDynamicNamespaceImportAccess": "error",
+				"noNamespaceImport": "error",
+				"noReExportAll": "error",
+				"useTopLevelRegex": "error"
 			},
 			"style": {
 				"noNonNullAssertion": "warn",
-				"noParameterAssign": "warn"
+				"noParameterAssign": "warn",
+				"noCommonJs": "error",
+				"useDeprecatedReason": "error"
 			},
 			"suspicious": {
 				"noAssignInExpressions": "off",
@@ -28,6 +35,7 @@
 	},
 	"vcs": {
 		"clientKind": "git",
+		"defaultBranch": "main",
 		"enabled": true,
 		"useIgnoreFile": true
 	}

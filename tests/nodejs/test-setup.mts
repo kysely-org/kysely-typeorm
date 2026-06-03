@@ -46,7 +46,12 @@ export interface TestContext {
 	typeORMDataSource: DataSource
 }
 
-export type PerDialect<T> = Record<SupportedDialect, T>
+export type TestedDialect = Extract<
+	SupportedDialect,
+	'better-sqlite3' | 'mssql' | 'mysql' | 'postgres' | 'sqljs'
+>
+
+export type PerDialect<T> = Record<TestedDialect, T>
 
 export const PLUGINS: KyselyPlugin[] = [
 	new ParseJSONResultsPlugin(),
@@ -137,19 +142,16 @@ export const CONFIGS: PerDialect<
 			useUTC: true,
 		},
 	},
-	sqlite: {
+	sqljs: {
 		kyselySubDialect: sqliteSubDialect,
 		typeORMDataSourceOptions: {
 			...BASE_DATA_SOURCE_OPTIONS,
-			database: ':memory:',
-			type: 'sqlite',
+			type: 'sqljs',
 		},
 	},
 }
 
-export async function initTest(
-	dialect: SupportedDialect,
-): Promise<TestContext> {
+export async function initTest(dialect: TestedDialect): Promise<TestContext> {
 	const config = CONFIGS[dialect]
 
 	const typeORMDataSource = new DataSource(config.typeORMDataSourceOptions)

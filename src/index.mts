@@ -1,4 +1,15 @@
-export * from './config.mjs'
-export * from './dialect.mjs'
-export * from './driver.mjs'
-export * from './kyselify.mjs'
+/** biome-ignore-all lint/performance/noBarrelFile: we're in library context and need an entry point */
+export type {
+	KyselySubDialect,
+	KyselyTypeORMDialectConfig,
+} from './config.mjs'
+export { KyselyTypeORMDialect } from './dialect.mjs'
+export { KyselyTypeORMDriver } from './driver.mjs'
+export type {
+	Generated,
+	GeneratedAlways,
+	JSONColumnType,
+	KyselifyEntity,
+	NonAttribute,
+	SimpleArray,
+} from './kyselify.mjs'

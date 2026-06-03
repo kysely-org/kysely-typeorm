@@ -6,5 +6,5 @@ export const ISOLATION_LEVELS = {
 	'read uncommitted': 'READ UNCOMMITTED',
 	'repeatable read': 'REPEATABLE READ',
 	serializable: 'SERIALIZABLE',
-	snapshot: null,
+	snapshot: 'SNAPSHOT',
 } as const satisfies Record<KyselyIsolationLevel, TypeORMIsolationLevel | null>
