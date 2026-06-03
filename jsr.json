@@ -1,0 +1,12 @@
+{
+  "$schema": "https://jsr.io/schema/config-file.v1.json",
+  "name": "@kysely/typeorm",
+  "version": "0.3.0",
+  "license": "MIT",
+  "exports": {
+    ".": "./src/index.mts"
+  },
+  "publish": {
+    "include": ["LICENSE", "README.md", "src/**/*.ts"]
+  }
+}
