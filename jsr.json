@@ -7,6 +7,6 @@
     ".": "./src/index.mts"
   },
   "publish": {
-    "include": ["LICENSE", "README.md", "src/**/*.ts"]
+    "include": ["LICENSE", "README.md", "src/**/*.mts"]
   }
 }
