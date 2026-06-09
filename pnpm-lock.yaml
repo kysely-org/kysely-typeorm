@@ -28,8 +28,8 @@ importers:
         specifier: 4.17.24
         version: 4.17.24
       '@types/node':
-        specifier: 25.9.1
-        version: 25.9.1
+        specifier: 25.9.2
+        version: 25.9.2
       '@types/pg':
         specifier: 8.20.0
         version: 8.20.0
@@ -50,7 +50,7 @@ importers:
         version: 12.5.5(@azure/core-client@1.10.1)
       mysql2:
         specifier: 3.22.5
-        version: 3.22.5(@types/node@25.9.1)
+        version: 3.22.5(@types/node@25.9.2)
       pathe:
         specifier: 2.0.3
         version: 2.0.3
@@ -83,7 +83,7 @@ importers:
         version: 6.0.3
       vitest:
         specifier: 4.1.8
-        version: 4.1.8(@types/node@25.9.1)(vite@7.3.2)
+        version: 4.1.8(@types/node@25.9.2)(vite@7.3.2)
 
 packages:
 
@@ -732,8 +732,8 @@ packages:
   '@types/lodash@4.17.24':
     resolution: {integrity: sha512-gIW7lQLZbue7lRSWEFql49QJJWThrTFFeIMJdp3eH4tKoxm1OvEPg02rm4wCCSHS0cL3/Fizimb35b7k8atwsQ==}
 
-  '@types/node@25.9.1':
-    resolution: {integrity: sha512-xfrlY7UD5rMJk3ZVJP8BNzS28J36YJg+xp+LPXV1TdWxr8uMH5A860QNxYDGQe/ylDSgjxE52Q9VnO7p75tJxg==}
+  '@types/node@25.9.2':
+    resolution: {integrity: sha512-G05zqtJhcDLb8uslf5EjCxXg9G1KQxiV8OS0R26IC//Eoyitzqe8z37I7cqvnZlrlSfgocQRfSn/AHBZJJFyGw==}
 
   '@types/pg@8.20.0':
     resolution: {integrity: sha512-bEPFOaMAHTEP1EzpvHTbmwR8UsFyHSKsRisLIHVMXnpNefSbGA1bD6CVy+qKjGSqmZqNqBDV2azOBo8TgkcVow==}
@@ -2325,19 +2325,19 @@ snapshots:
 
   '@types/lodash@4.17.24': {}
 
-  '@types/node@25.9.1':
+  '@types/node@25.9.2':
     dependencies:
       undici-types: 7.24.6
 
   '@types/pg@8.20.0':
     dependencies:
-      '@types/node': 25.9.1
+      '@types/node': 25.9.2
       pg-protocol: 1.14.0
       pg-types: 2.2.0
 
   '@types/readable-stream@4.0.23':
     dependencies:
-      '@types/node': 25.9.1
+      '@types/node': 25.9.2
 
   '@typescript/analyze-trace@0.10.1':
     dependencies:
@@ -2380,7 +2380,7 @@ snapshots:
       estree-walker: 3.0.3
       magic-string: 0.30.21
     optionalDependencies:
-      vite: 7.3.2(@types/node@25.9.1)
+      vite: 7.3.2(@types/node@25.9.2)
 
   '@vitest/pretty-format@4.1.8':
     dependencies:
@@ -2777,9 +2777,9 @@ snapshots:
       - '@azure/core-client'
       - supports-color
 
-  mysql2@3.22.5(@types/node@25.9.1):
+  mysql2@3.22.5(@types/node@25.9.2):
     dependencies:
-      '@types/node': 25.9.1
+      '@types/node': 25.9.2
       aws-ssl-profiles: 1.1.2
       denque: 2.1.0
       generate-function: 2.3.1
@@ -3119,7 +3119,7 @@ snapshots:
       '@azure/identity': 4.13.1
       '@azure/keyvault-keys': 4.10.0(@azure/core-client@1.10.1)
       '@js-joda/core': 5.7.0
-      '@types/node': 25.9.1
+      '@types/node': 25.9.2
       bl: 6.1.6
       iconv-lite: 0.7.2
       js-md4: 0.3.2
@@ -3207,7 +3207,7 @@ snapshots:
     optionalDependencies:
       better-sqlite3: 12.10.0
       mssql: 12.5.5(@azure/core-client@1.10.1)
-      mysql2: 3.22.5(@types/node@25.9.1)
+      mysql2: 3.22.5(@types/node@25.9.2)
       pg: 8.21.0
       pg-query-stream: 4.15.0(pg@8.21.0)
       sql.js: 1.14.1
@@ -3230,7 +3230,7 @@ snapshots:
 
   validate-npm-package-name@5.0.1: {}
 
-  vite@7.3.2(@types/node@25.9.1):
+  vite@7.3.2(@types/node@25.9.2):
     dependencies:
       esbuild: 0.27.7
       fdir: 6.5.0(picomatch@4.0.4)
@@ -3239,10 +3239,10 @@ snapshots:
       rollup: 4.61.1
       tinyglobby: 0.2.17
     optionalDependencies:
-      '@types/node': 25.9.1
+      '@types/node': 25.9.2
       fsevents: 2.3.3
 
-  vitest@4.1.8(@types/node@25.9.1)(vite@7.3.2):
+  vitest@4.1.8(@types/node@25.9.2)(vite@7.3.2):
     dependencies:
       '@vitest/expect': 4.1.8
       '@vitest/mocker': 4.1.8(vite@7.3.2)
@@ -3262,10 +3262,10 @@ snapshots:
       tinyexec: 1.1.2
       tinyglobby: 0.2.17
       tinyrainbow: 3.1.0
-      vite: 7.3.2(@types/node@25.9.1)
+      vite: 7.3.2(@types/node@25.9.2)
       why-is-node-running: 2.3.0
     optionalDependencies:
-      '@types/node': 25.9.1
+      '@types/node': 25.9.2
     transitivePeerDependencies:
       - msw
 
