@@ -48,7 +48,7 @@
   "devDependencies": {
     "@arethetypeswrong/core": "0.18.3",
     "@arktype/attest": "0.56.0",
-    "@biomejs/biome": "2.4.16",
+    "@biomejs/biome": "2.5.0",
     "@tsconfig/node22": "22.0.5",
     "@types/lodash": "4.17.24",
     "@types/node": "25.9.3",
