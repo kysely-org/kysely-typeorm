@@ -34,8 +34,8 @@ importers:
         specifier: 8.20.0
         version: 8.20.0
       better-sqlite3:
-        specifier: 12.10.0
-        version: 12.10.0
+        specifier: 12.11.1
+        version: 12.11.1
       jsr:
         specifier: 0.14.3
         version: 0.14.3
@@ -74,7 +74,7 @@ importers:
         version: 0.22.3(@arethetypeswrong/core@0.18.3)(publint@0.3.21)(typescript@6.0.3)
       typeorm:
         specifier: 1.0.0
-        version: 1.0.0(better-sqlite3@12.10.0)(mssql@12.5.5)(mysql2@3.22.5)(pg-query-stream@4.15.0)(pg@8.21.0)(sql.js@1.14.1)
+        version: 1.0.0(better-sqlite3@12.11.1)(mssql@12.5.5)(mysql2@3.22.5)(pg-query-stream@4.15.0)(pg@8.21.0)(sql.js@1.14.1)
       typeorm-naming-strategies:
         specifier: 4.1.0
         version: 4.1.0(typeorm@1.0.0)
@@ -823,8 +823,8 @@ packages:
   base64-js@1.5.1:
     resolution: {integrity: sha512-AKpaYlHn8t4SVbOHCy+b5+KKgvR4vrsD8vbvrbiQJps7fKDTkjkDry6ji0rUJjC0kzbNePLwzxq8iypo41qeWA==}
 
-  better-sqlite3@12.10.0:
-    resolution: {integrity: sha512-CyzaZRQKyHkB2ZInfTTl2nvT33EbDpjkLEbE8/Zck3Ll6O0qqvuGdrJ45HgtH+HykRg88ITY3AdreBGN70aBSQ==}
+  better-sqlite3@12.11.1:
+    resolution: {integrity: sha512-dq9AtApgg5PGFtBzPFSBl3HZQjHok5gaQCM6zh2Yk0aSmDCs1CbnVI8/HgASQkNKsWFpseIO9beg5xxpYhbIfA==}
     engines: {node: 20.x || 22.x || 23.x || 24.x || 25.x || 26.x}
 
   bindings@1.5.0:
@@ -1212,8 +1212,8 @@ packages:
   native-duplexpair@1.0.0:
     resolution: {integrity: sha512-E7QQoM+3jvNtlmyfqRZ0/U75VFgCls+fSkbml2MpgWkWyz3ox8Y58gNhfuziuQYGNNQAbFZJQck55LHCnCK6CA==}
 
-  node-abi@3.92.0:
-    resolution: {integrity: sha512-KdHvFWZjEKDf0cakgFjebl371GPsISX2oZHcuyKqM7DtogIsHrqKeLTo8wBHxaXRAQlY2PsPlZmfo+9ZCxEREQ==}
+  node-abi@3.101.0:
+    resolution: {integrity: sha512-bkb/RkuWCE64eWu1PCh3Fu2pGc9mKRs+kOE+FU2bGHRYlQa86/D321DSATV54AsCQMKz3/xSt9sRgraZTpqdhQ==}
     engines: {node: '>=10'}
 
   node-stream-zip@1.15.0:
@@ -1425,6 +1425,11 @@ packages:
     engines: {node: '>=10'}
     hasBin: true
 
+  semver@7.8.6:
+    resolution: {integrity: sha512-9lpSSU4Mly3mrtruwLs1eLK6+gzbzqeBFwRNjIjE+9LuDpWdYctrQlQ3ej1Ilgi7gknpsTRnPoLP8DpCHqHIJw==}
+    engines: {node: '>=10'}
+    hasBin: true
+
   simple-concat@1.0.1:
     resolution: {integrity: sha512-cSFtAPtRhljv69IK0hTVZQ+OfE9nePi/rtJmw5UjHeVyVroEqJXP1sFztKUy1qU+xvz3u/sfYJLa947b7nAN2Q==}
 
@@ -1486,8 +1491,8 @@ packages:
     resolution: {integrity: sha512-qpCAvRl9stuOHveKsn7HncJRvv501qIacKzQlO/+Lwxc9+0q2wLyv4Dfvt80/DPn2pqOBsJdDiogXGR9+OvwRw==}
     engines: {node: '>=8'}
 
-  tar-fs@2.1.4:
-    resolution: {integrity: sha512-mDAjwmZdh7LTT6pNleZ05Yt65HC3E+NiQzl672vQG38jIrehtJk/J3mNwIg+vShQPcLF/LV7CMnDW6vjj6sfYQ==}
+  tar-fs@2.1.5:
+    resolution: {integrity: sha512-OboTd8mmMhZDNPV+UjQcK9yKAatXu2aJ+r1w4im1Otd4M4fl2hwvdoXUxIYHFTHWK/3y3FarBP70v3vwmGlOxw==}
 
   tar-stream@2.2.0:
     resolution: {integrity: sha512-ujeqbceABgwMZxEJnk2HDY2DlnUZ+9oEcb1KzTVfYHio0UE6dG71n60d8D2I4qNvleWrrXpmjpt7vZeF1LnMZQ==}
@@ -2399,7 +2404,7 @@ snapshots:
 
   base64-js@1.5.1: {}
 
-  better-sqlite3@12.10.0:
+  better-sqlite3@12.11.1:
     dependencies:
       bindings: 1.5.0
       prebuild-install: 7.1.3
@@ -2657,7 +2662,7 @@ snapshots:
       lodash.isstring: 4.0.1
       lodash.once: 4.1.1
       ms: 2.1.3
-      semver: 7.8.4
+      semver: 7.8.6
 
   jsr@0.14.3:
     dependencies:
@@ -2748,9 +2753,9 @@ snapshots:
 
   native-duplexpair@1.0.0: {}
 
-  node-abi@3.92.0:
+  node-abi@3.101.0:
     dependencies:
-      semver: 7.8.4
+      semver: 7.8.6
 
   node-stream-zip@1.15.0: {}
 
@@ -2851,11 +2856,11 @@ snapshots:
       minimist: 1.2.8
       mkdirp-classic: 0.5.3
       napi-build-utils: 2.0.0
-      node-abi: 3.92.0
+      node-abi: 3.101.0
       pump: 3.0.4
       rc: 1.2.8
       simple-get: 4.0.1
-      tar-fs: 2.1.4
+      tar-fs: 2.1.5
       tunnel-agent: 0.6.0
 
   prettier@3.6.2: {}
@@ -2988,6 +2993,8 @@ snapshots:
 
   semver@7.8.4: {}
 
+  semver@7.8.6: {}
+
   simple-concat@1.0.1: {}
 
   simple-get@4.0.1:
@@ -3044,7 +3051,7 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  tar-fs@2.1.4:
+  tar-fs@2.1.5:
     dependencies:
       chownr: 1.1.4
       mkdirp-classic: 0.5.3
@@ -3136,9 +3143,9 @@ snapshots:
 
   typeorm-naming-strategies@4.1.0(typeorm@1.0.0):
     dependencies:
-      typeorm: 1.0.0(better-sqlite3@12.10.0)(mssql@12.5.5)(mysql2@3.22.5)(pg-query-stream@4.15.0)(pg@8.21.0)(sql.js@1.14.1)
+      typeorm: 1.0.0(better-sqlite3@12.11.1)(mssql@12.5.5)(mysql2@3.22.5)(pg-query-stream@4.15.0)(pg@8.21.0)(sql.js@1.14.1)
 
-  typeorm@1.0.0(better-sqlite3@12.10.0)(mssql@12.5.5)(mysql2@3.22.5)(pg-query-stream@4.15.0)(pg@8.21.0)(sql.js@1.14.1):
+  typeorm@1.0.0(better-sqlite3@12.11.1)(mssql@12.5.5)(mysql2@3.22.5)(pg-query-stream@4.15.0)(pg@8.21.0)(sql.js@1.14.1):
     dependencies:
       '@sqltools/formatter': 1.2.5
       ansis: 4.3.0
@@ -3151,7 +3158,7 @@ snapshots:
       tslib: 2.8.1
       yargs: 18.0.0
     optionalDependencies:
-      better-sqlite3: 12.10.0
+      better-sqlite3: 12.11.1
       mssql: 12.5.5(@azure/core-client@1.10.1)
       mysql2: 3.22.5(@types/node@25.9.3)
       pg: 8.21.0
