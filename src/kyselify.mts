@@ -61,7 +61,7 @@ import type {
  */
 export type Generated<T> =
 	| (Exclude<T, null> & {
-			readonly __kysely__generated__?: unique symbol
+			readonly __kysely__generated__?: never
 	  })
 	| Extract<null, T>
 
@@ -121,7 +121,7 @@ export type Generated<T> =
  */
 export type GeneratedAlways<T> =
 	| (Exclude<T, null> & {
-			readonly __kysely__generated__always__?: unique symbol
+			readonly __kysely__generated__always__?: never
 	  })
 	| Extract<null, T>
 
@@ -187,7 +187,7 @@ export type GeneratedAlways<T> =
  */
 export type NonAttribute<T> =
 	| (Exclude<T, null> & {
-			readonly __kysely__non__attribute__?: unique symbol
+			readonly __kysely__non__attribute__?: never
 	  })
 	| Extract<null, T>
 
@@ -200,7 +200,7 @@ export type NonAttribute<T> =
 // biome-ignore lint/suspicious/noExplicitAny: this is fine.
 export type SimpleArray<T extends any[] | null> =
 	| (Exclude<T, null> & {
-			readonly __kysely__simple__array__?: unique symbol
+			readonly __kysely__simple__array__?: never
 	  })
 	| Extract<null, T>
 
@@ -212,7 +212,7 @@ export type SimpleArray<T extends any[] | null> =
  */
 export type JSONColumnType<T extends object | null> =
 	| (Exclude<T, null> & {
-			readonly __kysely__json__?: unique symbol
+			readonly __kysely__json__?: never
 	  })
 	| Extract<null, T>
 
